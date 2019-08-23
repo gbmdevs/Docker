@@ -1,0 +1,9 @@
+version: "3.1"
+services: 
+      nodeweb:
+          build: .
+          container_name: "webNodeJS"
+          ports: 
+           -  "3000:3000"
+          tty: true
+          stdin_open: true
