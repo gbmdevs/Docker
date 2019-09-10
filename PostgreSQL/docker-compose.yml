@@ -2,6 +2,12 @@ version: "2.1"
 services: 
    postdb: 
        build: .
-       container_sname: "postgresql"
+       container_name: "postgresql"
        tty: true
        stdin_open: true
+       environment:
+           - POSTGRES_USER=root
+           - POSTGRES_PASSWORD=psql
+           - POSTGRES_DB=psql
+
+      
