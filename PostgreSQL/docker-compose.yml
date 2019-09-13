@@ -5,9 +5,12 @@ services:
        container_name: "postgresql"
        tty: true
        stdin_open: true
-       environment:
-           - POSTGRES_USER=root
-           - POSTGRES_PASSWORD=psql
-           - POSTGRES_DB=psql
+       ports:
+           - 5432:5432
+       volumes:
+           - my_dbdata:/var/lib/postgresql/data
+volumes:
+   my_dbdata:           
+        
 
       
