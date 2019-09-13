@@ -1,7 +1,7 @@
 version: "2.1"
 services: 
    postdb: 
-       build: .
+       image: postgres:9.6
        container_name: "postgresql"
        tty: true
        stdin_open: true
@@ -9,6 +9,10 @@ services:
            - 5432:5432
        volumes:
            - my_dbdata:/var/lib/postgresql/data
+       environment: 
+         - POSTGRES_DB=pgweb
+         - POSTGRES_USER=postgres
+         - TZ=GMT    
 volumes:
    my_dbdata:           
         
