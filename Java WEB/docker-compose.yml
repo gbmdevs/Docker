@@ -13,7 +13,9 @@ services:
     banco: 
        image: postgres
        environment: 
-          POSTGRES_PASSWORD: 'psqladmin'
+          - POSTGRES_PASSWORD=psqladmin
+          - POSTGRES_DB=pgweb
+          - POSTGRES_USER=psql
        ports: 
         - "15432:15432"
        volumes:
@@ -25,5 +27,5 @@ volumes:
 # Area de Conexao com Outras Imagens de Containers
 networks: 
     postgres-compose-network:
-    driver: bridge
+     
       
