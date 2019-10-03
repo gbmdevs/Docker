@@ -5,5 +5,5 @@ services:
           container_name: "webNodeJS"
           ports: 
            -  "3000:3000"
-          tty: true
+         # tty: true
           stdin_open: true

@@ -1,9 +1,9 @@
-version: "2.1"
+version: "2.0"
 services: 
    postdb: 
        image: postgres:9.6
        container_name: "postgresql"
-       tty: true
+#       tty: true
        stdin_open: true
        ports:
            - 5432:5432

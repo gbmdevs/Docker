@@ -1,10 +1,29 @@
-version: "3.0"
+version: "2.0"
 services: 
     web:
       container_name: javaDesenv
       build: .
-      tty: true
+#      tty: true
       stdin_open: true
       ports: 
        -  "7001:7001"
        -  "8080:8080"
+      networks: 
+        - postgres-compose-network        
+    banco: 
+       image: postgres
+       environment: 
+          POSTGRES_PASSWORD: 'psqladmin'
+       ports: 
+        - "15432:15432"
+       volumes:
+        - my_dbdata:/var/lib/postgresql/data 
+       networks: 
+        - postgres-compose-network    
+volumes:
+   my_dbdata:               
+# Area de Conexao com Outras Imagens de Containers
+networks: 
+    postgres-compose-network:
+    driver: bridge
+      
