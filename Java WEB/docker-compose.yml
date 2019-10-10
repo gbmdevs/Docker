@@ -12,6 +12,7 @@ services:
         - postgres-compose-network        
     banco: 
        image: psql:Desenv
+       stdin_open: true
        environment: 
           - POSTGRES_PASSWORD=admin
           - POSTGRES_DB=desenv
