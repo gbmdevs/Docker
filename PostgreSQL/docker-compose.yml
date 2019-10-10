@@ -1,7 +1,7 @@
 version: "2.0"
 services: 
    postdb: 
-       image: postgres:9.6
+       image: psql:Desenv
        container_name: "postgresql"
 #       tty: true
        stdin_open: true

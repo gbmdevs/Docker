@@ -11,13 +11,13 @@ services:
       networks: 
         - postgres-compose-network        
     banco: 
-       image: postgres
+       image: psql:Desenv
        environment: 
-          - POSTGRES_PASSWORD=psqladmin
-          - POSTGRES_DB=pgweb
-          - POSTGRES_USER=psql
+          - POSTGRES_PASSWORD=admin
+          - POSTGRES_DB=desenv
+          - POSTGRES_USER=admin
        ports: 
-        - "15432:15432"
+        - "5432:5432"
        volumes:
         - my_dbdata:/var/lib/postgresql/data 
        networks: 
