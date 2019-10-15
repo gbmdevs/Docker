@@ -8,25 +8,25 @@ services:
       ports: 
        -  "7001:7001"
        -  "8080:8080"
-      networks: 
-        - postgres-compose-network        
-    banco: 
-       image: psql:Desenv
-       stdin_open: true
-       environment: 
-          - POSTGRES_PASSWORD=admin
-          - POSTGRES_DB=desenv
-          - POSTGRES_USER=admin
-       ports: 
-        - "5432:5432"
-       volumes:
-        - my_dbdata:/var/lib/postgresql/data 
-       networks: 
-        - postgres-compose-network    
+#      networks: 
+#        - postgres-compose-network        
+#    banco: 
+#       image: psql:Desenv
+#       stdin_open: true
+#       environment: 
+#          - POSTGRES_PASSWORD=admin
+#        - POSTGRES_DB=desenv
+#          - POSTGRES_USER=admin
+#       ports: 
+#        - "5432:5432"
+##       volumes:
+#        - my_dbdata:/var/lib/postgresql/data 
+#       networks: 
+#        - postgres-compose-network    
 volumes:
    my_dbdata:               
 # Area de Conexao com Outras Imagens de Containers
-networks: 
-    postgres-compose-network:
+#networks: 
+#    postgres-compose-network:
      
       

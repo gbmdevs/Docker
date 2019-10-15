@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get install git -y 
 RUN apt-get install curl -y
 RUN apt-get install nano -y 
-RUN apt-get install expect -y 
+RUN apt-get update -y && apt-get install expect -y
 
 # Cria as pastas para o ambiente java
 RUN mkdir /usr/lib/jvm
@@ -30,6 +30,6 @@ RUN tar xzvf apache-maven-3.6.1-bin.tar.gz -C /opt/
 RUN update-alternatives --install "/usr/bin/mvn" "mvn" "/opt/apache-maven-3.6.1/bin/mvn" 0
 
 # Executa o script de Automação
-RUN ./instalacaoWEBLOGIC.sh
+#RUN ./instalacaoWEBLOGIC.sh
 
 CMD ["/bin/bash"]
