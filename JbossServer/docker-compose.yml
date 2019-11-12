@@ -1,0 +1,10 @@
+version: "2.0"
+services:
+    servidor:
+          build: .
+          image: "jboss:desen"
+          container_name: "jbossDesen"
+          tty: true
+          stdin_open: true
+          ports: 
+          - "8080:8080"
