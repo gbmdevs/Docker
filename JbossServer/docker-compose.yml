@@ -4,7 +4,8 @@ services:
           build: .
           image: "jboss:desen"
           container_name: "jbossDesen"
-          tty: true
-          stdin_open: true
           ports: 
-          - "8080:8080"
+            - "8080:8080"
+            - "9990:9990"
+        #  tty: true
+          stdin_open: true
