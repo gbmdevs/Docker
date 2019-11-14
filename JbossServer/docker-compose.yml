@@ -9,3 +9,4 @@ services:
             - "9990:9990"
         #  tty: true
           stdin_open: true
+        # command: /home/app/java/init.sh
