@@ -9,8 +9,11 @@ RUN apt-get update
 RUN apt-get install nano -y && apt-get install curl -y
 RUN apt-get install git -y  
 
-# Criação das Pastas para o Projeto em si
-RUN mdkir projetos
+# Inicialização dos repositorios GIT :  Projetos em Java e SETUP para ambiente
+RUN mkdir projetos
+RUN git config --global user.name "Guilherme B.(Emaloka)"
+RUN git config --global user.email guih.smi2@outlook.com
+RUN cd projetos && git init && git remote add origin https://github.com/emaloka/Java.git && git pull origin master
 
 RUN mkdir /usr/lib/jvm
 
