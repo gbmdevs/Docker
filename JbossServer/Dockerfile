@@ -26,6 +26,7 @@ COPY jboss-eap-7.2.0-installer.jar   /home/app/java/jboss-7-2.jar
 COPY auto.xml                        /home/app/java/auto.xml  
 COPY init.sh                         /home/app/java/init.sh 
 
+#RUN ./init.sh
 # Extração do JDK versão 8 e Instalação
 RUN tar xzvf jdk-8u221-linux-x64.tar.gz -C /usr/lib/jvm
 RUN update-alternatives --install "/usr/bin/java"  "java"  "/usr/lib/jvm/jdk1.8.0_221/bin/java" 0
