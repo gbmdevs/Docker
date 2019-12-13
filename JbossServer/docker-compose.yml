@@ -12,15 +12,27 @@ services:
         # Adição do Commando para Iniciar o Servidor  
           command: /root/EAP-7.2.0/bin/./standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0
           networks:
+<<<<<<< HEAD
             - rede
+=======
+           - teste
+>>>>>>> 81109cd1376b8960bfc7054e68342723c755a7b4
     db: 
        image: postgres
        restart: always
+       networks:
+           - teste
        environment:
           POSTGRES_PASSWORD: "example"
           POSTGRES_USER: "postgres"
+<<<<<<< HEAD
        networks:
             - rede
 networks:
     rede:
       driver: bridge
+=======
+networks:
+    teste:
+      driver: bridge          
+>>>>>>> 81109cd1376b8960bfc7054e68342723c755a7b4
