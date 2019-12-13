@@ -11,11 +11,16 @@ services:
           stdin_open: true
         # Adição do Commando para Iniciar o Servidor  
           command: /root/EAP-7.2.0/bin/./standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0
-          links: 
-             - "db:postgres"
+          networks:
+           - teste
     db: 
        image: postgres
        restart: always
+       networks:
+           - teste
        environment:
           POSTGRES_PASSWORD: "example"
           POSTGRES_USER: "postgres"
+networks:
+    teste:
+      driver: bridge          
