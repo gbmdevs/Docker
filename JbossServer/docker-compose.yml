@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.0"
 services:
     servidor:
           build: .
@@ -12,7 +12,8 @@ services:
         # Adição do Commando para Iniciar o Servidor  
           command: /root/EAP-7.2.0/bin/./standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0
           networks:
-            - rede
+            rede: 
+              ipv4_address: 172.20.0.6
     db: 
        image: postgres
        restart: always
@@ -20,7 +21,11 @@ services:
           POSTGRES_PASSWORD: "example"
           POSTGRES_USER: "postgres"
        networks:
-            - rede
+            rede: 
+              ipv4_address: 172.20.0.5
 networks:
     rede:
       driver: bridge
+      ipam:
+        config:
+           - subnet: 172.20.0.0/24
