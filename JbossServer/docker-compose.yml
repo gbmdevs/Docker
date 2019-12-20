@@ -15,14 +15,16 @@ services:
             rede: 
               ipv4_address: 172.20.0.6
     db: 
-       image: postgres
-       restart: always
-       environment:
-          POSTGRES_PASSWORD: "example"
-          POSTGRES_USER: "postgres"
+       build:
+          context:  ../PostgreSQL     
+       image: "postgres:desen"
+       stdin_open: true
+      # tty: true
+      # restart: always
+      #command: service postgresql start
        networks:
             rede: 
-              ipv4_address: 172.20.0.5
+              ipv4_address: 172.20.0.5                           
 networks:
     rede:
       driver: bridge
