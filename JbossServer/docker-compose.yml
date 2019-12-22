@@ -14,17 +14,12 @@ services:
           networks:
             rede: 
               ipv4_address: 172.20.0.6
-    db: 
-       build:
-          context:  ../PostgreSQL     
-       image: "postgres:desen"
-       stdin_open: true
-      # tty: true
-      # restart: always
-      #command: service postgresql start
+    db:
+       image: "postgres"
+       restart: always   
        networks:
-            rede: 
-              ipv4_address: 172.20.0.5                           
+        rede: 
+          ipv4_address: 172.20.0.5                            
 networks:
     rede:
       driver: bridge
