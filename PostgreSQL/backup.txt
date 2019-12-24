@@ -55,10 +55,52 @@ ALTER SEQUENCE public.teste_iduser_seq OWNED BY public.teste.iduser;
 
 
 --
+-- Name: tip_gasto; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tip_gasto (
+    idtipgasto integer NOT NULL,
+    nometipgasto character varying(20) NOT NULL,
+    desctipgasto character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.tip_gasto OWNER TO postgres;
+
+--
+-- Name: tip_gasto_idtipgasto_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tip_gasto_idtipgasto_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tip_gasto_idtipgasto_seq OWNER TO postgres;
+
+--
+-- Name: tip_gasto_idtipgasto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tip_gasto_idtipgasto_seq OWNED BY public.tip_gasto.idtipgasto;
+
+
+--
 -- Name: teste iduser; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.teste ALTER COLUMN iduser SET DEFAULT nextval('public.teste_iduser_seq'::regclass);
+
+
+--
+-- Name: tip_gasto idtipgasto; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tip_gasto ALTER COLUMN idtipgasto SET DEFAULT nextval('public.tip_gasto_idtipgasto_seq'::regclass);
 
 
 --
@@ -69,10 +111,24 @@ INSERT INTO public.teste (iduser, usuario) VALUES (1, 'Jamal');
 
 
 --
+-- Data for Name: tip_gasto; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tip_gasto (idtipgasto, nometipgasto, desctipgasto) VALUES (1, 'Refeicao', 'Cartao refeicao bandeira Alelo');
+
+
+--
 -- Name: teste_iduser_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.teste_iduser_seq', 1, false);
+
+
+--
+-- Name: tip_gasto_idtipgasto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tip_gasto_idtipgasto_seq', 1, true);
 
 
 --
@@ -89,6 +145,14 @@ ALTER TABLE ONLY public.teste
 
 ALTER TABLE ONLY public.teste
     ADD CONSTRAINT teste_usuario_key UNIQUE (usuario);
+
+
+--
+-- Name: tip_gasto tip_gasto_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tip_gasto
+    ADD CONSTRAINT tip_gasto_pkey PRIMARY KEY (idtipgasto);
 
 
 --
