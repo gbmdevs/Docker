@@ -4,12 +4,13 @@
 
 FROM ubuntu:16.04
 MAINTAINER guih.smi2@outlook.com(Emaloka)
-ARG hello="Teste"
+#ARG hello="Teste"
 RUN apt-get update
 RUN apt-get install curl -y && apt-get install nano -y  && apt-get install git -y
 
 # Iniciando a Instalação do Postgres
 RUN apt-get install postgresql postgresql-contrib -y &&  echo ${hello}
+RUN service postgresql start
 
 EXPOSE 5432
 #RUN service postgresql start

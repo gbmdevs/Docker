@@ -1,0 +1,30 @@
+# Teste de Ambiente
+
+version: "2.0"
+services: 
+     teste: 
+         build: .
+         image: "teste:ambiente"
+         container_name: "ambiente_teste"
+         tty: true
+         stdin_open: true
+         ports: 
+            - "8080:8080"
+         networks: 
+            - mynet
+     pg:
+        build: ../PostgreSQL
+        image: "postgres:teste"
+        container_name: "postgres_teste"
+        tty: true
+        stdin_open: true
+        ports: 
+           - "5432:5432"
+        networks: 
+           - mynet
+
+networks: 
+    mynet: 
+        driver: bridge
+
+            
