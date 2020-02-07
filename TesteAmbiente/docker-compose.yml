@@ -11,7 +11,8 @@ services:
          ports: 
             - "8080:8080"
          networks: 
-            - mynet
+            mynet:
+               ipv4_address: 172.20.0.8 
      pgdb:
         build: ../PostgreSQL
         image: "postgres:teste"
@@ -21,10 +22,14 @@ services:
         ports: 
            - "5432:5432"
         networks: 
-           - mynet
+             mynet:
+               ipv4_address: 172.20.0.9 
 
 networks: 
     mynet: 
         driver: bridge
+        ipam:
+         config:
+            - subnet: 172.20.0.0/24
 
             

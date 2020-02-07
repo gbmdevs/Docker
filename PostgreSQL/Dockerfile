@@ -19,6 +19,7 @@ RUN cd /home/app/db
 # Instalção dos Pacotes em Binários
 RUN apt-get install g++ -y && apt-get install libreadline-dev -y
 RUN apt-get install zlib1g-dev -y
+
 #######################################
 # Arquivos necessarios para o Postgres
 #######################################
@@ -44,7 +45,6 @@ RUN chown postgres /etc/postgresql/data -R -f
 USER "postgres"
 # Iniciar o Banco de Dados
 RUN cd /etc/postgresql/bin/ && ./initdb -D /etc/postgresql/data/
-
 
 EXPOSE 5432
 CMD ["/bin/bash"];
