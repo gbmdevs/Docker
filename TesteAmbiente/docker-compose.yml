@@ -19,6 +19,7 @@ services:
         container_name: "postgres_teste"
         tty: true
         stdin_open: true
+        #command: postgres -D /etc/postgresql/data
         ports: 
            - "5432:5432"
         networks: 

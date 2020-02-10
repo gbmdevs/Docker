@@ -42,9 +42,22 @@ RUN make install
 RUN chown postgres /etc/postgresql/bin -R -f
 RUN chown postgres /etc/postgresql/data -R -f
 
+# Criação dos comandos alternativos para execução do banco de dados
+RUN update-alternatives --install /usr/bin/psql psql /etc/postgresql/bin/psql 1
+RUN update-alternatives --install /usr/bin/pg_dump pg_dump /etc/postgresql/bin/pg_dump 1
+RUN update-alternatives --install /usr/bin/pg_restore pg_restore /etc/postgresql/bin/pg_restore 1
+RUN update-alternatives --install /usr/bin/postgres postgres /etc/postgresql/bin/postgres 1
+
+# Copia do Arquivo de Backup da base de dados ( Utilizar cat backup.txt | psql)
+COPY backup.txt       /home/app/db/backup.txt
+
+# Usuario para a aplicação (no momento , sem nehuma trava de segurança)
 USER "postgres"
-# Iniciar o Banco de Dados
+
+# Iniciar o Banco de Dados com copia os arquivos de configurações Prontos
 RUN cd /etc/postgresql/bin/ && ./initdb -D /etc/postgresql/data/
+COPY pb_hba.conf      /etc/postgresql/data/
+COPY postgresql.conf  /etc/postgresql/data/
 
 EXPOSE 5432
 CMD ["/bin/bash"];
