@@ -50,15 +50,20 @@ RUN update-alternatives --install /usr/bin/postgres postgres /etc/postgresql/bin
 
 # Copia do Arquivo de Backup da base de dados ( Utilizar cat backup.txt | psql)
 COPY backup.txt       /home/app/db/backup.txt
+COPY pb_hba.conf      /home/app/db/
+COPY postgresql.conf  /home/app/db/
+RUN chown postgres:postgres postgresql.conf && chown postgres:postgres pb_hba.conf 
+RUN chmod 600 *.conf 
 
 # Usuario para a aplicação (no momento , sem nehuma trava de segurança)
 USER "postgres"
 
 # Iniciar o Banco de Dados com copia os arquivos de configurações Prontos
 RUN cd /etc/postgresql/bin/ && ./initdb -D /etc/postgresql/data/
-COPY pb_hba.conf      /etc/postgresql/data/
-COPY postgresql.conf  /etc/postgresql/data/
+RUN cd /etc/postgresql/data/ && rm -r postgresql.conf && rm -r pg_hba.conf
+RUN cp /home/app/db/pb_hba.conf  /etc/postgresql/data/pb_hba.conf 
+RUN cp /home/app/db/postgresql.conf  /etc/postgresql/data/postgresql.conf
 
 EXPOSE 5432
-CMD ["/bin/bash"];
+CMD ["/bin/bash"]
 
