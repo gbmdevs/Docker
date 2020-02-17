@@ -7,8 +7,7 @@ FROM ubuntu:16.04
 MAINTAINER guih.smi2@outlook.com(Emaloka)
 WORKDIR /home/app/db
 
-COPY docker-entrypoint.sh /usr/bin
-
+# 
 RUN apt-get update
 RUN apt-get install curl -y && apt-get install nano -y  && apt-get install git -y
 RUN apt-get install make -y
@@ -18,7 +17,7 @@ RUN adduser --disabled-password --shell /bin/bash --gecos "User" postgres
 RUN su postgres
 RUN cd /home/app/db
 
-# Instalção dos Pacotes em Binários
+# Instalação dos Pacotes em Binários
 RUN apt-get install g++ -y && apt-get install libreadline-dev -y
 RUN apt-get install zlib1g-dev -y
 
@@ -57,6 +56,8 @@ COPY postgresql.conf  /home/app/db/
 RUN chown postgres:postgres postgresql.conf && chown postgres:postgres pg_hba.conf 
 RUN chmod 600 *.conf  
 
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh && chown postgres:postgres /usr/local/bin/docker-entrypoint.sh
 # Usuario para a aplicação (no momento , sem nehuma trava de segurança)
 USER "postgres"
 
@@ -67,6 +68,6 @@ RUN cp /home/app/db/pg_hba.conf  /etc/postgresql/data/pg_hba.conf
 RUN cp /home/app/db/postgresql.conf  /etc/postgresql/data/postgresql.conf
 
 EXPOSE 5432
-ENTRYPOINT [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "docker-entrypoint.sh " ]
 CMD ["postgres"]
 #CMD ["/bin/bash"]
