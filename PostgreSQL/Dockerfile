@@ -48,6 +48,7 @@ RUN update-alternatives --install /usr/bin/psql psql /etc/postgresql/bin/psql 1
 RUN update-alternatives --install /usr/bin/pg_dump pg_dump /etc/postgresql/bin/pg_dump 1
 RUN update-alternatives --install /usr/bin/pg_restore pg_restore /etc/postgresql/bin/pg_restore 1
 RUN update-alternatives --install /usr/bin/postgres postgres /etc/postgresql/bin/postgres 1
+RUN update-alternatives --install /usr/bin/pg_ctl pg_ctl /etc/postgresql/bin/pg_ctl 1
 
 # Copia do Arquivo de Backup da base de dados ( Utilizar cat backup.txt | psql)
 COPY backup.txt       /home/app/db/backup.txt
@@ -66,6 +67,7 @@ RUN cd /etc/postgresql/bin/ && ./initdb -D /etc/postgresql/data/
 RUN cd /etc/postgresql/data/ && rm -r postgresql.conf && rm -r pg_hba.conf
 RUN cp /home/app/db/pg_hba.conf  /etc/postgresql/data/pg_hba.conf 
 RUN cp /home/app/db/postgresql.conf  /etc/postgresql/data/postgresql.conf
+
 
 EXPOSE 5432
 ENTRYPOINT [ "docker-entrypoint.sh"]
