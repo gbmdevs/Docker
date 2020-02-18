@@ -1,8 +1,8 @@
 #!/bin/bash
-
+# Iniciador do servidor para realização de backup automatico
 set -e
-
-if [ "$1" = 'postgres']; then
-     echo 'Teste de SH'
-fi
-
+echo '*==============================================*'
+echo '*=   Iniciando o Banco de Dados PostgreSQL    =*'
+echo '*==============================================*'
+echo $1
+postgres -D /etc/postgresql/data

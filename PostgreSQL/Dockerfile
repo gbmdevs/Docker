@@ -56,8 +56,8 @@ COPY postgresql.conf  /home/app/db/
 RUN chown postgres:postgres postgresql.conf && chown postgres:postgres pg_hba.conf 
 RUN chmod 600 *.conf  
 
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod 777 /usr/local/bin/docker-entrypoint.sh && chown postgres:postgres /usr/local/bin/docker-entrypoint.sh
+COPY docker-entrypoint.sh /usr/local/bin/ 
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh 
 # Usuario para a aplicação (no momento , sem nehuma trava de segurança)
 USER "postgres"
 
@@ -68,6 +68,6 @@ RUN cp /home/app/db/pg_hba.conf  /etc/postgresql/data/pg_hba.conf
 RUN cp /home/app/db/postgresql.conf  /etc/postgresql/data/postgresql.conf
 
 EXPOSE 5432
-ENTRYPOINT [ "docker-entrypoint.sh " ]
+ENTRYPOINT [ "docker-entrypoint.sh"]
 CMD ["postgres"]
 #CMD ["/bin/bash"]
