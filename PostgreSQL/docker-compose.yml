@@ -3,7 +3,7 @@ services:
    postdb: 
        image: psql:Desenv
        container_name: "postgresql"
-#       tty: true
+       tty: true
        stdin_open: true
        ports:
            - 5432:5432
