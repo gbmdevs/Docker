@@ -2,14 +2,11 @@
 # Iniciador do servidor para realização de backup automatico
 # Status de Saida e realizar a copia para o volume indicado
 finalizar() {
-    echo 'Finalizou !!'
-    for x in 'seq 1 1'; do
-    sleep 1
-    echo '.'
-    done
+ echo ' FInalizando'
+ trap - SIGINT SIGTERM # clear the trap
 }
-
-trap finalizar SIGTERM
+ 
+trap finalizar SIGINT SIGTERM
 set -e
 echo '*==============================================*'
 echo '*=   Iniciando o Banco de Dados PostgreSQL    =*'
@@ -24,5 +21,7 @@ echo '*==============================================*'
 cat /home/app/db/backup.txt | psql 
 echo -e '\e[32mBackup Finalizado com Sucesso! \e[0m'
 # Deixa o processo em execução ate que seja cancelado
+echo $!
 sleep infinity
+ 
  

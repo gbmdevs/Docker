@@ -24,8 +24,7 @@ services:
            - "5432:5432"
         networks: 
              mynet:
-               ipv4_address: 172.20.0.9 
-
+               ipv4_address: 172.20.0.9  
 networks: 
     mynet: 
         driver: bridge
