@@ -1,0 +1,10 @@
+version: '3.0'
+services: 
+    bootcamp:
+          build: .
+          container_name: 'bootcamp_geral'
+          image: 'bootcamp:geral'
+          ports: 
+            - '8080:8080'
+          tty: true
+          stdin_open: true

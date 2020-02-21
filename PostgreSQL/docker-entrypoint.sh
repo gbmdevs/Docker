@@ -1,7 +1,20 @@
 #!/bin/bash
 # Iniciador do servidor para realização de backup automatico
-if [ $? -eq 0 ]
-then
+
+
+# Status de Saida e realizar a copia para o volume indicado
+
+
+finalizar() {
+    echo 'Finalizou !!'
+    for x in 'seq 1 10'; do
+    sleep 1
+    echo '.'
+    done
+}
+
+trap finalizar INT TERM
+
 set -e
 echo '*==============================================*'
 echo '*=   Iniciando o Banco de Dados PostgreSQL    =*'
@@ -14,10 +27,7 @@ echo '*==============================================*'
 echo '*= Backup do arquivo TXT para Desenvolvimento =*'
 echo '*==============================================*'
 cat /home/app/db/backup.txt | psql 
-echo $? 
+echo -e '\e[32mBackup Finalizado com Sucesso! \e[0m'
 # Deixa o processo em execução ate que seja cancelado
 sleep infinity & wait
-else
-    echo $?
-    echo 'Sai dessa desgrama'
-fi
+ 
