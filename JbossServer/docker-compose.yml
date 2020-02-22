@@ -14,14 +14,18 @@ services:
           networks:
             rede: 
               ipv4_address: 172.20.0.6
-    db:
-       image: "postgres"
-       restart: always   
-       environment:
-           POSTGRES_PASSWORD: postgres
-       networks:
-        rede: 
-          ipv4_address: 172.20.0.5                            
+    pgdb:
+        build: ../PostgreSQL
+        image: "postgres:desen"
+        container_name: "postgres_teste"
+        tty: true
+        stdin_open: true
+        #command: postgres -D /etc/postgresql/data
+        ports: 
+           - "5432:5432"
+        networks: 
+             rede:
+               ipv4_address: 172.20.0.9                       
 networks:
     rede:
       driver: bridge
