@@ -16,5 +16,11 @@ RUN apt-get install -y nodejs
 
 # Instalação do Angular 8
 RUN npm install -g @angular/cli
+
+# Backup do Diretirio onde os projetos Front-end estao hospedados
+RUN git config --global user.name "Guilherme B.(gbmdevs)"
+RUN git config --global user.email guih.smi2@outlook.com
+RUN git init && git remote add origin https://github.com/gbmdevs/Front-end.git && git pull origin master 
+
 EXPOSE 4200
 CMD ["/bin/bash"]
