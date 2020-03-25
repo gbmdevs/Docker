@@ -1,0 +1,10 @@
+version: "2.0"
+services: 
+    mongodb:
+         container_name: "mongodbDes"
+         build: .
+         image: "mongodb:des"
+         ports:
+            - "27017:27017"
+         tty: true
+         stdin_open: true
