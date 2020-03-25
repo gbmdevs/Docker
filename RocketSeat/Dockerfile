@@ -21,11 +21,12 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt update && apt install yarn
 
 # Area de Parametrização do Github
+RUN mkdir oministack11
 RUN git init
 RUN git config --global user.name "Guilherme B.(Emaloka)"
 RUN git config --global user.email "guih.smi2@outlook.com"
-RUN git remote add origin https://github.com/emaloka/Bootcamps.git
+RUN git remote add origin https://github.com/gbmdevs/Bootcamps.git
 RUN git pull origin master
 
-EXPOSE 8080
+EXPOSE 3333
 CMD ["/bin/bash"]
