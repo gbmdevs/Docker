@@ -2,8 +2,22 @@ version: "3.0"
 services:
       webapp:
           build: .
-          image: "bootcamp:rocket"
+          image: "bootcamp:nodejs"
           tty: true
           stdin_open: true
           ports: 
             - 3333:3333
+          networks: 
+              - conexao  
+      react:
+          build: ../React
+          image: "bootcamp:react"
+          tty: true
+          stdin_open: true 
+          ports: 
+            - "3000:3000"
+          networks: 
+               - conexao
+networks: 
+    conexao:
+       driver: bridge            
