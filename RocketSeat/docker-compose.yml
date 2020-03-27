@@ -18,6 +18,14 @@ services:
             - "3000:3000"
           networks: 
                - conexao
+      mongodb:
+          build: ../MongoDB
+          image: "mongodb:des"
+          ports:
+            - "27017:27017"
+          tty: true
+          stdin_open: true
+
 networks: 
     conexao:
        driver: bridge            
