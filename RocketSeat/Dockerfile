@@ -28,5 +28,8 @@ RUN git config --global user.email "guih.smi2@outlook.com"
 RUN git remote add origin https://github.com/gbmdevs/Bootcamps.git
 RUN git pull origin master
 
+# Instalação KNEX Query Builder JS
+RUN cd oministack11 && npm install knex --save && npm install sqlite3
+
 EXPOSE 3333
 CMD ["/bin/bash"]
