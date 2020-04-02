@@ -21,6 +21,7 @@ services:
       mongodb:
           build: ../MongoDB
           image: "mongodb:des"
+          command: "mongod"
           ports:
             - "27017:27017"
           tty: true
