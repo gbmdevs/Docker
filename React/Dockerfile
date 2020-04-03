@@ -8,13 +8,17 @@ RUN apt-get install nano -y
 RUN apt-get install curl -y
 RUN apt-get install git -y
 
-# Instalando o NodeJS na versao 13
+# Instalando o NodeJS na versao 13 - Junto ao NPM 
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -  
 RUN apt-get install -y nodejs
 
 # Instala o ambiente de React
 RUN npm install -g create-react-app
 
+# Backup do Diretirio onde os projetos Front-end estao hospedados
+RUN git config --global user.name "Guilherme B.(gbmdevs)"
+RUN git config --global user.email guih.smi2@outlook.com
+RUN git init && git remote add origin https://github.com/gbmdevs/Front-end.git && git pull origin master 
 
 EXPOSE 3000
 CMD ["/bin/bash"]

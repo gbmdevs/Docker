@@ -5,23 +5,26 @@ services:
           image: "bootcamp:nodejs"
           tty: true
           stdin_open: true
+          network_mode: host
           ports: 
             - 3333:3333
-          networks: 
-              - conexao  
+        #  networks: 
+        #      - conexao  
       react:
           build: ../React
           image: "bootcamp:react"
           tty: true
           stdin_open: true 
+          network_mode: host
           ports: 
             - "3000:3000"
-          networks: 
-               - conexao
+        #  networks: 
+        #       - conexao
       mongodb:
           build: ../MongoDB
           image: "mongodb:des"
           command: "mongod"
+          network_mode: host
           ports:
             - "27017:27017"
           tty: true
