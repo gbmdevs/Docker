@@ -5,26 +5,30 @@ services:
           image: "bootcamp:nodejs"
           tty: true
           stdin_open: true
+          privileged: true
           network_mode: host
           ports: 
             - 3333:3333
-        #  networks: 
-        #      - conexao  
+     #     networks: 
+      #        conexao:
+      #           ipv4_address: 172.20.0.14   
       react:
           build: ../React
           image: "bootcamp:react"
           tty: true
           stdin_open: true 
+          privileged: true
           network_mode: host
           ports: 
             - "3000:3000"
         #  networks: 
-        #       - conexao
+        #      conexao:
+        #         ipv4_address: 172.20.0.15    
       mongodb:
           build: ../MongoDB
           image: "mongodb:des"
           command: "mongod"
-          network_mode: host
+       #   network_mode: host
           ports:
             - "27017:27017"
           tty: true
@@ -32,4 +36,7 @@ services:
 
 networks: 
     conexao:
-       driver: bridge            
+       driver: bridge       
+       ipam:
+        config:
+           - subnet: 172.20.0.0/24     

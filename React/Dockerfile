@@ -20,5 +20,9 @@ RUN git config --global user.name "Guilherme B.(gbmdevs)"
 RUN git config --global user.email guih.smi2@outlook.com
 RUN git init && git remote add origin https://github.com/gbmdevs/Front-end.git && git pull origin master 
 
+# Incluir mais Watcher para Requisição
+RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
+RUN sysctl -p
+
 EXPOSE 3000
 CMD ["/bin/bash"]

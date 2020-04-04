@@ -31,5 +31,9 @@ RUN git pull origin master
 # Instalação KNEX Query Builder JS
 RUN cd oministack11 && npm install knex --save && npm install sqlite3
 
+# Incluir mais Watcher para Requisição
+RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
+RUN sysctl -p
+
 EXPOSE 3333
 CMD ["/bin/bash"]
