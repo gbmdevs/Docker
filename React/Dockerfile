@@ -3,6 +3,7 @@
 # --------------------------------------------------------#
 FROM ubuntu:16.04
 WORKDIR  /home/app/react
+
 RUN apt-get update
 RUN apt-get install nano -y
 RUN apt-get install curl -y
@@ -20,9 +21,9 @@ RUN git config --global user.name "Guilherme B.(gbmdevs)"
 RUN git config --global user.email guih.smi2@outlook.com
 RUN git init && git remote add origin https://github.com/gbmdevs/Front-end.git && git pull origin master 
 
-# Incluir mais Watcher para Requisição
-RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
-RUN sysctl -p
+# Bash para Inicialização 
+COPY docker-entrypoint.sh /usr/local/bin/
 
 EXPOSE 3000
+ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD ["/bin/bash"]
