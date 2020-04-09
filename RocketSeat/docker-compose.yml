@@ -19,6 +19,7 @@ services:
           stdin_open: true 
           privileged: true
           network_mode: host
+        # command: "echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p"
           ports: 
             - "3000:3000"
         #  networks: 

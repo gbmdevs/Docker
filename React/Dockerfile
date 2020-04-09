@@ -22,8 +22,9 @@ RUN git config --global user.email guih.smi2@outlook.com
 RUN git init && git remote add origin https://github.com/gbmdevs/Front-end.git && git pull origin master 
 
 # Bash para Inicialização 
-COPY docker-entrypoint.sh /usr/local/bin/
+#COPY docker-entrypoint.sh /home/app/
+#RUN chmod 777 /home/app/docker-entrypoint.sh
 
 EXPOSE 3000
-ENTRYPOINT [ "docker-entrypoint.sh" ]
+#ENTRYPOINT [ "/home/app/docker-entrypoint.sh"]
 CMD ["/bin/bash"]
