@@ -1,30 +1,30 @@
 version: "3.0"
 services:
-      webapp:
+      nodejs:
           build: .
           image: "bootcamp:nodejs"
           tty: true
           stdin_open: true
           privileged: true
-          network_mode: host
+      #    network_mode: host
           ports: 
             - 3333:3333
-     #     networks: 
-      #        conexao:
-      #           ipv4_address: 172.20.0.14   
+          networks: 
+              conexao:
+                 ipv4_address: 172.20.0.10   
       react:
           build: ../React
           image: "bootcamp:react"
           tty: true
           stdin_open: true 
           privileged: true
-          network_mode: host
+        #  network_mode: host
         # command: "echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p"
           ports: 
             - "3000:3000"
-        #  networks: 
-        #      conexao:
-        #         ipv4_address: 172.20.0.15    
+          networks: 
+              conexao:
+               ipv4_address: 172.20.0.11    
       mongodb:
           build: ../MongoDB
           image: "mongodb:des"
