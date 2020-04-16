@@ -150,6 +150,13 @@ ALTER TABLE ONLY public.tip_gasto ALTER COLUMN idtipgasto SET DEFAULT nextval('p
 --
 
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype) VALUES (1, 'Salario Inicio do Mes', 5569.76, 1);
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype) VALUES (3, 'Pastelaria do Cerrado Janta', -33.00, 2);
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype) VALUES (4, 'Comida Fora de Casa Quarentena', -43.00, 1);
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype) VALUES (5, 'Pagamento Claro Mes Marco', -66.39, 1);
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype) VALUES (6, 'Drogaria Salompas e Alcool Gel', -25.97, 1);
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype) VALUES (7, 'Pastelaria Cerrado', -48.00, 1);
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype) VALUES (8, 'Pagamento Nubank Marco', -1300.00, 1);
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype) VALUES (9, 'Cervejas do Poker Night', -11.97, 1);
 
 
 --
@@ -170,7 +177,7 @@ INSERT INTO public.tip_gasto (idtipgasto, nometipgasto, desctipgasto) VALUES (1,
 -- Name: gastos_idspent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gastos_idspent_seq', 1, true);
+SELECT pg_catalog.setval('public.gastos_idspent_seq', 9, true);
 
 
 --
