@@ -57,6 +57,41 @@ ALTER SEQUENCE public.gastos_idspent_seq OWNED BY public.gastos.idspent;
 
 
 --
+-- Name: investimentos; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.investimentos (
+    idinvest integer NOT NULL,
+    idtipinves integer NOT NULL,
+    valueinvest real NOT NULL
+);
+
+
+ALTER TABLE public.investimentos OWNER TO postgres;
+
+--
+-- Name: investimentos_idinvest_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.investimentos_idinvest_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.investimentos_idinvest_seq OWNER TO postgres;
+
+--
+-- Name: investimentos_idinvest_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.investimentos_idinvest_seq OWNED BY public.investimentos.idinvest;
+
+
+--
 -- Name: teste; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -126,10 +161,52 @@ ALTER SEQUENCE public.tip_gasto_idtipgasto_seq OWNED BY public.tip_gasto.idtipga
 
 
 --
+-- Name: tipinvestimentos; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipinvestimentos (
+    idtipinves integer NOT NULL,
+    tipdescinves character varying(100) NOT NULL,
+    tiptitleinves character varying(20) NOT NULL
+);
+
+
+ALTER TABLE public.tipinvestimentos OWNER TO postgres;
+
+--
+-- Name: tipinvestimentos_idtipinves_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipinvestimentos_idtipinves_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipinvestimentos_idtipinves_seq OWNER TO postgres;
+
+--
+-- Name: tipinvestimentos_idtipinves_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipinvestimentos_idtipinves_seq OWNED BY public.tipinvestimentos.idtipinves;
+
+
+--
 -- Name: gastos idspent; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.gastos ALTER COLUMN idspent SET DEFAULT nextval('public.gastos_idspent_seq'::regclass);
+
+
+--
+-- Name: investimentos idinvest; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.investimentos ALTER COLUMN idinvest SET DEFAULT nextval('public.investimentos_idinvest_seq'::regclass);
 
 
 --
@@ -147,6 +224,13 @@ ALTER TABLE ONLY public.tip_gasto ALTER COLUMN idtipgasto SET DEFAULT nextval('p
 
 
 --
+-- Name: tipinvestimentos idtipinves; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipinvestimentos ALTER COLUMN idtipinves SET DEFAULT nextval('public.tipinvestimentos_idtipinves_seq'::regclass);
+
+
+--
 -- Data for Name: gastos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -158,6 +242,13 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (7, 'Pastelaria Cerrado', -48.00, 1, '2020-04-13');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (8, 'Pagamento Nubank Marco', -1300.00, 1, '2020-04-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (9, 'Cervejas do Poker Night', -11.97, 1, '2020-04-14');
+
+
+--
+-- Data for Name: investimentos; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.investimentos (idinvest, idtipinves, valueinvest) VALUES (1, 1, 19922.1406);
 
 
 --
@@ -175,10 +266,24 @@ INSERT INTO public.tip_gasto (idtipgasto, nometipgasto, desctipgasto) VALUES (1,
 
 
 --
+-- Data for Name: tipinvestimentos; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tipinvestimentos (idtipinves, tipdescinves, tiptitleinves) VALUES (1, 'Descricao simples Poupanca', 'Poupanca');
+
+
+--
 -- Name: gastos_idspent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.gastos_idspent_seq', 9, true);
+
+
+--
+-- Name: investimentos_idinvest_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.investimentos_idinvest_seq', 1, true);
 
 
 --
@@ -196,11 +301,26 @@ SELECT pg_catalog.setval('public.tip_gasto_idtipgasto_seq', 1, true);
 
 
 --
+-- Name: tipinvestimentos_idtipinves_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipinvestimentos_idtipinves_seq', 1, true);
+
+
+--
 -- Name: gastos gastos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.gastos
     ADD CONSTRAINT gastos_pkey PRIMARY KEY (idspent);
+
+
+--
+-- Name: investimentos investimentos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.investimentos
+    ADD CONSTRAINT investimentos_pkey PRIMARY KEY (idinvest, idtipinves);
 
 
 --
@@ -225,6 +345,22 @@ ALTER TABLE ONLY public.teste
 
 ALTER TABLE ONLY public.tip_gasto
     ADD CONSTRAINT tip_gasto_pkey PRIMARY KEY (idtipgasto);
+
+
+--
+-- Name: tipinvestimentos tipinvestimentos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipinvestimentos
+    ADD CONSTRAINT tipinvestimentos_pkey PRIMARY KEY (idtipinves);
+
+
+--
+-- Name: investimentos investimentos_idtipinves_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.investimentos
+    ADD CONSTRAINT investimentos_idtipinves_fkey FOREIGN KEY (idtipinves) REFERENCES public.tipinvestimentos(idtipinves);
 
 
 --
