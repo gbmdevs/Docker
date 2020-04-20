@@ -20,6 +20,43 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: despesasfixas; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.despesasfixas (
+    idexpenses integer NOT NULL,
+    idtipexpenses integer NOT NULL,
+    valueexpenses numeric(16,2) DEFAULT 0.0,
+    duedate date NOT NULL,
+    sitpayment character(1) DEFAULT 'N'::bpchar
+);
+
+
+ALTER TABLE public.despesasfixas OWNER TO postgres;
+
+--
+-- Name: despesasfixas_idexpenses_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.despesasfixas_idexpenses_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.despesasfixas_idexpenses_seq OWNER TO postgres;
+
+--
+-- Name: despesasfixas_idexpenses_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.despesasfixas_idexpenses_seq OWNED BY public.despesasfixas.idexpenses;
+
+
+--
 -- Name: gastos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -161,6 +198,41 @@ ALTER SEQUENCE public.tip_gasto_idtipgasto_seq OWNED BY public.tip_gasto.idtipga
 
 
 --
+-- Name: tipdespesas; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipdespesas (
+    idtipexpenses integer NOT NULL,
+    titleexpenses character varying(20) NOT NULL,
+    descexpenses character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.tipdespesas OWNER TO postgres;
+
+--
+-- Name: tipdespesas_idtipexpenses_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipdespesas_idtipexpenses_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipdespesas_idtipexpenses_seq OWNER TO postgres;
+
+--
+-- Name: tipdespesas_idtipexpenses_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipdespesas_idtipexpenses_seq OWNED BY public.tipdespesas.idtipexpenses;
+
+
+--
 -- Name: tipinvestimentos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -196,6 +268,13 @@ ALTER SEQUENCE public.tipinvestimentos_idtipinves_seq OWNED BY public.tipinvesti
 
 
 --
+-- Name: despesasfixas idexpenses; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.despesasfixas ALTER COLUMN idexpenses SET DEFAULT nextval('public.despesasfixas_idexpenses_seq'::regclass);
+
+
+--
 -- Name: gastos idspent; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -224,10 +303,25 @@ ALTER TABLE ONLY public.tip_gasto ALTER COLUMN idtipgasto SET DEFAULT nextval('p
 
 
 --
+-- Name: tipdespesas idtipexpenses; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipdespesas ALTER COLUMN idtipexpenses SET DEFAULT nextval('public.tipdespesas_idtipexpenses_seq'::regclass);
+
+
+--
 -- Name: tipinvestimentos idtipinves; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.tipinvestimentos ALTER COLUMN idtipinves SET DEFAULT nextval('public.tipinvestimentos_idtipinves_seq'::regclass);
+
+
+--
+-- Data for Name: despesasfixas; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (1, 1, 66.39, '2020-04-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (2, 2, 563.29, '2020-04-15', 'N');
 
 
 --
@@ -242,6 +336,7 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (7, 'Pastelaria Cerrado', -48.00, 1, '2020-04-13');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (8, 'Pagamento Nubank Marco', -1300.00, 1, '2020-04-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (9, 'Cervejas do Poker Night', -11.97, 1, '2020-04-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (10, 'Parada Obrigatoria Petra', -56.00, 2, '2020-04-18');
 
 
 --
@@ -266,6 +361,14 @@ INSERT INTO public.tip_gasto (idtipgasto, nometipgasto, desctipgasto) VALUES (1,
 
 
 --
+-- Data for Name: tipdespesas; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (1, 'Fatura Telefone', 'Fatura Referente ao plano da Claro');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (2, 'Cartao de Crdito', 'Referente ao Nubank Mensal');
+
+
+--
 -- Data for Name: tipinvestimentos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -273,10 +376,17 @@ INSERT INTO public.tipinvestimentos (idtipinves, tipdescinves, tiptitleinves) VA
 
 
 --
+-- Name: despesasfixas_idexpenses_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 2, true);
+
+
+--
 -- Name: gastos_idspent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gastos_idspent_seq', 9, true);
+SELECT pg_catalog.setval('public.gastos_idspent_seq', 10, true);
 
 
 --
@@ -301,10 +411,25 @@ SELECT pg_catalog.setval('public.tip_gasto_idtipgasto_seq', 1, true);
 
 
 --
+-- Name: tipdespesas_idtipexpenses_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipdespesas_idtipexpenses_seq', 2, true);
+
+
+--
 -- Name: tipinvestimentos_idtipinves_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.tipinvestimentos_idtipinves_seq', 1, true);
+
+
+--
+-- Name: despesasfixas despesasfixas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.despesasfixas
+    ADD CONSTRAINT despesasfixas_pkey PRIMARY KEY (idexpenses, idtipexpenses);
 
 
 --
@@ -348,11 +473,27 @@ ALTER TABLE ONLY public.tip_gasto
 
 
 --
+-- Name: tipdespesas tipdespesas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipdespesas
+    ADD CONSTRAINT tipdespesas_pkey PRIMARY KEY (idtipexpenses);
+
+
+--
 -- Name: tipinvestimentos tipinvestimentos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.tipinvestimentos
     ADD CONSTRAINT tipinvestimentos_pkey PRIMARY KEY (idtipinves);
+
+
+--
+-- Name: despesasfixas despesasfixas_idtipexpenses_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.despesasfixas
+    ADD CONSTRAINT despesasfixas_idtipexpenses_fkey FOREIGN KEY (idtipexpenses) REFERENCES public.tipdespesas(idtipexpenses);
 
 
 --
