@@ -321,7 +321,11 @@ ALTER TABLE ONLY public.tipinvestimentos ALTER COLUMN idtipinves SET DEFAULT nex
 --
 
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (1, 1, 66.39, '2020-04-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (2, 2, 563.29, '2020-04-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (3, 3, 250.00, '2020-04-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (4, 4, 1000.00, '2020-04-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (5, 5, 175.00, '2020-04-20', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (6, 2, 666.28, '2020-05-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (2, 2, 1586.39, '2020-04-15', 'S');
 
 
 --
@@ -365,7 +369,10 @@ INSERT INTO public.tip_gasto (idtipgasto, nometipgasto, desctipgasto) VALUES (1,
 --
 
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (1, 'Fatura Telefone', 'Fatura Referente ao plano da Claro');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (2, 'Cartao de Crdito', 'Referente ao Nubank Mensal');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (2, 'Cartao de Credito', 'Referente ao Nubank Mensal');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (3, 'Seguranca(Reserva)', 'Refere-se a dinheiro de margem de seguranca');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (4, 'Investimento', 'Refere-se a dinheiro de Investimento Livre');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (5, 'Academia e Saude', 'Refere-se a reserva para Academia/Saude');
 
 
 --
@@ -379,7 +386,7 @@ INSERT INTO public.tipinvestimentos (idtipinves, tipdescinves, tiptitleinves) VA
 -- Name: despesasfixas_idexpenses_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 2, true);
+SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 6, true);
 
 
 --
@@ -414,7 +421,7 @@ SELECT pg_catalog.setval('public.tip_gasto_idtipgasto_seq', 1, true);
 -- Name: tipdespesas_idtipexpenses_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.tipdespesas_idtipexpenses_seq', 2, true);
+SELECT pg_catalog.setval('public.tipdespesas_idtipexpenses_seq', 5, true);
 
 
 --
