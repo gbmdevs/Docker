@@ -324,23 +324,33 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (3, 3, 250.00, '2020-04-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (4, 4, 1000.00, '2020-04-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (5, 5, 175.00, '2020-04-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (6, 2, 666.28, '2020-05-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (2, 2, 1586.39, '2020-04-15', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (6, 2, 926.38, '2020-05-15', 'N');
 
 
 --
 -- Data for Name: gastos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1, 'Salario Inicio do Mes', 5569.76, 1, '2020-04-01');
-INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (3, 'Pastelaria do Cerrado Janta', -33.00, 2, '2020-04-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (3, 'Pastelaria do Cerrado Janta', -33.00, 1, '2020-04-01');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (4, 'Comida Fora de Casa Quarentena', -43.00, 1, '2020-04-03');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (5, 'Pagamento Claro Mes Marco', -66.39, 1, '2020-04-06');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (6, 'Drogaria Salompas e Alcool Gel', -25.97, 1, '2020-04-13');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (7, 'Pastelaria Cerrado', -48.00, 1, '2020-04-13');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (8, 'Pagamento Nubank Marco', -1300.00, 1, '2020-04-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (9, 'Cervejas do Poker Night', -11.97, 1, '2020-04-14');
-INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (10, 'Parada Obrigatoria Petra', -56.00, 2, '2020-04-18');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (10, 'Parada Obrigatoria Petra', -56.00, 1, '2020-04-18');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (12, 'Imperio dos Paes', -66.59, 2, '2020-04-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (13, 'Mc Donalds SBR', -40.70, 2, '2020-04-10');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (14, 'Imperio dos Paes', -81.18, 2, '2020-04-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (15, 'Deposito do Beneficio', 524.80, 2, '2020-04-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (16, 'Imperio dos Paes', -21.98, 2, '2020-04-21');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (11, 'Inicio do Refeicao', 819.00, 2, '2020-04-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1, 'Salario Inicio do Mes', 5569.76, 1, '2020-04-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (17, 'Deposito Beneficio', 875.35, 3, '2020-04-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (18, 'Imperio dos Paes', -55.33, 3, '2020-04-09');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (19, 'Imperio dos Paes', -54.58, 3, '2020-04-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (20, 'Imperio dos Paes', -41.98, 3, '2020-04-17');
 
 
 --
@@ -393,7 +403,7 @@ SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 6, true);
 -- Name: gastos_idspent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gastos_idspent_seq', 10, true);
+SELECT pg_catalog.setval('public.gastos_idspent_seq', 20, true);
 
 
 --

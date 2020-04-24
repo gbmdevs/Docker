@@ -8,3 +8,4 @@ services:
             - "80:4200"
          tty: true
          stdin_open: true
+         command: "git pull origin master"
