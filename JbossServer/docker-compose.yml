@@ -30,7 +30,7 @@ services:
          build: ../Front-End
          image: "frontend:desen"
          container_name: "frontend_desen"
-         command: "git pull origin master"
+         ##command: "git pull origin master"
          ports: 
             - "4200:4200"
          tty: true
