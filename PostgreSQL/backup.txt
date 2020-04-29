@@ -65,7 +65,7 @@ CREATE TABLE public.gastos (
     spentdescription character varying(60) NOT NULL,
     spentvalue numeric(16,2) NOT NULL,
     spenttype integer NOT NULL,
-    datespent date DEFAULT '0001-01-01'::date
+    datespent date DEFAULT '0001-01-01'::date NOT NULL
 );
 
 
@@ -400,6 +400,8 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (25, 'Pastelaria Familia Lais', -50.00, 1, '2020-04-24');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (26, 'Resgate de Reserva no Nubank', 200.00, 1, '2020-04-27');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (29, 'Transferencia CMIG4 -Modal', -600.00, 1, '2020-04-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (30, 'Pagamento Claro Abril', -66.39, 1, '2020-04-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (31, 'Transferencia Ovo Pascoa', -60.00, 1, '2020-04-29');
 
 
 --
@@ -461,7 +463,7 @@ SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 6, true);
 -- Name: gastos_idspent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gastos_idspent_seq', 29, true);
+SELECT pg_catalog.setval('public.gastos_idspent_seq', 31, true);
 
 
 --
@@ -519,7 +521,7 @@ ALTER TABLE ONLY public.despesasfixas
 --
 
 ALTER TABLE ONLY public.gastos
-    ADD CONSTRAINT gastos_pkey PRIMARY KEY (idspent);
+    ADD CONSTRAINT gastos_pkey PRIMARY KEY (idspent, spentdescription, datespent);
 
 
 --
