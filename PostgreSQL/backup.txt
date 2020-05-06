@@ -363,14 +363,16 @@ ALTER TABLE ONLY public.tipogasto ALTER COLUMN idtypespent SET DEFAULT nextval('
 --
 
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (7, 1, 66.36, '2020-05-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (8, 4, 1000.00, '2020-05-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (9, 3, 250.00, '2020-05-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (1, 1, 66.39, '2020-04-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (3, 3, 250.00, '2020-04-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (5, 5, 175.00, '2020-04-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (2, 2, 1586.39, '2020-04-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (4, 4, 400.00, '2020-04-25', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (6, 2, 1051.16, '2020-05-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (6, 2, 1163.16, '2020-05-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (8, 4, 1600.00, '2020-05-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (7, 5, 175.00, '2020-05-20', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (8, 6, 300.00, '2020-05-30', 'N');
 
 
 --
@@ -408,6 +410,8 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (32, 'Milkshake do Mcdonalds', -11.90, 1, '2020-05-01');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (32, 'Pizza HUN Imperio dos Paes', -103.31, 2, '2020-04-30');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (33, 'Padaria Gartic Jogatina', -77.39, 1, '2020-05-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (33, 'Salário Mês Abril/20', 3547.10, 1, '2020-05-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (34, 'Kit Lily Boticário Mãe', -269.90, 1, '2020-05-05');
 
 
 --
@@ -440,6 +444,8 @@ INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALU
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (3, 'Seguranca(Reserva)', 'Refere-se a dinheiro de margem de seguranca');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (4, 'Investimento', 'Refere-se a dinheiro de Investimento Livre');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (5, 'Academia e Saude', 'Refere-se a reserva para Academia/Saude');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (6, 'Transporte Onibus', 'Vale transporte pro 
+servico');
 
 
 --
@@ -462,14 +468,14 @@ INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent) VALUES
 -- Name: despesasfixas_idexpenses_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 6, true);
+SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 8, true);
 
 
 --
 -- Name: gastos_idspent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gastos_idspent_seq', 32, true);
+SELECT pg_catalog.setval('public.gastos_idspent_seq', 34, true);
 
 
 --
@@ -497,7 +503,7 @@ SELECT pg_catalog.setval('public.tip_gasto_idtipgasto_seq', 1, true);
 -- Name: tipdespesas_idtipexpenses_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.tipdespesas_idtipexpenses_seq', 5, true);
+SELECT pg_catalog.setval('public.tipdespesas_idtipexpenses_seq', 6, true);
 
 
 --
