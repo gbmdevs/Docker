@@ -1,0 +1,629 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.1
+-- Dumped by pg_dump version 11.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'SQL_ASCII';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: despesasfixas; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.despesasfixas (
+    idexpenses integer NOT NULL,
+    idtipexpenses integer NOT NULL,
+    valueexpenses numeric(16,2) DEFAULT 0.0,
+    duedate date NOT NULL,
+    sitpayment character(1) DEFAULT 'N'::bpchar
+);
+
+
+ALTER TABLE public.despesasfixas OWNER TO postgres;
+
+--
+-- Name: despesasfixas_idexpenses_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.despesasfixas_idexpenses_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.despesasfixas_idexpenses_seq OWNER TO postgres;
+
+--
+-- Name: despesasfixas_idexpenses_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.despesasfixas_idexpenses_seq OWNED BY public.despesasfixas.idexpenses;
+
+
+--
+-- Name: gastos; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.gastos (
+    idspent integer NOT NULL,
+    spentdescription character varying(60) NOT NULL,
+    spentvalue numeric(16,2) NOT NULL,
+    spenttype integer NOT NULL,
+    datespent date DEFAULT '0001-01-01'::date NOT NULL
+);
+
+
+ALTER TABLE public.gastos OWNER TO postgres;
+
+--
+-- Name: gastos_idspent_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.gastos_idspent_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.gastos_idspent_seq OWNER TO postgres;
+
+--
+-- Name: gastos_idspent_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.gastos_idspent_seq OWNED BY public.gastos.idspent;
+
+
+--
+-- Name: investimentos; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.investimentos (
+    idinvest integer NOT NULL,
+    idtipinves integer NOT NULL,
+    valueinvest real NOT NULL
+);
+
+
+ALTER TABLE public.investimentos OWNER TO postgres;
+
+--
+-- Name: investimentos_idinvest_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.investimentos_idinvest_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.investimentos_idinvest_seq OWNER TO postgres;
+
+--
+-- Name: investimentos_idinvest_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.investimentos_idinvest_seq OWNED BY public.investimentos.idinvest;
+
+
+--
+-- Name: teste; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.teste (
+    iduser integer NOT NULL,
+    usuario character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.teste OWNER TO postgres;
+
+--
+-- Name: teste_iduser_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.teste_iduser_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.teste_iduser_seq OWNER TO postgres;
+
+--
+-- Name: teste_iduser_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.teste_iduser_seq OWNED BY public.teste.iduser;
+
+
+--
+-- Name: tip_gasto; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tip_gasto (
+    idtipgasto integer NOT NULL,
+    nometipgasto character varying(20) NOT NULL,
+    desctipgasto character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.tip_gasto OWNER TO postgres;
+
+--
+-- Name: tip_gasto_idtipgasto_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tip_gasto_idtipgasto_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tip_gasto_idtipgasto_seq OWNER TO postgres;
+
+--
+-- Name: tip_gasto_idtipgasto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tip_gasto_idtipgasto_seq OWNED BY public.tip_gasto.idtipgasto;
+
+
+--
+-- Name: tipdespesas; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipdespesas (
+    idtipexpenses integer NOT NULL,
+    titleexpenses character varying(20) NOT NULL,
+    descexpenses character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.tipdespesas OWNER TO postgres;
+
+--
+-- Name: tipdespesas_idtipexpenses_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipdespesas_idtipexpenses_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipdespesas_idtipexpenses_seq OWNER TO postgres;
+
+--
+-- Name: tipdespesas_idtipexpenses_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipdespesas_idtipexpenses_seq OWNED BY public.tipdespesas.idtipexpenses;
+
+
+--
+-- Name: tipinvestimentos; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipinvestimentos (
+    idtipinves integer NOT NULL,
+    tipdescinves character varying(100) NOT NULL,
+    tiptitleinves character varying(20) NOT NULL
+);
+
+
+ALTER TABLE public.tipinvestimentos OWNER TO postgres;
+
+--
+-- Name: tipinvestimentos_idtipinves_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipinvestimentos_idtipinves_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipinvestimentos_idtipinves_seq OWNER TO postgres;
+
+--
+-- Name: tipinvestimentos_idtipinves_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipinvestimentos_idtipinves_seq OWNED BY public.tipinvestimentos.idtipinves;
+
+
+--
+-- Name: tipogasto; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipogasto (
+    idtypespent integer NOT NULL,
+    titletypespent character varying(50) NOT NULL,
+    desctypespent character varying(200) NOT NULL
+);
+
+
+ALTER TABLE public.tipogasto OWNER TO postgres;
+
+--
+-- Name: tipogasto_idtypespent_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipogasto_idtypespent_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipogasto_idtypespent_seq OWNER TO postgres;
+
+--
+-- Name: tipogasto_idtypespent_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipogasto_idtypespent_seq OWNED BY public.tipogasto.idtypespent;
+
+
+--
+-- Name: despesasfixas idexpenses; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.despesasfixas ALTER COLUMN idexpenses SET DEFAULT nextval('public.despesasfixas_idexpenses_seq'::regclass);
+
+
+--
+-- Name: gastos idspent; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.gastos ALTER COLUMN idspent SET DEFAULT nextval('public.gastos_idspent_seq'::regclass);
+
+
+--
+-- Name: investimentos idinvest; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.investimentos ALTER COLUMN idinvest SET DEFAULT nextval('public.investimentos_idinvest_seq'::regclass);
+
+
+--
+-- Name: teste iduser; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.teste ALTER COLUMN iduser SET DEFAULT nextval('public.teste_iduser_seq'::regclass);
+
+
+--
+-- Name: tip_gasto idtipgasto; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tip_gasto ALTER COLUMN idtipgasto SET DEFAULT nextval('public.tip_gasto_idtipgasto_seq'::regclass);
+
+
+--
+-- Name: tipdespesas idtipexpenses; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipdespesas ALTER COLUMN idtipexpenses SET DEFAULT nextval('public.tipdespesas_idtipexpenses_seq'::regclass);
+
+
+--
+-- Name: tipinvestimentos idtipinves; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipinvestimentos ALTER COLUMN idtipinves SET DEFAULT nextval('public.tipinvestimentos_idtipinves_seq'::regclass);
+
+
+--
+-- Name: tipogasto idtypespent; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipogasto ALTER COLUMN idtypespent SET DEFAULT nextval('public.tipogasto_idtypespent_seq'::regclass);
+
+
+--
+-- Data for Name: despesasfixas; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (7, 1, 66.36, '2020-05-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (9, 3, 250.00, '2020-05-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (1, 1, 66.39, '2020-04-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (3, 3, 250.00, '2020-04-25', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (5, 5, 175.00, '2020-04-20', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (2, 2, 1586.39, '2020-04-15', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (4, 4, 400.00, '2020-04-25', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (7, 5, 175.00, '2020-05-20', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (6, 2, 2186.37, '2020-05-15', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (8, 4, 1200.00, '2020-05-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (8, 6, 300.00, '2020-05-30', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (9, 2, 1149.71, '2020-06-15', 'N');
+
+
+--
+-- Data for Name: gastos; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (3, 'Pastelaria do Cerrado Janta', -33.00, 1, '2020-04-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (4, 'Comida Fora de Casa Quarentena', -43.00, 1, '2020-04-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (5, 'Pagamento Claro Mes Marco', -66.39, 1, '2020-04-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (6, 'Drogaria Salompas e Alcool Gel', -25.97, 1, '2020-04-13');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (7, 'Pastelaria Cerrado', -48.00, 1, '2020-04-13');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (8, 'Pagamento Nubank Marco', -1300.00, 1, '2020-04-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (9, 'Cervejas do Poker Night', -11.97, 1, '2020-04-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (10, 'Parada Obrigatoria Petra', -56.00, 1, '2020-04-18');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (12, 'Imperio dos Paes', -66.59, 2, '2020-04-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (13, 'Mc Donalds SBR', -40.70, 2, '2020-04-10');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (14, 'Imperio dos Paes', -81.18, 2, '2020-04-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (15, 'Deposito do Beneficio', 524.80, 2, '2020-04-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (16, 'Imperio dos Paes', -21.98, 2, '2020-04-21');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (11, 'Inicio do Refeicao', 819.00, 2, '2020-04-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1, 'Salario Inicio do Mes', 5569.76, 1, '2020-04-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (17, 'Deposito Beneficio', 875.35, 3, '2020-04-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (18, 'Imperio dos Paes', -55.33, 3, '2020-04-09');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (19, 'Imperio dos Paes', -54.58, 3, '2020-04-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (20, 'Imperio dos Paes', -41.98, 3, '2020-04-17');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (21, 'Imperio dos Paes Cafe da Manha', -88.78, 2, '2020-04-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (22, 'Disponibilidade do Beneficio', 1161.97, 3, '2020-04-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (23, 'Mc Donalds com a Lais', -44.70, 1, '2020-04-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (24, 'Drogaria Pos MC', -20.03, 1, '2020-04-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (25, 'Pastelaria Familia Lais', -50.00, 1, '2020-04-24');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (26, 'Resgate de Reserva no Nubank', 200.00, 1, '2020-04-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (29, 'Transferencia CMIG4 -Modal', -600.00, 1, '2020-04-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (30, 'Pagamento Claro Abril', -66.39, 1, '2020-04-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (31, 'Transferencia Ovo Pascoa', -60.00, 1, '2020-04-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (32, 'Milkshake do Mcdonalds', -11.90, 1, '2020-05-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (32, 'Pizza HUN Imperio dos Paes', -103.31, 2, '2020-04-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (33, 'Padaria Gartic Jogatina', -77.39, 1, '2020-05-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (33, 'Salário Mês Abril/20', 3547.10, 1, '2020-05-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (34, 'Kit Lily Boticário Mãe', -269.90, 1, '2020-05-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (35, 'Pastel do Cerrado', -76.50, 1, '2020-05-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (35, 'Padaria Imperio dos Paes', -48.18, 2, '2020-05-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (36, 'Padaria Imperio dos Paes', -105.13, 2, '2020-05-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (37, 'Atacadao Dia a Dia Maio', -544.91, 3, '2020-05-07');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (38, 'Gasolina Compra de Panelas', -30.21, 1, '2020-05-08');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (39, 'Mc Donalds Pos Carrefour', -59.20, 2, '2020-05-08');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (40, 'Dona de Casa Complemento', -216.32, 3, '2020-05-09');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (38, 'Pastelaria do Cerrado Mães', -59.50, 1, '2020-05-10');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (39, 'Fatura NuBank Mês Abril', -2050.00, 1, '2020-05-12');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (39, 'Investimento WIZS3', -400.00, 1, '2020-05-13');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (39, 'Complemento da Fatura Abril', -80.00, 1, '2020-05-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (40, 'Império dos Pães - Reserva', -82.01, 2, '2020-05-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (40, 'Pastel do Cerrado Jogatina', -77.50, 1, '2020-05-17');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (41, 'Padaria Imperio dos Paes - Pizza e Pão', -66.04, 2, '2020-05-19');
+
+
+--
+-- Data for Name: investimentos; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.investimentos (idinvest, idtipinves, valueinvest) VALUES (1, 1, 19922.1406);
+
+
+--
+-- Data for Name: teste; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.teste (iduser, usuario) VALUES (1, 'Jamal');
+
+
+--
+-- Data for Name: tip_gasto; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tip_gasto (idtipgasto, nometipgasto, desctipgasto) VALUES (1, 'Refeicao', 'Cartao refeicao bandeira Alelo');
+
+
+--
+-- Data for Name: tipdespesas; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (1, 'Fatura Telefone', 'Fatura Referente ao plano da Claro');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (2, 'Cartao de Credito', 'Referente ao Nubank Mensal');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (3, 'Seguranca(Reserva)', 'Refere-se a dinheiro de margem de seguranca');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (4, 'Investimento', 'Refere-se a dinheiro de Investimento Livre');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (5, 'Academia e Saude', 'Refere-se a reserva para Academia/Saude');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (6, 'Transporte Onibus', 'Vale transporte pro 
+servico');
+
+
+--
+-- Data for Name: tipinvestimentos; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tipinvestimentos (idtipinves, tipdescinves, tiptitleinves) VALUES (1, 'Descricao simples Poupanca', 'Poupanca');
+
+
+--
+-- Data for Name: tipogasto; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent) VALUES (1, 'Conta Corrente - Inter', 'Referente a conta corrent atual do banco inter');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent) VALUES (2, 'Cartao Alelo Refeicao', 'Beneficio Refeicao do Alelo');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent) VALUES (3, 'Ticket Alimentacao', 'Beneficio do ticket Alimentacao');
+
+
+--
+-- Name: despesasfixas_idexpenses_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 8, true);
+
+
+--
+-- Name: gastos_idspent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.gastos_idspent_seq', 41, true);
+
+
+--
+-- Name: investimentos_idinvest_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.investimentos_idinvest_seq', 1, true);
+
+
+--
+-- Name: teste_iduser_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.teste_iduser_seq', 1, false);
+
+
+--
+-- Name: tip_gasto_idtipgasto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tip_gasto_idtipgasto_seq', 1, true);
+
+
+--
+-- Name: tipdespesas_idtipexpenses_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipdespesas_idtipexpenses_seq', 6, true);
+
+
+--
+-- Name: tipinvestimentos_idtipinves_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipinvestimentos_idtipinves_seq', 1, true);
+
+
+--
+-- Name: tipogasto_idtypespent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipogasto_idtypespent_seq', 3, true);
+
+
+--
+-- Name: despesasfixas despesasfixas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.despesasfixas
+    ADD CONSTRAINT despesasfixas_pkey PRIMARY KEY (idexpenses, idtipexpenses);
+
+
+--
+-- Name: gastos gastos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.gastos
+    ADD CONSTRAINT gastos_pkey PRIMARY KEY (idspent, spentdescription, datespent);
+
+
+--
+-- Name: investimentos investimentos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.investimentos
+    ADD CONSTRAINT investimentos_pkey PRIMARY KEY (idinvest, idtipinves);
+
+
+--
+-- Name: teste teste_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.teste
+    ADD CONSTRAINT teste_pkey PRIMARY KEY (iduser);
+
+
+--
+-- Name: teste teste_usuario_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.teste
+    ADD CONSTRAINT teste_usuario_key UNIQUE (usuario);
+
+
+--
+-- Name: tip_gasto tip_gasto_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tip_gasto
+    ADD CONSTRAINT tip_gasto_pkey PRIMARY KEY (idtipgasto);
+
+
+--
+-- Name: tipdespesas tipdespesas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipdespesas
+    ADD CONSTRAINT tipdespesas_pkey PRIMARY KEY (idtipexpenses);
+
+
+--
+-- Name: tipinvestimentos tipinvestimentos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipinvestimentos
+    ADD CONSTRAINT tipinvestimentos_pkey PRIMARY KEY (idtipinves);
+
+
+--
+-- Name: tipogasto tipogasto_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipogasto
+    ADD CONSTRAINT tipogasto_pkey PRIMARY KEY (idtypespent);
+
+
+--
+-- Name: despesasfixas despesasfixas_idtipexpenses_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.despesasfixas
+    ADD CONSTRAINT despesasfixas_idtipexpenses_fkey FOREIGN KEY (idtipexpenses) REFERENCES public.tipdespesas(idtipexpenses);
+
+
+--
+-- Name: investimentos investimentos_idtipinves_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.investimentos
+    ADD CONSTRAINT investimentos_idtipinves_fkey FOREIGN KEY (idtipinves) REFERENCES public.tipinvestimentos(idtipinves);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
