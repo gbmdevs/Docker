@@ -426,6 +426,8 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (39, 'Complemento da Fatura Abril', -80.00, 1, '2020-05-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (40, 'Império dos Pães - Reserva', -82.01, 2, '2020-05-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (40, 'Pastel do Cerrado Jogatina', -77.50, 1, '2020-05-17');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (41, 'Imperio dos Paes - Filmes e Lanche', -66.04, 2, '2020-05-18');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (42, 'Deposito do Beneficio Junho/20', 551.04, 2, '2020-05-20');
 
 
 --
@@ -489,7 +491,7 @@ SELECT pg_catalog.setval('public.despesasfixas_idexpenses_seq', 8, true);
 -- Name: gastos_idspent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gastos_idspent_seq', 40, true);
+SELECT pg_catalog.setval('public.gastos_idspent_seq', 42, true);
 
 
 --
