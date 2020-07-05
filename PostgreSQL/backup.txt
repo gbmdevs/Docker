@@ -373,12 +373,17 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (8, 4, 1200.00, '2020-05-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (10, 5, 175.00, '2020-05-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (11, 6, 300.00, '2020-05-30', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (16, 4, 2200.00, '2020-06-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (17, 1, 66.39, '2020-06-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (12, 2, 2085.52, '2020-06-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (14, 6, 150.00, '2020-06-30', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (15, 5, 125.00, '2020-06-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (19, 3, 125.00, '2020-06-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (18, 7, 1150.00, '2020-07-20', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (21, 8, 139.00, '2020-07-20', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (22, 9, 110.00, '2020-07-20', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (15, 5, 0.00, '2020-06-20', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (16, 4, 1100.00, '2020-06-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (19, 3, 50.00, '2020-06-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (20, 2, 2257.70, '2020-07-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (23, 1, 66.39, '2020-07-10', 'S');
 
 
 --
@@ -461,6 +466,38 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (45, 'Imperio dos Paes - pizza noturna', -96.71, 2, '2020-06-10');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (44, 'Pastelaria Viçosa Boulevard', -27.50, 2, '2020-06-13');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (52, 'China Brasil Familia', -66.00, 2, '2020-06-18');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (54, 'Credito do NuBank', 100.00, 1, '2020-06-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (55, 'Estacionamento Boulevard', -3.60, 1, '2020-06-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (56, 'Compra das Cadeiras Tok&Stok', -399.96, 1, '2020-06-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (64, 'Custos do Rack Sala', -15.00, 1, '2020-06-23');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (57, 'Império dos Pães', -70.89, 2, '2020-06-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (58, 'Crédito do Beneficio', 603.52, 2, '2020-06-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (60, 'China Brasil no Almoço', -59.40, 2, '2020-06-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (61, 'Compra da Tabua e Papel', -40.70, 1, '2020-06-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (62, 'Compras Mensal para Julho/2020', -976.10, 3, '2020-06-21');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (63, 'Deposito de Nubank - Reserva', 800.00, 1, '2020-06-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (65, 'Investimento TGAR11', -1000.00, 1, '2020-06-24');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (66, 'China Brasil Familia', -44.10, 2, '2020-06-24');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (67, 'Drogaria Pos Imobiliaria', -32.93, 1, '2020-06-25');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (68, 'MilkShake do McDonalds', -23.80, 2, '2020-06-25');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (69, 'Imperio dos Paes', -29.41, 3, '2020-06-24');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (70, 'Imperio dos Pães', -65.19, 3, '2020-06-25');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (71, 'Pes e Parafusos Rack', -54.00, 1, '2020-06-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (72, 'Bolo Aniversário da Liana', -65.00, 1, '2020-06-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (73, 'Transferencia do Bolo Liana', 59.00, 1, '2020-06-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (74, 'Depósito do Benefício', 1161.97, 3, '2020-06-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (83, 'Compra do Assento da Privada', -59.00, 1, '2020-07-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (76, 'Complemento da Casa - Mundo do Real Central', -33.50, 1, '2020-06-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (77, 'Bio Mundo - Balas de Alga', -63.93, 3, '2020-06-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (78, 'Picolé Pós Visita APTO', -14.58, 1, '2020-06-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (79, 'Compra na Kalunga Pasta', -27.08, 1, '2020-06-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (80, 'Garagem Iguatemi', -9.00, 1, '2020-06-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (81, 'Deposito do Salário', 3644.13, 1, '2020-07-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (82, 'China Brasil Familia', -44.10, 2, '2020-06-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (84, 'Compra da Extensão da Lais', -34.00, 1, '2020-07-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (85, 'Compra da Escada Riacho Tintas', -112.00, 1, '2020-07-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (86, 'Reparo da Bicicleta ', -70.00, 1, '2020-07-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (87, 'Imperio dos Paes - Esfirra e Pães', -58.40, 3, '2020-07-04');
 
 
 --
@@ -495,6 +532,10 @@ INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALU
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (5, 'Academia e Saude', 'Refere-se a reserva para Academia/Saude');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (6, 'Transporte Onibus', 'Vale transporte pro 
 servico');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (7, '
+Aluguel Apartamento', 'Aluguel + Condominio - Q.02');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (8, 'Internet Banda Larga', 'Internet da Casa');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (9, 'Agua e Luz/Gas', 'Depesas de Agua e Luz');
 
 
 --
