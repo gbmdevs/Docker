@@ -362,7 +362,6 @@ ALTER TABLE ONLY public.tipogasto ALTER COLUMN idtypespent SET DEFAULT nextval('
 -- Data for Name: despesasfixas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (29, 2, 1036.39, '2020-09-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (9, 3, 250.00, '2020-05-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (3, 3, 250.00, '2020-04-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (5, 5, 175.00, '2020-04-20', 'S');
@@ -390,14 +389,15 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (8, 4, 1200.00, '2020-05-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (16, 4, 1100.00, '2020-06-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (27, 4, 750.00, '2020-07-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (30, 10, 315.00, '2020-09-08', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (31, 7, 900.00, '2020-09-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (32, 4, 1250.00, '2020-09-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (33, 9, 80.00, '2020-09-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (34, 1, 66.39, '2020-09-10', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (35, 8, 148.85, '2020-09-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (36, 3, 125.00, '2020-09-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (37, 6, 150.00, '2020-09-30', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (30, 10, 315.00, '2020-09-08', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (34, 1, 66.39, '2020-09-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (35, 8, 148.85, '2020-09-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (32, 4, 950.00, '2020-09-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (29, 2, 1535.60, '2020-09-15', 'N');
 
 
 --
@@ -591,8 +591,29 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (168, 'Compra na Distribuidora', -47.98, 1, '2020-08-25');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (169, 'Deposito do Beneficio', 1161.97, 3, '2020-08-26');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (170, 'Compra na Padaria', -70.42, 3, '2020-08-26');
-INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (171, 'Salário do Mês Setembro', 3457.10, 1, '2020-09-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (183, 'Mundo do Real', -17.48, 1, '2020-09-04');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (172, 'China Brasil Franguinho', -28.90, 2, '2020-08-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (173, 'Compras na Padaria - Império dos Pães', -81.11, 3, '2020-08-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (174, 'Pastelaria com a Lais', -62.50, 1, '2020-08-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (175, 'Mc Donalds Lais', -44.60, 2, '2020-08-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (176, 'Depósito do FGTS ', 1045.00, 1, '2020-09-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (177, 'Pagamento da NET', -148.49, 1, '2020-09-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (178, 'Pagamento do Telefone', -66.39, 1, '2020-09-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (179, 'Compras Verduras e Frutas da Leh', -24.13, 1, '2020-09-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (180, 'Pagamento do Condomínio', -315.00, 1, '2020-09-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (181, 'Gasto das Redes de Segurança', -270.00, 1, '2020-09-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (182, 'Depósito do Salário Setembro/20', 3545.13, 1, '2020-09-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (186, 'Compras no Comper', -131.00, 3, '2020-09-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (184, 'Potiguar com Sogra', -81.97, 2, '2020-09-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (187, 'Biomundo - GojiBerry', -20.16, 3, '2020-09-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (185, 'Compras do Mês Setembro', -694.14, 3, '2020-08-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (188, 'Help da Mih', -36.68, 3, '2020-09-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (189, 'Resgate do Nubank', 50.00, 1, '2020-09-08');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (190, 'Frango Oriental - China Brasil', -40.00, 2, '2020-09-09');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (191, 'Lampada da Sogra Maquina', -10.80, 1, '2020-09-09');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (192, 'Fonte de Vida - Sucos', -51.22, 2, '2020-09-10');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (193, 'IRBR3 - Preço Médio', -300.00, 1, '2020-09-11');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (194, 'McDonalds da Lais', -20.70, 2, '2020-09-11');
 
 
 --
