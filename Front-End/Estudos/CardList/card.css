@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+body{ 
+    padding: 0;
+    margin: 0;
+    background-color: #17141d;
+    color: white;
+    font-family: 'DM Mono', monospace;
+}
+
+.card-list{
+    display: flex;  
+    padding: 3rem;
+}
+
+.card{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 350px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background-color: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+
+    transition: 0.2s;
+}
+
+
+.card-author{
+    position: relative;
+     display: grid;
+     grid-template-columns: 75px 1fr;
+     align-items: center;
+     margin:  3rem 0 0;
+}
+
+
+.author-avatar img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    margin: 16px 10px;
+}
+
+.half-circle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 48px;
+    fill: none;
+    stroke: #ff8a00;
+    stroke-width: 8;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.author-name-prefix{
+    font-style: normal;
+    font-weight: 700;
+    color: #74748c
+}
+
+/* Aplicar o Gradiante no Texto de cada card */
+
+.card-header h2:hover{
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-backgroud-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+/* Efeitos para subir as cartas */
+
+/* Sobe a carta no eixo y */
+.card:hover{
+    transform: translateY(-1rem);
+}
+
+.card:hover~.card{
+    transform: translateX(130px);
+}
+
+.card:not(:first-child){
+    margin-left: -130px;
+}
