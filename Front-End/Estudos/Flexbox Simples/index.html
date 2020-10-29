@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.: FlexBoxSimples :.</title>
+
+  <style>
+
+ .container{
+     width: 100%;
+     display: flex;
+     background: lightcyan; 
+     box-sizing: border-box;
+     flex-direction: row;
+     margin: 0 auto;
+ }
+
+ .containerInternoL{
+     flex: 1;
+     background: yellow; 
+     padding: 30px;
+     font-size: 12px;
+     font-family: 'Roboto' , sans-serif;
+     margin: 3px;
+ }
+
+.containerInternoM{
+     flex: 1;
+     background: lightseagreen;  
+     padding: 30px;
+     font-size: 12px;
+     font-family: 'Roboto' , sans-serif;
+     margin: 3px;
+}
+
+ .containerInternoR{
+     flex: 1;
+     background: lightcoral;  
+     padding: 30px;
+     font-size: 12px;
+     font-family: 'Roboto' , sans-serif;
+     margin: 3px;
+ }
+  
+  
+/*  Para celular */
+@media screen and (max-width: 760px){
+    .container{
+        flex-direction: column;
+    }
+}
+
+
+  </style>
+
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="containerInternoL"><h1>Texto caixa alta 01</h1><img src="https://picsum.photos/id/0/5616/3744" width="100%">Fusce ac justo efficitur, vestibulum sem quis, vulputate est. Vivamus at nunc tempor, vulputate diam id, venenatis nisi. Quisque neque felis, hendrerit lacinia convallis in, gravida et mi. Aliquam sed nulla faucibus dolor accumsan tincidunt. Donec at purus in nibh aliquet posuere eget ac turpis. Pellentesque interdum accumsan ante scelerisque volutpat. Curabitur ac velit id nisl accumsan iaculis. Nulla mattis nisi lacus, eu rutrum sapien aliquam in. Duis at rutrum ex, non lobortis nibh. Aenean dui lorem, tincidunt non dapibus vel, interdum sed dui. Nullam pellentesque lorem sit amet dui ornare, eu consectetur ligula lobortis. Cras dignissim augue mauris. Nunc ullamcorper, metus in accumsan mattis, erat mi posuere lorem, eu luctus lacus libero et turpis. Nunc rhoncus ultricies elit vitae laoreet. Donec ultrices nec mauris non suscipit. Aenean rhoncus lorem nunc, id placerat lacus porttitor iaculis.</div>
+        <div class="containerInternoM"><h1>Texto caixa alta 02</h1><img src="https://picsum.photos/450/200" width="100%">Fusce ac justo efficitur, vestibulum sem quis, vulputate est. Vivamus at nunc tempor, vulputate diam id, venenatis nisi. Quisque neque felis, hendrerit lacinia convallis in, gravida et mi. Aliquam sed nulla faucibus dolor accumsan tincidunt. Donec at purus in nibh aliquet posuere eget ac turpis. Pellentesque interdum accumsan ante scelerisque volutpat. Curabitur ac velit id nisl accumsan iaculis. Nulla mattis nisi lacus, eu rutrum sapien aliquam in. Duis at rutrum ex, non lobortis nibh. Aenean dui lorem, tincidunt non dapibus vel, interdum sed dui. Nullam pellentesque lorem sit amet dui ornare, eu consectetur ligula lobortis. Cras dignissim augue mauris. Nunc ullamcorper, metus in accumsan mattis, erat mi posuere lorem, eu luctus lacus libero et turpis. Nunc rhoncus ultricies elit vitae laoreet. Donec ultrices nec mauris non suscipit. Aenean rhoncus lorem nunc, id placerat lacus porttitor iaculis.</div>
+        <div class="containerInternoR"><h1>Texto caixa alta 03</h1><img src="https://picsum.photos/450/200" width="100%">Fusce ac justo efficitur, vestibulum sem quis, vulputate est. Vivamus at nunc tempor, vulputate diam id, venenatis nisi. Quisque neque felis, hendrerit lacinia convallis in, gravida et mi. Aliquam sed nulla faucibus dolor accumsan tincidunt. Donec at purus in nibh aliquet posuere eget ac turpis. Pellentesque interdum accumsan ante scelerisque volutpat. Curabitur ac velit id nisl accumsan iaculis. Nulla mattis nisi lacus, eu rutrum sapien aliquam in. Duis at rutrum ex, non lobortis nibh. Aenean dui lorem, tincidunt non dapibus vel, interdum sed dui. Nullam pellentesque lorem sit amet dui ornare, eu consectetur ligula lobortis. Cras dignissim augue mauris. Nunc ullamcorper, metus in accumsan mattis, erat mi posuere lorem, eu luctus lacus libero et turpis. Nunc rhoncus ultricies elit vitae laoreet. Donec ultrices nec mauris non suscipit. Aenean rhoncus lorem nunc, id placerat lacus porttitor iaculis.</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+<style>
+:root{
+    --navbar-color: #1a57a7;
+    --conteudo-color: #16096d;
+    --quadro1-color: yellow;
+    --quadro2-color: green;
+    font-size: 08px;
+}
+
+    *{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+
+body{
+    display: flex;
+}    
+
+.navbar{
+    background-color: var(--navbar-color);
+    width: 5%;
+    transition: width 600ms ease ;
+}
+
+.conteudo{
+    background-color: var(--conteudo-color);
+    width: 95%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-cont{
+    background-color: white; 
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    margin-top: 30px;
+    align-items: center; 
+}
+
+.quadro1{
+  background-color: var(--quadro1-color);
+  height: 80vh;
+  width: 100%; 
+}
+
+.quadro2{
+  background-color: var(--quadro2-color);
+  height: 80vh;
+  width: 50%;
+}
+
+
+/* Efeito do SideMenu */
+.navbar:hover{
+    width: 15%;
+}
+
+
+
+
+</style>
+
+</head>
+<body>
+    <div class="navbar">
+
+    </div>
+    <div class="conteudo">
+        
+        Texto
+        <div class="container-cont"> 
+          <div class="quadro1">
+
+          </div>
+          <div class="quadro2">
+              
+          </div>
+        </div>
+    </div>
+    
+</body>
+</html>
