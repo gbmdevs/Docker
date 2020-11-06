@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox IMG de Lado</title>
+
+
+<style>
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: salmon;
+}
+
+
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 650px;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+.imgBox{
+    width: 150px;
+    flex: 0 0 150px;
+    align-items: center;
+}
+
+.imgBox img{
+    width: 100%;
+}
+.conteudo{
+    padding-left: 20px;
+}
+
+.conteudo h2{
+    margin: 0;
+    padding-left: 0;
+    color: #ff005c;
+}
+.conteudo p{
+    margin: 0;
+    padding: 10px 0 0 ;
+    text-align: justify;
+}
+
+</style>
+
+
+</head>
+<body>
+    
+<div class="box">
+   <div class="imgBox">
+     <img src="https://picsum.photos/seed/picsum/200/300">
+   </div>
+   <div class="conteudo">
+      <h2>Texto com Flexbox de Lado</h2>
+      <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+   </div>
+
+
+</div>
+
+
+</body>
+</html>
