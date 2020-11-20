@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dashboard Admin</title>
+</head>
+<body>
+    <div class="container">
+      <nav class="navbar">
+         <div class="nav_icon" onclick="toggleSidebar()">
+            <i class="fa fa-bars"> </i>
+         </div>
+         <div class="navbar__left">
+               <a href="#">Inscritos</a>
+               <a href="#">Admin Videos</a>
+               <a href="#">Minhas Coisas</a>
+               <a href="#" class="active__link">Admin</a>
+         </div>
+         <div class="navbar__right">
+               <a href="#">
+                   <i class="fa fa-search"></i>
+               </a>
+               <a href="#">
+                   <i class="fa fa-clock-o"></i>
+               </a>              
+
+               <a href="#">
+                   <img width="30" src="assets/avatar.svg" alt="" />
+               </a>
+
+        </div>
+      </nav>
+
+      <!-- Area Principal-->
+      <main>
+        <div class="main__container">
+           
+            <div class="main__title">
+              <img src="assets/hello.svg" alt="">
+              <div class="main__greeting">
+                  <h1>Ola Usuario!</h1>
+                  <p>Bem vindo ao Dashboard</p>
+              </div>
+            </div>
+
+            <div class="main__cards">
+
+                <div class="card">  
+                   <i class="fa fa-user-o fa-2x text-lightblue"></i>
+                   <div class="card__inner">
+                      <p class="text-primary-p">Numero de Inscritos</p>
+                      <span class="font-bold text-title">578</span>
+                  </div>
+                </div>
+
+                <div class="card">  
+                    <i class="fa fa-calendar fa-2x text-red"></i>
+                    <div class="card__inner">
+                       <p class="text-primary-p">Numero de Views</p>
+                       <span class="font-bold text-title">2467</span>
+                   </div>
+                 </div>
+
+                 <div class="card">  
+                    <i class="fa fa-video-camera fa-2x text-yellow"></i>
+                    <div class="card__inner">
+                       <p class="text-primary-p">Numero de Videos</p>
+                       <span class="font-bold text-title">2</span>
+                   </div>
+                 </div>
+
+                 <div class="card">  
+                    <i class="fa fa-thumbs-up fa-2x text-green"></i>
+                    <div class="card__inner">
+                       <p class="text-primary-p">Curtidas</p>
+                       <span class="font-bold text-title">0</span>
+                   </div>
+                 </div>
+            </div>
+
+
+    <!-- Graficos -->
+
+            <div class="charts">
+              
+                <div class="charts__left">
+                   <div class="charts__left__title">
+                       <div>
+                           <h1>Reporte Diario</h1>
+                           <p>Sobradinho, Distrito Federal</p>
+                       </div>
+                       <i class="fa fa-usd"></i>
+                   </div>
+                   <div id="apex1"></div>            
+                </div>
+
+               <div class="charts__right">
+                   <div class="charts__right__title">
+                       <div>
+                          <h1>Status Diario</h1>
+                          <p>Sobradinho, Distrito Federal</p>
+                       </div>
+                       <i class="fa fa-usd"></i>
+                   </div>
+
+                   <div class="charts__right__cards">
+
+                      <div class="card1">
+                          <h1>Receita</h1>
+                          <p>R$ 59,99</p>
+                      </div>
+
+                   </div>
+               </div>
+            </div>
+        </div>          
+      </main>
+
+        <!-- Sidebar -->
+
+        <div id="sidebar">
+            <div class="sidebar_title">
+                <div class="sidebar__img">
+                    <img src="assets/logo.png" alt="">
+                    <h1>Dashboard</h1>
+                </div>
+                <i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar"></i>
+            </div>
+
+            <div class="sidebar__menu">
+                <div class="sidebar__link active_menu_link">
+                    <i class="fa fa-home"></i>
+                    <a href="#">Dashboard</a>
+                </div>
+                <h2>MNG</h2>
+                <div class="sidebar__link">
+                    <i class="fa fa-user-secret"></i>
+                    <a href="#">Administrar</a>
+                </div>
+                <div class="sidebar__link">
+                    <i class="fa fa-building-o"></i>
+                    <a href="#">Administrar1</a>
+                </div>                <div class="sidebar__link">
+                    <i class="fa fa-user-secret"></i>
+                    <a href="#">Administrar2</a>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Apex CDN - Estudar Sobre -->
+
+
+    <Script src="https://cdn.jsdelivr.net/npm/apexcharts"></Script>
+
+</body>
+</html>

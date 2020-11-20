@@ -362,14 +362,14 @@ ALTER TABLE ONLY public.tipogasto ALTER COLUMN idtypespent SET DEFAULT nextval('
 -- Data for Name: despesasfixas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (50, 7, 900.00, '2020-11-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (51, 8, 104.99, '2020-11-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (47, 1, 66.39, '2020-11-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (54, 3, 100.00, '2020-11-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (55, 6, 100.00, '2020-11-30', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (49, 4, 875.00, '2020-11-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (50, 7, 900.00, '2020-11-20', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (51, 8, 104.99, '2020-11-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (47, 1, 66.39, '2020-11-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (53, 10, 240.00, '2020-11-08', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (41, 4, 275.00, '2020-10-25', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (49, 4, 875.00, '2020-11-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (46, 6, 0.00, '2020-10-30', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (40, 3, 0.00, '2020-10-30', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (9, 3, 250.00, '2020-05-25', 'S');
@@ -716,6 +716,12 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (279, 'Panificadora Ferreira', -2.86, 2, '2020-11-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (280, 'Espetinho da Lais', -19.99, 2, '2020-11-13');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (281, 'Coco Bambu pos Hospital', -110.90, 2, '2020-11-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (282, 'Pagamento do Aluguel', -900.00, 1, '2020-11-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (283, 'Pastelaria com a Lais', -47.50, 1, '2020-11-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (284, 'Resgate do Nubank PIX', 10.00, 1, '2020-11-17');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (285, 'Salves Bellavia', -75.40, 3, '2020-11-17');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (286, 'Compras da Leh', -27.70, 1, '2020-11-18');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (287, 'Deposito do Beneficio', 577.28, 2, '2020-11-20');
 
 
 --

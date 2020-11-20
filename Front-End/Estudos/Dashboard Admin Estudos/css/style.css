@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
+.text-primary-p {
+    color: #a5aaad;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-title {
+    color: #2e4a66;
+}
+
+.text-lightblue {
+    color: #469cac;
+}
+
+.text-red {
+    color: #cc3d38;
+}
+
+.text-yellow {
+    color: #a98921;   
+}
+
+.text-green {
+    color: #3b9668;   
+}
+
+/* Area de Display das Informações */
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.8fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: 
+       "sidebar nav nav nav"
+       "sidebar main main main";
+}
+
+
+.navbar {
+    background: #ffffff;
+    grid-area: nav;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+.nav_icon {
+    display: none;
+}
+
+/* Micro operação: Estudar o > */
+
+.nav_icon > i {
+    font-size: 26px;
+    color: #a5aaad;
+}
+
+.navbar__left > a {
+    margin-right: 30px;
+    text-decoration: none;
+    color: #a5aaad;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.navbar__left .active__link{
+    color: #265acc;
+    border-bottom: 3px solid #265acc;
+    padding-bottom: 12px;
+}
+
+
+.navbar__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__right > a {
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbar__right > a > i {
+    color: #a5aaad;
+    font-size: 16px;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow: 2px 2px 5px #d9d9d9,
+                 -2px -2px 5px #ffffff;
+}
+
+main {
+    background: #f3f4f6;
+    grid-area: main;
+    overflow-y: auto;
+}
+
+.main__container {
+    padding: 20px 50px;
+}
+
+.main__title {
+    display: flex;
+    align-items: center;
+}
+
+.main__title > img {
+    max-height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.main__greeting > h1 {
+    font-size: 24px;
+    color: #2e4a66;
+    margin-bottom: 5px;
+}
+
+.main__greeting > p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #a5aaad
+}
+
+
+.main__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70px;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 5px 5px 13px #ededed,
+                -5px -5px 13px #ffffff;
+}
+
+.card_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card_inner > span {
+    font-size: 25px;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.charts__left {
+    padding: 25px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 5px 5px 5px 13px #ededed,
+                -5px -5px 13px #ffffff;
+}
+
+.charts__left__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.charts__left__title > div > h1 {
+    font-size: 24px;
+    color: #2e4a66;
+    margin-bottom: 5px;
+}
+
+.charts__left__title > div > p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #a5aaad;
+}
+
+.charts__left__title > i {
+    color: #ffffff;
+    font-size: 20px;
+    background: #ffc100;
+    border-radius: 200px 0px 200px 200px;
+    -moz-border-radius: 200px 0px 200px 200px;
+    -webkit-border-radius: 200px 0px 200px 200px;
+    border: 0px solid #000000;
+    padding: 15px;
+}
+
+.charts__right {
+    padding: 25px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 5px 5px 13px #ededed,
+                -5px -5px 13px #ffffff;
+}
+
+.charts__right__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.charts__right__title > div > h1 {
+    font-size: 24px;
+    color: #2e4a66;
+    margin-bottom: 5px;
+  }
+  
+
+#sidebar {
+    background: #020509;
+    grid-area: sidebar;
+    overflow-y: auto;
+    padding: 20px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+
