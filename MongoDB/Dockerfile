@@ -21,6 +21,5 @@ RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mo
 RUN apt-get update 
 RUN apt-get install -y mongodb-org
 RUN mkdir -p /data/db
-
-EXPOSE 27017
+EXPOSE 27017 
 CMD ["/bin/bash"]
