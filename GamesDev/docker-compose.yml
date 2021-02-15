@@ -1,0 +1,11 @@
+version: "3.0"
+services: 
+    gameServer: 
+        build: .
+        image: "gamedes:server"
+        container_name: "gamesServer"
+        ports: 
+           - "8080:8080"
+        stdin_open: true
+        tty: true
+      
