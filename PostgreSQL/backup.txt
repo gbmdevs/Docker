@@ -450,7 +450,7 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (77, 4, 675.00, '2021-02-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (76, 3, 200.00, '2021-02-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (78, 6, 200.00, '2021-02-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (84, 2, 764.70, '2021-03-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (84, 2, 809.09, '2021-03-15', 'N');
 
 
 --
@@ -942,6 +942,9 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (470, 'Potiguar Noite com Lais', -33.98, 2, '2021-02-22');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (472, 'Pão da Hora', -32.92, 3, '2021-02-23');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (473, 'Potiguar Almoço', -57.40, 2, '2021-02-24');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (474, 'Energetico', -14.00, 1, '2021-02-25');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (475, 'La casita', -36.40, 2, '2021-02-25');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (476, 'Deposito do Beneficio', 1161.97, 3, '2021-02-26');
 
 
 --
