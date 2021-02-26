@@ -16,6 +16,10 @@ RUN apt-get install -y nodejs
 # Instala o ambiente de React
 RUN npm install -g create-react-app
 
+# Instalação do Next.js
+RUN npm install -g next
+RUN npm install -g react  &&  npm install -g react-dom  
+
 # Backup do Diretirio onde os projetos Front-end estao hospedados
 RUN git config --global user.name "Guilherme B.(gbmdevs)"
 RUN git config --global user.email guih.smi2@outlook.com

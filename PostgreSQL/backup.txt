@@ -945,6 +945,9 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (474, 'Energetico', -14.00, 1, '2021-02-25');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (475, 'La casita', -36.40, 2, '2021-02-25');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (476, 'Deposito do Beneficio', 1161.97, 3, '2021-02-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (477, 'Biomundo - Blueberry', -79.52, 3, '2021-02-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (478, 'Mercado Expresso', -3.92, 3, '2021-02-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (479, 'Tesoura de Ouro - Nando', -35.99, 1, '2021-02-26');
 
 
 --
