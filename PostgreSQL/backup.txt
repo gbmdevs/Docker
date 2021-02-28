@@ -954,6 +954,7 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (483, 'Pre compras Dia-a-Dia', -171.36, 3, '2021-02-26');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (484, 'Dellicata Padaria', -27.00, 3, '2021-02-26');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (485, 'Compras do Mês - Fevereiro 2021', -882.16, 3, '2021-02-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (486, 'Sushi Koji', -63.49, 2, '2021-02-28');
 
 
 --
