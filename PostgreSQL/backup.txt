@@ -1008,6 +1008,7 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (529, 'Telefone Março 2021', -66.39, 1, '2021-03-29');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (530, 'Potiguar Almoço', -93.47, 2, '2021-03-30');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (531, 'Compras da Farmacia', -67.87, 1, '2021-03-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (532, 'Padaria Pão da Hora', -34.05, 3, '2021-03-31');
 
 
 --
