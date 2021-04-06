@@ -1,0 +1,7 @@
+version: "3.0"
+services: 
+     javascript:
+         build: .
+         container_name: "javascriptEstudos"
+         tty: true
+         stdin_open: true
