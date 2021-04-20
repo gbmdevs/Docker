@@ -274,7 +274,8 @@ ALTER SEQUENCE public.tipinvestimentos_idtipinves_seq OWNED BY public.tipinvesti
 CREATE TABLE public.tipogasto (
     idtypespent integer NOT NULL,
     titletypespent character varying(50) NOT NULL,
-    desctypespent character varying(200) NOT NULL
+    desctypespent character varying(200) NOT NULL,
+    isactive character varying(1) DEFAULT 'S'::character varying
 );
 
 
@@ -466,7 +467,7 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (105, 4, 500.00, '2021-05-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (106, 9, 91.00, '2021-05-23', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (93, 4, 500.00, '2021-04-30', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (99, 2, 518.94, '2021-05-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (99, 2, 686.89, '2021-05-15', 'N');
 
 
 --
@@ -1059,6 +1060,17 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (572, 'Rei do mate Hospital', -39.00, 1, '2021-04-16');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (573, 'Estacionamento Hospital', -21.60, 1, '2021-04-16');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (574, 'Compras material Pato da Loh', -13.70, 1, '2021-04-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (575, 'Elastico das Mascaras', -6.50, 1, '2021-04-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (576, 'Lanche da tarde imperio dos pães', -61.09, 3, '2021-04-17');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (577, 'Gatorade para a barriga', -17.99, 3, '2021-04-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (578, 'Deposito pra Samy', -175.00, 1, '2021-04-18');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (579, 'Almoço tradição Mineira', -51.71, 1, '2021-04-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (580, 'Kalunga', -15.55, 1, '2021-04-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (581, 'Pamonharia', -10.00, 1, '2021-04-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (582, 'Pastelaria com a Lais e Mãe', -81.00, 1, '2021-04-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (583, 'LactoPurga', -3.69, 1, '2021-04-18');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (584, 'Deposito do Beneficio', 429.92, 4, '2021-04-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (585, 'Pão da Hora', -9.60, 2, '2021-04-18');
 
 
 --
@@ -1112,9 +1124,10 @@ INSERT INTO public.tipinvestimentos (idtipinves, tipdescinves, tiptitleinves) VA
 -- Data for Name: tipogasto; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent) VALUES (1, 'Conta Corrente - Inter', 'Referente a conta corrent atual do banco inter');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent) VALUES (2, 'Cartao Alelo Refeicao', 'Beneficio Refeicao do Alelo');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent) VALUES (3, 'Ticket Alimentacao', 'Beneficio do ticket Alimentacao');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (1, 'Conta Corrente - Inter', 'Referente a conta corrent atual do banco inter', 'S');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (3, 'Ticket Alimentacao', 'Beneficio do ticket Alimentacao', 'S');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (4, 'Sodexo Refeicao', 'Cartao de refeicao Sodexo', 'S');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (2, 'Cartao Alelo Refeicao', 'Beneficio Refeicao do Alelo', 'N');
 
 
 --
@@ -1170,7 +1183,7 @@ SELECT pg_catalog.setval('public.tipinvestimentos_idtipinves_seq', 1, true);
 -- Name: tipogasto_idtypespent_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.tipogasto_idtypespent_seq', 3, true);
+SELECT pg_catalog.setval('public.tipogasto_idtypespent_seq', 4, true);
 
 
 --
