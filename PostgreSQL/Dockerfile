@@ -68,8 +68,9 @@ RUN cd /etc/postgresql/data/ && rm -r postgresql.conf && rm -r pg_hba.conf
 RUN cp /home/app/db/pg_hba.conf  /etc/postgresql/data/pg_hba.conf 
 RUN cp /home/app/db/postgresql.conf  /etc/postgresql/data/postgresql.conf
 
+# Setando as Vaiaveis locais
+RUN export PGDATA=/etc/postgresql/data/
 
 EXPOSE 5432
 ENTRYPOINT [ "docker-entrypoint.sh"]
-CMD ["postgres"]
-#CMD ["/bin/bash"]
+CMD ["postgres"] 
