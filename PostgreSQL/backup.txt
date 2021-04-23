@@ -465,9 +465,9 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (103, 1, 66.39, '2021-05-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (106, 9, 91.00, '2021-05-23', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (93, 4, 500.00, '2021-04-30', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (99, 2, 711.88, '2021-05-15', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (105, 4, 375.00, '2021-05-30', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (104, 11, 75.00, '2021-05-30', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (99, 2, 744.78, '2021-05-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (105, 4, 600.00, '2021-05-30', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (104, 11, 387.77, '2021-05-30', 'S');
 
 
 --
@@ -1072,6 +1072,12 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (584, 'Deposito do Beneficio', 429.92, 4, '2021-04-20');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (585, 'Pão da Hora', -9.60, 2, '2021-04-18');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (586, 'Compra da Silica', -38.00, 1, '2021-04-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (587, 'Saque banco 24 viagem', -70.00, 1, '2021-04-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (588, 'Gasolina mae aeroporto', -60.00, 1, '2021-04-21');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (589, 'Porpino Hamburgeria', -122.40, 4, '2021-04-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (590, 'Recisão do Contrato de trabalho', 4822.83, 1, '2021-04-23');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (591, 'Babytube Bebe', -50.00, 1, '2021-04-23');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (592, 'Emergencia Viagem ', -387.77, 1, '2021-04-23');
 
 
 --
@@ -1106,12 +1112,11 @@ INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALU
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (5, 'Academia e Saude', 'Refere-se a reserva para Academia/Saude');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (6, 'Transporte Onibus', 'Vale transporte pro 
 servico');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (7, '
-Aluguel Apartamento', 'Aluguel + Condominio - Q.02');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (8, 'Internet Banda Larga', 'Internet da Casa');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (9, 'Agua e Luz/Gas', 'Depesas de Agua e Luz');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (10, 'Condominio', 'Condominio do Apartamento');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (11, 'Caixa - Viagem', 'Caixa para futuras viagens e ferias');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (7, 'Aluguel do Apto', 'Solino Apto Quadra 02');
 
 
 --
@@ -1257,14 +1262,6 @@ ALTER TABLE ONLY public.tipinvestimentos
 
 ALTER TABLE ONLY public.tipogasto
     ADD CONSTRAINT tipogasto_pkey PRIMARY KEY (idtypespent);
-
-
---
--- Name: despesasfixas despesasfixas_idtipexpenses_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.despesasfixas
-    ADD CONSTRAINT despesasfixas_idtipexpenses_fkey FOREIGN KEY (idtipexpenses) REFERENCES public.tipdespesas(idtipexpenses);
 
 
 --
