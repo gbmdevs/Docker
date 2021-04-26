@@ -8,23 +8,23 @@ services:
           -  "3000:3000"
          # tty: true
          stdin_open: true
-         links:
-          - mongodb
+      #   links:
+      #    - mongodb
          networks: 
               rede:
                 ipv4_address: 172.20.0.10
-      mongodb:
-         container_name: "mongodbDes"
-         build: ../MongoDB
-         image: "mongodb:des"
-         command: "mongod --bind_ip 172.20.0.11"
-         ports:
-            - "27017:27017"
-         tty: true
-         stdin_open: true    
-         networks: 
-              rede:
-                ipv4_address: 172.20.0.11
+      #mongodb:
+      #   container_name: "mongodbDes"
+      #   build: ../MongoDB
+      #   image: "mongodb:des"
+      #   command: "mongod --bind_ip 172.20.0.11"
+      #   ports:
+      #      - "27017:27017"
+      #   tty: true
+      #   stdin_open: true    
+      #   networks: 
+      #        rede:
+      #          ipv4_address: 172.20.0.11
 
 networks:
     rede:
