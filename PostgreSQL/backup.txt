@@ -468,6 +468,7 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (105, 4, 600.00, '2021-05-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (104, 11, 387.77, '2021-05-30', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (99, 2, 749.78, '2021-05-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (107, 12, 401.82, '2021-05-05', 'N');
 
 
 --
@@ -1122,6 +1123,7 @@ INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALU
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (10, 'Condominio', 'Condominio do Apartamento');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (11, 'Caixa - Viagem', 'Caixa para futuras viagens e ferias');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (7, 'Aluguel do Apto', 'Solino Apto Quadra 02');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (12, 'Divida - Fortaleza', 'Estadia na raiana');
 
 
 --
