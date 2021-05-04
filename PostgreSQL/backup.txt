@@ -459,16 +459,16 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (96, 9, 90.19, '2021-04-23', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (97, 11, 175.00, '2021-04-30', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (91, 2, 1223.05, '2021-04-15', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (100, 8, 144.99, '2021-05-10', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (101, 10, 240.00, '2021-05-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (102, 7, 900.00, '2021-05-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (106, 9, 91.00, '2021-05-23', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (93, 4, 500.00, '2021-04-30', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (105, 4, 600.00, '2021-05-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (104, 11, 387.77, '2021-05-30', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (107, 12, 552.95, '2021-05-05', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (103, 1, 67.99, '2021-05-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (99, 2, 795.85, '2021-05-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (100, 8, 144.99, '2021-05-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (101, 10, 240.00, '2021-05-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (107, 12, 641.13, '2021-05-05', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (99, 2, 889.62, '2021-05-15', 'N');
 
 
 --
@@ -1085,6 +1085,15 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (596, 'Deposito de Beneficio', 697.18, 3, '2021-04-26');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (597, 'Habibs viagem', -51.30, 4, '2021-04-23');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (598, 'Deposito Parcial ACT Digital', 359.01, 1, '2021-04-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (599, 'Deposito Parcial ACT Digital', 2409.76, 1, '2021-04-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (600, 'Pagamento da Internet NET', -144.99, 1, '2021-04-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (601, 'Pagamento do Condomínio', -240.00, 1, '2021-04-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (603, 'Deposito de Beneficio', 577.50, 6, '2021-04-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (604, 'Sutiã de amamentar', -90.00, 1, '2021-04-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (602, 'Deposito do Beneficio', 300.01, 5, '2021-04-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (605, 'Almoço em Familia Sampaio', -194.98, 1, '2021-05-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (606, 'Adianto de Fatura', -372.36, 1, '2021-05-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (607, 'Pagamento da Viagem e Despesas', -641.13, 1, '2021-05-03');
 
 
 --
@@ -1142,6 +1151,8 @@ INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isacti
 INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (3, 'Ticket Alimentacao', 'Beneficio do ticket Alimentacao', 'S');
 INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (4, 'Sodexo Refeicao', 'Cartao de refeicao Sodexo', 'S');
 INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (2, 'Cartao Alelo Refeicao', 'Beneficio Refeicao do Alelo', 'N');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (5, 'Vale Combustivel Alelo', 'Auxilio Combustivel da ACT Digital', 'S');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (6, 'Refeicao Alelo ACT', 'Auxilio Refeicao da ACT Digital', 'S');
 
 
 --
