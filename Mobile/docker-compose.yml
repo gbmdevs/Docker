@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+    mobile:
+        build: .
+        container_name: "mobileDesenv"
+        tty: true
+        stdin_open: true
+        ports:
+            - "19001:19001"
+            - "19005:19005"
+            - "19006:19006"
