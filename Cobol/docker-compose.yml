@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+     cobol:
+         build: .
+         image: "cobol:desen"
+         container_name: "cobolDesen"
+         ports:
+            - "8081:8081"
+            - "3270:3270"
+         stdin_open: true
+         tty: true

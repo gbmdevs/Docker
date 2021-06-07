@@ -378,7 +378,6 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (9, 3, 250.00, '2020-05-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (3, 3, 250.00, '2020-04-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (5, 5, 175.00, '2020-04-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (2, 2, 1586.39, '2020-04-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (6, 2, 2186.37, '2020-05-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (10, 5, 175.00, '2020-05-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (11, 6, 300.00, '2020-05-30', 'S');
@@ -467,14 +466,17 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (107, 12, 641.13, '2021-05-05', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (106, 9, 59.63, '2021-05-23', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (99, 2, 1558.68, '2021-05-15', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (105, 4, 1000.00, '2021-05-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (102, 7, 900.00, '2021-05-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (109, 7, 900.00, '2021-06-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (110, 8, 144.99, '2021-06-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (111, 1, 67.99, '2021-06-10', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (108, 2, 663.57, '2021-06-15', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (112, 10, 240.00, '2021-06-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (113, 9, 95.00, '2021-06-23', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (105, 4, 1000.00, '2021-05-30', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (114, 13, 1000.00, '2021-06-21', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (115, 4, 675.00, '2021-06-30', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (112, 10, 450.00, '2021-06-10', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (108, 2, 1197.63, '2021-06-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (2, 2, 1586.39, '2020-04-15', 'S');
 
 
 --
@@ -1145,6 +1147,34 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (650, 'Dellicata Padaria', -6.70, 6, '2021-05-24');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (651, 'Biomundo - Blueberry', -31.61, 3, '2021-05-24');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (652, 'Dona de Casa', -19.39, 3, '2021-05-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (653, 'Rateio Subway', -5.34, 1, '2021-05-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (654, 'SushiLoko', -48.29, 1, '2021-05-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (655, 'Subway da Lais', -21.46, 4, '2021-05-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (656, 'Compras Salve Casa', -261.32, 3, '2021-05-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (657, 'Frango Oriental - China Brasil', -39.50, 6, '2021-05-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (658, 'Rateio Subway', -6.50, 6, '2021-05-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (659, 'Rico Investimento', -500.00, 1, '2021-05-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (660, 'Cacau Show - La creme Kids', -59.60, 6, '2021-05-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (661, 'Silica e Ração', -76.00, 1, '2021-05-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (662, 'Energetico', -14.00, 1, '2021-05-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (663, 'La casita', -41.90, 1, '2021-05-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (664, 'Deposito do Beneficio', 577.50, 6, '2021-05-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (665, 'Deposito do Beneficio', 300.00, 5, '2021-05-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (666, 'Deposito do Salário 1/2', 2067.12, 1, '2021-05-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (667, 'Cafe da manha Delicata', -31.00, 6, '2021-05-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (668, 'Combustível carro mãe', -80.00, 5, '2021-05-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (669, 'Presente Liana', -49.50, 1, '2021-05-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (670, 'Compras no Comper', -34.32, 3, '2021-05-31');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (671, 'Lanche Pao da Hora', -21.61, 1, '2021-06-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (672, 'Almoço Girafas', -50.60, 6, '2021-06-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (673, 'Imperio dos Paes', -35.10, 1, '2021-06-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (674, 'Lar dos Velinhos', -15.00, 1, '2021-06-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (675, 'Combustível carro mãe', -30.00, 5, '2021-06-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (676, 'Pastelaria com a Lais', -50.00, 1, '2021-06-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (677, 'Mascaras PF N95', -39.90, 1, '2021-06-07');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (678, 'Gasolina de Consulta', -35.00, 5, '2021-06-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (679, 'Padaria cafe da Manha', -14.80, 6, '2021-06-07');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (680, 'Almoço tradição Mineira', -46.40, 6, '2021-06-07');
 
 
 --
@@ -1185,6 +1215,7 @@ INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALU
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (11, 'Caixa - Viagem', 'Caixa para futuras viagens e ferias');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (7, 'Aluguel do Apto', 'Solino Apto Quadra 02');
 INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (12, 'Divida - Fortaleza', 'Estadia na raiana');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (13, 'Compras do Mes', 'Compras do mes para a casa no atacadao');
 
 
 --
@@ -1200,10 +1231,10 @@ INSERT INTO public.tipinvestimentos (idtipinves, tipdescinves, tiptitleinves) VA
 
 INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (1, 'Conta Corrente - Inter', 'Referente a conta corrent atual do banco inter', 'S');
 INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (3, 'Ticket Alimentacao', 'Beneficio do ticket Alimentacao', 'S');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (4, 'Sodexo Refeicao', 'Cartao de refeicao Sodexo', 'S');
 INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (2, 'Cartao Alelo Refeicao', 'Beneficio Refeicao do Alelo', 'N');
 INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (5, 'Vale Combustivel Alelo', 'Auxilio Combustivel da ACT Digital', 'S');
 INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (6, 'Refeicao Alelo ACT', 'Auxilio Refeicao da ACT Digital', 'S');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (4, 'Sodexo Refeicao', 'Cartao de refeicao Sodexo', 'N');
 
 
 --
