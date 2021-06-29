@@ -25,10 +25,9 @@ services:
       #   networks: 
       #        rede:
       #          ipv4_address: 172.20.0.11
-
-networks:
-    rede:
+networks: 
+    rede: 
       driver: bridge
-      ipam:
-        config:
+      ipam: 
+        config: 
            - subnet: 172.20.0.0/24
