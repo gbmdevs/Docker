@@ -1,0 +1,11 @@
+version:  "3.0"
+services:
+    ragnarok:
+        build: .
+        container_name: "ragnarokDes"
+        image: "ragnarok:server"
+        tty: true
+        stdin_open: true
+        ports: 
+            - "80:80"
+            - "3306:3306"
