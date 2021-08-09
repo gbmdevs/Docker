@@ -491,11 +491,11 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (132, 9, 100.00, '2021-08-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (133, 4, 675.00, '2021-08-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (126, 1, 67.99, '2021-08-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (127, 2, 1931.26, '2021-08-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (128, 8, 144.99, '2021-08-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (129, 14, 750.00, '2021-08-01', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (131, 10, 450.00, '2021-08-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (134, 13, 900.00, '2021-08-21', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (127, 2, 2160.92, '2021-08-15', 'N');
 
 
 --
@@ -1306,6 +1306,12 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (790, 'Pagamento da NET', -144.99, 1, '2021-08-04');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (791, 'Condomínio de Julho 21', -445.00, 1, '2021-08-04');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (792, 'Cama do Bebe', -750.00, 1, '2021-08-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (793, 'Pix Ragnarok', -15.00, 1, '2021-08-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (794, 'Almoço Potiguar', -66.59, 6, '2021-08-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (795, 'Tecidos da Lais', -150.70, 1, '2021-08-07');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (796, 'Combustivel da Lais', -50.00, 1, '2021-08-08');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (797, 'Cafe da manha dia dos pais', -47.83, 1, '2021-08-08');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (798, 'Sorvete dos meninos', -29.98, 1, '2021-08-08');
 
 
 --
