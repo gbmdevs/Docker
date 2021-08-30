@@ -15,6 +15,11 @@ position: fixed;
 height: 100%;
 width: 240px;
 background: #0A2558;
+transition: all 0.5s ease;
+}
+
+.sidebar.active{
+    width: 60px;
 }
 
 .sidebar .logo-details{
@@ -83,15 +88,31 @@ color: #fff;
     min-height: 100vh;
     width: calc(100% - 240px); /* Estudar o calc */
     left: 240px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .home-section {
+    width: calc(100% - 60px); /* Estudar o calc */
+    left: 60px;  
 }
 
 .home-section nav{
+    position: fixed;
+    width: calc(100% - 240px);
+    left: 240px;
     height: 80px;
     background: #fff;
     padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.sidebar.active ~ .home-section nav {
+    width: calc(100% - 60px);
+    left: 60px;
 }
 
 .home-section nav .sidebar-button{
@@ -168,3 +189,110 @@ nav .profile-details i {
     color: #333;
     font-size: 25px;
 }
+
+
+
+
+.home-section .home-content { 
+    position: relative;
+    padding-top: 100px;
+}
+
+.home-content .overview-boxes{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+
+.home-section .overview-boxes .box { 
+    width: calc(100% / 4 - 15px);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 15px 14px;
+    background: #fff;
+    border-radius: 12px;
+
+}
+
+.home-content .overview-boxes .box_topic{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home-content .overview-boxes .number{
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: -5px;
+    display: inline-block;
+}
+
+.overview-boxes .indicator i {
+    height: 20px;
+    width: 20px;
+    background: #8FDACB;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.overview-boxes .indicator i.down{
+    background: #e05260
+}
+
+.overview-boxes .indicator .text{
+    font-size: 12px;
+}
+
+.overview-boxes .box .cart{
+    font-size: 32px;
+    font-weight: 500;
+    height: 50px;
+    width: 50px;
+    background: #cce5ff;
+    color: #66b0ff;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.overview-boxes .box .cart.two{
+    background: #C0F2D8;
+    color: #2BD47D;
+}
+
+.overview-boxes .box .cart.three{
+    background: #FFC233;
+    color: #FFE8B3;
+}
+
+.overview-boxes .box .cart.four{
+    background: #e05260;
+    color: #f7d4d7;
+}
+
+
+
+@media (max-width: 1216px) {
+    .sidebar{
+      width: 60px;
+    }
+    .sidebar
+    .home-content{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .home-content nav {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .sidebar.active ~ .home-section nav{
+        width: calc(100% - 220px);
+        left: 220px;
+    }
+    
+}
+
