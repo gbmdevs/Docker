@@ -214,6 +214,7 @@ nav .profile-details i {
     padding: 15px 14px;
     background: #fff;
     border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 
 }
 
@@ -275,24 +276,147 @@ nav .profile-details i {
 }
 
 
+.home-section .sales-boxes{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
 
-@media (max-width: 1216px) {
+
+.home-section .sales-boxes .sales-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-section .sales-boxes .box .title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.home-section .sales-boxes .box .topic{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home-section .sales-boxes .box li{
+    list-style: none;
+    margin: 8px 0;
+}
+
+.home-section .sales-boxes .recent-sales{
+    width: 65%;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.sales-boxes .box li a {
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.sales-boxes .button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sales-boxes .button a { 
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    background: #0a2558;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.sales-boxes .button a:hover { 
+    background: #0d3073;
+}
+
+
+/* Lado Direito Top Vendas */
+.home-section .sales-boxes .top-sales{
+    width: 35%;
+    margin-left: 20px;
+    background: #fff;
+    box-sizing: 0 5px 10px rgba(0,0,0,0,0.1);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+
+/* Responsive Media Query */
+@media (max-width: 1240px) {
     .sidebar{
       width: 60px;
     }
-    .sidebar
-    .home-content{
-        width: calc(100% - 60px);
-        left: 60px;
+    .sidebar.active{
+      width: 220px;
     }
-    .home-content nav {
-        width: calc(100% - 60px);
-        left: 60px;
+    .home-section{
+      width: calc(100% - 60px);
+      left: 60px;
+    }
+    .sidebar.active ~ .home-section{
+      /* width: calc(100% - 220px); */
+      overflow: hidden;
+      left: 220px;
+    }
+    .home-section nav{
+      width: calc(100% - 60px);
+      left: 60px;
     }
     .sidebar.active ~ .home-section nav{
-        width: calc(100% - 220px);
-        left: 220px;
+      width: calc(100% - 220px);
+      left: 220px;
     }
-    
-}
-
+  }
+  @media (max-width: 1150px) {
+    .home-content .sales-boxes{
+      flex-direction: column;
+    }
+    .home-content .sales-boxes .box{
+      width: 100%;
+      overflow-x: scroll;
+      margin-bottom: 30px;
+    }
+    .home-content .sales-boxes .top-sales{
+      margin: 0;
+    }
+  }
+  @media (max-width: 1000px) {
+    .overview-boxes .box{
+      width: calc(100% / 2 - 15px);
+      margin-bottom: 15px;
+    }
+  }
+  @media (max-width: 700px) {
+    nav .sidebar-button .dashboard,
+    nav .profile-details .admin_name,
+    nav .profile-details i{
+      display: none;
+    }
+    .home-section nav .profile-details{
+      height: 50px;
+      min-width: 40px;
+    }
+    .home-content .sales-boxes .sales-details{
+      width: 560px;
+    }
+  }
+  @media (max-width: 550px) {
+    .overview-boxes .box{
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .sidebar.active ~ .home-section nav .profile-details{
+      display: none;
+    }
+  }
