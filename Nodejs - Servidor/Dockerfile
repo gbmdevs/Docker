@@ -17,4 +17,5 @@ RUN git init && git remote add origin 'https://github.com/gbmdevs/Nodejs.git'
 RUN git pull origin main
 
 EXPOSE 3000
+EXPOSE 4000
 CMD ["/bin/bash"]

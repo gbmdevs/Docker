@@ -1,0 +1,32 @@
+version: "3.0"
+services: 
+    # Ambiente de Desenvolvimento do React
+    react:
+         build: ../Front-End
+         image: "react:desenv"
+         container_name: "reactDesenv"
+         tty: true
+         stdin_open: true
+         #networks: 
+         #   rede:
+         #       ipv4_address: 172.20.0.10
+    # Ambiente de Desenvolvimento do NodeJs           
+    nodejs:
+         build: '..\Nodejs - Servidor\'
+         image: "nodejs:desenv"
+         container_name: "nodejsDesenv"
+         tty: true
+         stdin_open: true
+    # Ambiente de Desenvolvimento do MongoDB           
+    #mongodb:
+    #     build: ../MongoDB
+    #     image: "mongodb:desenv"
+    #     container_name: "mongodbDesenv"
+    #     tty: true
+    #     stdin_open: true     
+#networks: 
+#    rede: 
+#      driver: bridge
+#      ipam: 
+#        config: 
+#           - subnet: 172.20.0.0/24           
