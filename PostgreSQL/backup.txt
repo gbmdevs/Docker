@@ -544,7 +544,7 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (180, 10, 450.00, '2022-02-08', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (181, 1, 67.99, '2022-02-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (182, 8, 144.99, '2022-02-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (179, 2, 3265.45, '2022-02-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (179, 2, 3402.35, '2022-02-15', 'N');
 
 
 --
@@ -1604,6 +1604,12 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1039, 'Gasolina da Sogra', -100.00, 5, '2022-01-31');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1040, 'Pagamento do aluguel', -445.00, 1, '2022-02-03');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1041, 'Pagamento da NET', -144.99, 1, '2022-02-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1042, 'Mc Donalds', -40.30, 6, '2022-02-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1043, 'Tradição Mineira', -45.28, 6, '2022-02-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1044, 'Imperio dos paes', -47.86, 6, '2022-02-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1045, 'Pão da hora', -24.00, 6, '2022-02-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1046, 'China restaurante', -41.40, 6, '2022-02-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1047, 'Imperio dos paes', -32.00, 6, '2022-02-06');
 
 
 --
