@@ -94,6 +94,20 @@ ALTER SEQUENCE public.gastos_idspent_seq OWNED BY public.gastos.idspent;
 
 
 --
+-- Name: hibernate_sequence; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.hibernate_sequence
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.hibernate_sequence OWNER TO postgres;
+
+--
 -- Name: investimentos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -127,6 +141,18 @@ ALTER TABLE public.investimentos_idinvest_seq OWNER TO postgres;
 
 ALTER SEQUENCE public.investimentos_idinvest_seq OWNED BY public.investimentos.idinvest;
 
+
+--
+-- Name: pessoa; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.pessoa (
+    id integer NOT NULL,
+    nome character varying(255)
+);
+
+
+ALTER TABLE public.pessoa OWNER TO postgres;
 
 --
 -- Name: teste; Type: TABLE; Schema: public; Owner: postgres
@@ -537,14 +563,14 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (177, 3, 375.00, '2022-01-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (171, 2, 2883.67, '2022-01-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (175, 7, 695.00, '2022-01-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (183, 9, 120.00, '2022-02-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (184, 7, 695.00, '2022-02-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (185, 4, 675.00, '2022-02-28', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (186, 13, 927.40, '2022-02-05', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (180, 10, 450.00, '2022-02-08', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (181, 1, 67.99, '2022-02-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (182, 8, 144.99, '2022-02-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (179, 2, 3402.35, '2022-02-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (179, 2, 3438.64, '2022-02-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (183, 9, 122.03, '2022-02-20', 'S');
 
 
 --
@@ -1610,6 +1636,9 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1045, 'Pão da hora', -24.00, 6, '2022-02-04');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1046, 'China restaurante', -41.40, 6, '2022-02-05');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1047, 'Imperio dos paes', -32.00, 6, '2022-02-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1048, 'Burger king', -33.22, 6, '2022-02-07');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1049, 'correcao', 0.02, 6, '2022-02-08');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1050, 'Pagamento da Luz', -122.03, 1, '2022-02-08');
 
 
 --
@@ -1617,6 +1646,13 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 --
 
 INSERT INTO public.investimentos (idinvest, idtipinves, valueinvest) VALUES (1, 1, 19922.1406);
+
+
+--
+-- Data for Name: pessoa; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.pessoa (id, nome) VALUES (16, 'Jamal');
 
 
 --
@@ -1688,6 +1724,13 @@ SELECT pg_catalog.setval('public.gastos_idspent_seq', 43, true);
 
 
 --
+-- Name: hibernate_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.hibernate_sequence', 16, true);
+
+
+--
 -- Name: investimentos_idinvest_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1751,6 +1794,14 @@ ALTER TABLE ONLY public.gastos
 
 ALTER TABLE ONLY public.investimentos
     ADD CONSTRAINT investimentos_pkey PRIMARY KEY (idinvest, idtipinves);
+
+
+--
+-- Name: pessoa pessoa_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.pessoa
+    ADD CONSTRAINT pessoa_pkey PRIMARY KEY (id);
 
 
 --
