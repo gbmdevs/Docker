@@ -569,8 +569,8 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (180, 10, 450.00, '2022-02-08', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (181, 1, 67.99, '2022-02-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (182, 8, 144.99, '2022-02-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (179, 2, 3438.64, '2022-02-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (183, 9, 122.03, '2022-02-20', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (179, 2, 3476.54, '2022-02-15', 'S');
 
 
 --
@@ -1639,6 +1639,17 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1048, 'Burger king', -33.22, 6, '2022-02-07');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1049, 'correcao', 0.02, 6, '2022-02-08');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1050, 'Pagamento da Luz', -122.03, 1, '2022-02-08');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1051, 'Besteiras na Distribuidora', -11.00, 1, '2022-02-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1052, 'Pagamento Transporte', -30.00, 1, '2022-02-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1053, 'Pamonha da Br', -20.00, 1, '2022-02-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1054, 'Deposito 1/2 do Salário', 2880.00, 1, '2022-02-15');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1055, 'Nubank de Fevereiro', -3476.54, 1, '2022-02-15');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1056, 'Streambet', -50.00, 1, '2022-02-15');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1057, 'Resgate BRB', 259.05, 1, '2022-02-15');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1058, 'Camarao cremoso', -78.98, 6, '2022-02-11');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1059, 'Pao da hora', -37.00, 6, '2022-02-11');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1060, 'Potiguar Franguinho', -37.00, 6, '2022-02-13');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1061, 'Gasolina da Sogra', -80.00, 5, '2022-02-13');
 
 
 --
