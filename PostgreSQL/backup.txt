@@ -150,7 +150,7 @@ ALTER TABLE public.hibernate_sequence OWNER TO postgres;
 CREATE TABLE public.hist_bolsa_valores (
     idhistbolsavalores integer NOT NULL,
     abertura numeric(19,2),
-    datafechamento timestamp without time zone,
+    datafechamento date,
     fechamento numeric(19,2),
     maxima numeric(19,2),
     minima numeric(19,2),
@@ -479,6 +479,9 @@ ALTER TABLE ONLY public.tipogasto ALTER COLUMN idtypespent SET DEFAULT nextval('
 --
 
 INSERT INTO public.bolsa_de_valores (idticket, descricaoticket, nomebalcao, nometicket) VALUES (1, 'Usinas Siderurgicas de Minas Gerais A Pref Shs', 'SAO', 'USIM5');
+INSERT INTO public.bolsa_de_valores (idticket, descricaoticket, nomebalcao, nometicket) VALUES (37, 'Banco do Brasil SA', 'SAO', 'BBAS3');
+INSERT INTO public.bolsa_de_valores (idticket, descricaoticket, nomebalcao, nometicket) VALUES (39, 'B3 SA - Brasil Bolsa Balcao', 'SAO', 'B3SA3');
+INSERT INTO public.bolsa_de_valores (idticket, descricaoticket, nomebalcao, nometicket) VALUES (40, 'BB Seguridade', 'SAO', 'BBSE3');
 
 
 --
@@ -666,13 +669,14 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (183, 9, 122.03, '2022-02-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (179, 2, 3476.54, '2022-02-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (184, 7, 695.00, '2022-02-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (185, 4, 550.00, '2022-02-28', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (188, 1, 67.99, '2022-03-10', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (189, 8, 144.99, '2022-03-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (190, 7, 695.00, '2022-03-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (191, 4, 675.00, '2022-03-31', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (192, 9, 130.00, '2022-03-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (187, 2, 2323.51, '2022-03-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (188, 1, 67.99, '2022-03-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (189, 8, 144.99, '2022-03-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (193, 10, 450.00, '2022-03-08', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (185, 4, 550.00, '2022-02-28', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (187, 2, 2380.50, '2022-03-15', 'N');
 
 
 --
@@ -1770,12 +1774,419 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1077, 'Verduras risoto', -3.39, 1, '2022-02-28');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1078, 'Pao da hora', -40.00, 6, '2022-02-27');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1079, 'Tradição Mineira', -52.13, 6, '2022-03-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1080, 'Pagamento Telefone', -67.99, 1, '2022-03-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1081, 'Pagamento do Condominio', -445.00, 1, '2022-03-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1082, 'Investimento Fevereiro 2022', -500.00, 1, '2022-03-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1083, 'Pamonha da Br', -40.00, 1, '2022-03-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1084, 'Resgate BRB', 73.36, 1, '2022-03-02');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1085, 'Franguinho China', -41.90, 6, '2022-03-01');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1086, 'Pao da hora', -16.56, 6, '2022-03-02');
 
 
 --
 -- Data for Name: hist_bolsa_valores; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (1, 16.34, '2021-10-18', 16.08, 16.35, 15.84, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (2, 15.98, '2021-10-19', 15.59, 16.28, 15.30, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (3, 16.24, '2021-10-13', 16.31, 16.71, 16.02, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (4, 16.58, '2021-10-14', 16.29, 16.86, 16.24, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (5, 16.33, '2021-10-15', 16.58, 16.76, 16.22, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (6, 15.68, '2021-10-20', 15.01, 15.68, 14.85, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (7, 14.49, '2021-10-21', 14.16, 14.61, 13.77, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (8, 14.05, '2021-10-22', 14.35, 14.60, 13.77, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (9, 14.12, '2021-10-28', 14.33, 14.52, 13.97, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (10, 14.04, '2021-10-29', 13.25, 14.04, 13.13, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (11, 14.51, '2021-10-25', 14.68, 14.83, 14.50, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (12, 14.58, '2021-10-26', 14.22, 14.79, 14.12, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (13, 14.37, '2021-10-27', 14.19, 14.78, 14.04, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (14, 13.38, '2021-11-01', 13.10, 13.45, 12.91, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (15, 16.18, '2022-01-18', 16.54, 16.58, 16.12, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (16, 16.90, '2022-01-19', 16.75, 17.11, 16.63, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (17, 16.25, '2022-01-14', 16.45, 16.59, 16.14, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (18, 16.30, '2022-01-17', 16.23, 16.39, 15.95, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (19, 15.64, '2021-12-16', 15.75, 15.89, 15.33, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (20, 15.35, '2021-12-15', 15.44, 15.54, 14.97, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (21, 15.63, '2021-12-17', 15.54, 15.77, 15.36, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (22, 14.90, '2021-12-23', 14.86, 14.90, 14.64, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (23, 15.02, '2021-12-22', 14.90, 15.21, 14.56, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (24, 14.90, '2021-12-21', 15.12, 15.23, 14.85, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (25, 15.22, '2021-12-20', 14.67, 15.26, 14.56, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (26, 16.43, '2022-01-21', 15.86, 16.54, 15.77, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (27, 15.72, '2022-01-24', 16.24, 16.33, 15.34, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (28, 16.83, '2022-01-20', 16.57, 16.97, 16.52, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (29, 14.05, '2022-01-07', 14.68, 14.69, 13.94, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (30, 15.26, '2022-01-03', 14.97, 15.73, 14.95, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (31, 15.11, '2022-01-04', 14.85, 15.15, 14.66, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (32, 14.88, '2022-01-05', 13.99, 14.92, 13.96, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (33, 14.15, '2022-01-06', 14.01, 14.44, 13.85, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (34, 15.57, '2021-10-06', 15.78, 15.90, 15.16, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (35, 16.01, '2021-10-07', 15.77, 16.37, 15.70, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (36, 16.10, '2021-10-08', 16.55, 16.94, 16.07, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (37, 14.72, '2021-12-27', 15.04, 15.10, 14.71, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (38, 14.75, '2021-12-29', 14.80, 14.96, 14.65, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (39, 15.01, '2021-12-28', 14.75, 15.01, 14.58, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (40, 16.08, '2021-10-05', 15.93, 16.39, 15.75, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (41, 16.96, '2021-10-11', 16.53, 17.37, 16.49, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (42, 14.98, '2021-12-30', 15.16, 15.30, 14.88, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (43, 14.32, '2022-01-10', 15.38, 15.40, 14.21, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (44, 15.94, '2022-01-11', 16.31, 16.34, 15.81, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (45, 16.51, '2022-01-12', 16.44, 16.91, 16.34, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (46, 16.20, '2022-01-13', 16.37, 16.55, 16.05, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (47, 16.59, '2022-02-09', 16.95, 17.07, 16.50, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (48, 16.86, '2022-02-08', 16.81, 16.93, 16.58, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (49, 16.15, '2022-02-04', 16.32, 16.38, 15.96, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (50, 16.55, '2022-02-07', 16.85, 16.99, 16.50, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (51, 13.50, '2021-11-29', 13.70, 13.85, 13.36, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (52, 13.68, '2021-11-25', 13.82, 13.88, 13.46, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (53, 13.37, '2021-11-26', 12.91, 13.45, 12.70, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (54, 13.96, '2021-12-01', 13.42, 14.34, 13.40, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (55, 14.33, '2021-12-03', 14.23, 14.73, 13.88, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (56, 13.51, '2021-12-02', 14.43, 14.43, 13.45, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (57, 13.63, '2021-11-30', 13.59, 14.13, 13.28, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (58, 16.76, '2022-02-11', 15.53, 16.81, 15.50, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (59, 15.45, '2022-02-14', 15.68, 15.90, 15.31, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (60, 17.10, '2022-02-10', 16.78, 17.56, 16.68, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (61, 16.18, '2022-01-25', 16.16, 16.48, 15.83, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (62, 16.33, '2022-01-26', 16.34, 16.71, 15.77, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (63, 16.55, '2022-01-27', 16.26, 16.63, 16.05, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (64, 16.50, '2022-01-28', 16.01, 16.63, 15.81, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (65, 14.80, '2021-12-09', 14.94, 14.98, 14.42, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (66, 15.05, '2021-12-08', 15.05, 15.33, 14.80, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (67, 15.36, '2021-12-07', 14.92, 15.51, 14.85, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (68, 14.53, '2021-12-06', 14.78, 14.82, 14.15, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (69, 15.52, '2021-12-14', 15.31, 15.79, 15.08, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (70, 15.48, '2021-12-13', 15.39, 15.82, 15.23, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (71, 15.08, '2021-12-10', 15.21, 15.67, 15.05, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (72, 16.02, '2022-02-01', 16.59, 16.68, 15.85, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (73, 16.71, '2022-02-03', 16.20, 16.82, 16.09, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (74, 16.59, '2022-02-02', 16.63, 16.77, 16.42, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (75, 15.96, '2022-01-31', 15.97, 16.21, 15.70, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (76, 12.08, '2021-11-08', 12.60, 12.72, 11.90, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (77, 12.45, '2021-11-09', 12.76, 12.99, 12.31, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (78, 12.91, '2021-11-03', 12.37, 13.01, 12.32, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (79, 12.30, '2021-11-04', 12.30, 12.76, 12.23, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (80, 12.50, '2021-11-05', 12.05, 12.56, 11.85, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (81, 12.49, '2021-11-10', 12.67, 12.88, 12.41, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (82, 13.19, '2021-11-11', 13.46, 13.73, 13.16, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (83, 13.33, '2021-11-12', 13.50, 14.06, 13.33, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (84, 15.50, '2022-03-02', 15.37, 15.59, 14.98, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (85, 15.59, '2022-02-16', 15.49, 15.89, 15.36, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (86, 15.30, '2022-02-15', 15.59, 15.59, 15.13, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (87, 15.03, '2022-02-18', 14.75, 15.09, 14.70, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (88, 15.40, '2022-02-17', 14.86, 15.47, 14.77, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (89, 12.59, '2021-11-18', 12.08, 12.70, 11.97, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (90, 12.30, '2021-11-19', 12.25, 12.59, 12.15, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (91, 13.61, '2021-11-16', 13.11, 13.61, 12.77, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (92, 13.30, '2021-11-17', 12.81, 13.49, 12.72, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (93, 12.66, '2021-11-22', 12.61, 12.88, 12.34, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (94, 13.20, '2021-11-23', 13.21, 13.78, 12.97, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (95, 13.36, '2021-11-24', 13.67, 14.02, 13.25, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (96, 14.80, '2022-02-23', 14.26, 14.86, 14.16, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (97, 14.62, '2022-02-22', 14.72, 14.81, 14.52, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (98, 14.07, '2022-02-25', 14.71, 14.71, 13.99, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (99, 13.45, '2022-02-24', 14.25, 14.33, 13.45, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (100, 14.93, '2022-02-21', 14.48, 14.99, 14.47, 1);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (101, 31.25, '2021-10-18', 32.21, 32.37, 31.14, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (102, 31.87, '2021-10-19', 30.63, 31.87, 30.54, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (103, 30.72, '2021-10-13', 30.76, 30.97, 30.34, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (104, 30.98, '2021-10-14', 30.61, 31.14, 30.55, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (105, 30.81, '2021-10-15', 31.58, 31.80, 30.60, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (106, 31.00, '2021-10-20', 31.14, 31.54, 30.55, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (107, 30.50, '2021-10-21', 29.82, 30.96, 29.35, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (108, 29.64, '2021-10-22', 28.91, 29.64, 27.91, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (109, 29.25, '2021-10-28', 28.91, 29.29, 28.64, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (110, 29.17, '2021-10-29', 28.50, 29.17, 28.39, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (111, 29.07, '2021-10-25', 29.51, 29.79, 29.07, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (112, 29.29, '2021-10-26', 29.20, 29.54, 28.95, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (113, 29.28, '2021-10-27', 29.17, 29.90, 29.17, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (114, 28.96, '2021-11-01', 29.15, 29.59, 28.82, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (115, 30.31, '2022-01-18', 30.74, 30.94, 30.23, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (116, 30.96, '2022-01-19', 31.01, 31.29, 30.71, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (117, 29.70, '2022-01-14', 30.41, 30.67, 29.70, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (118, 30.45, '2022-01-17', 30.47, 30.69, 30.05, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (119, 31.71, '2021-12-16', 31.41, 32.14, 31.09, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (120, 32.21, '2021-12-15', 31.51, 32.23, 30.74, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (121, 31.12, '2021-12-17', 30.33, 31.32, 30.15, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (122, 29.30, '2021-12-23', 29.22, 29.48, 29.16, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (123, 29.60, '2021-12-22', 29.33, 29.65, 29.16, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (124, 29.75, '2021-12-21', 29.50, 30.10, 29.50, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (125, 29.97, '2021-12-20', 29.42, 29.97, 29.24, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (126, 31.15, '2022-01-21', 31.20, 31.54, 30.89, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (127, 31.13, '2022-01-24', 31.35, 31.75, 30.95, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (128, 31.11, '2022-01-20', 31.20, 31.50, 31.00, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (129, 28.61, '2022-01-07', 28.63, 28.82, 28.40, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (130, 29.13, '2022-01-03', 28.82, 29.76, 28.80, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (131, 29.12, '2022-01-04', 28.85, 29.15, 28.62, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (132, 28.82, '2022-01-05', 28.37, 28.98, 28.20, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (133, 28.42, '2022-01-06', 28.60, 28.86, 28.20, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (134, 30.15, '2021-10-06', 30.64, 30.74, 29.83, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (135, 30.73, '2021-10-07', 30.32, 31.08, 30.18, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (136, 30.50, '2021-10-08', 30.96, 31.23, 30.48, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (137, 29.25, '2021-12-27', 29.28, 29.49, 29.20, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (138, 29.18, '2021-12-29', 28.96, 29.31, 28.94, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (139, 29.34, '2021-12-28', 29.11, 29.39, 29.01, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (140, 29.30, '2021-10-05', 30.59, 30.78, 29.19, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (141, 31.06, '2021-10-11', 30.72, 31.18, 30.59, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (142, 29.13, '2021-12-30', 28.85, 29.19, 28.77, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (143, 28.54, '2022-01-10', 28.78, 29.09, 28.45, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (144, 28.72, '2022-01-11', 28.90, 29.02, 28.68, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (145, 28.92, '2022-01-12', 29.18, 29.36, 28.85, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (146, 29.06, '2022-01-13', 29.65, 30.02, 29.06, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (147, 32.10, '2022-02-09', 31.92, 32.51, 31.70, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (148, 31.82, '2022-02-08', 32.20, 32.37, 31.49, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (149, 32.20, '2022-02-04', 32.23, 32.41, 32.01, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (150, 32.13, '2022-02-07', 31.86, 32.38, 31.84, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (151, 31.18, '2021-11-29', 30.81, 31.64, 30.81, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (152, 30.37, '2021-11-25', 31.81, 31.81, 30.30, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (153, 30.75, '2021-11-26', 30.76, 31.23, 30.55, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (154, 32.50, '2021-12-01', 31.30, 32.80, 31.30, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (155, 32.21, '2021-12-03', 32.20, 32.66, 31.83, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (156, 31.69, '2021-12-02', 32.16, 32.40, 31.64, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (157, 30.71, '2021-11-30', 31.84, 31.84, 30.22, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (158, 32.46, '2022-02-11', 33.40, 33.59, 32.44, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (159, 33.40, '2022-02-14', 33.54, 33.74, 33.12, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (160, 32.00, '2022-02-10', 32.27, 32.64, 31.86, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (161, 31.24, '2022-01-25', 32.16, 32.39, 31.08, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (162, 32.31, '2022-01-26', 31.85, 32.63, 31.68, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (163, 31.99, '2022-01-27', 32.29, 32.71, 31.95, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (164, 32.29, '2022-01-28', 32.49, 32.59, 32.02, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (165, 32.80, '2021-12-09', 32.02, 32.92, 31.88, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (166, 32.78, '2021-12-08', 32.75, 32.95, 32.30, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (167, 33.60, '2021-12-07', 32.60, 33.60, 32.48, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (168, 32.73, '2021-12-06', 33.07, 33.60, 32.62, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (169, 32.48, '2021-12-14', 32.06, 32.92, 31.90, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (170, 32.50, '2021-12-13', 32.23, 33.07, 32.23, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (171, 32.26, '2021-12-10', 32.50, 32.87, 32.02, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (172, 32.80, '2022-02-01', 32.61, 32.83, 32.35, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (173, 32.08, '2022-02-03', 32.29, 32.58, 32.02, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (174, 32.52, '2022-02-02', 32.07, 32.60, 31.77, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (175, 32.44, '2022-01-31', 32.66, 32.94, 32.27, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (176, 29.00, '2021-11-08', 29.48, 29.66, 28.92, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (177, 30.40, '2021-11-09', 29.44, 30.62, 29.44, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (178, 29.05, '2021-11-03', 29.34, 29.84, 28.92, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (179, 29.39, '2021-11-04', 28.65, 29.52, 28.47, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (180, 29.00, '2021-11-05', 29.29, 29.57, 28.88, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (181, 29.52, '2021-11-10', 30.79, 31.07, 29.50, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (182, 31.10, '2021-11-11', 30.20, 31.13, 30.20, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (183, 30.31, '2021-11-12', 30.15, 30.68, 29.97, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (184, 35.10, '2022-03-02', 35.60, 35.80, 34.93, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (185, 35.18, '2022-02-16', 35.33, 35.79, 35.11, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (186, 35.50, '2022-02-15', 35.13, 35.70, 34.94, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (187, 35.41, '2022-02-18', 36.05, 36.23, 35.38, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (188, 35.31, '2022-02-17', 35.33, 35.73, 35.17, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (189, 29.37, '2021-11-18', 29.09, 29.45, 28.90, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (190, 29.15, '2021-11-19', 29.05, 29.31, 28.91, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (191, 30.28, '2021-11-16', 29.73, 30.45, 29.53, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (192, 29.76, '2021-11-17', 29.31, 30.10, 29.29, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (193, 29.25, '2021-11-22', 28.89, 29.53, 28.82, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (194, 28.88, '2021-11-23', 29.69, 29.77, 28.30, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (195, 29.40, '2021-11-24', 30.24, 30.35, 29.31, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (196, 35.80, '2022-02-23', 35.79, 36.12, 35.61, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (197, 35.40, '2022-02-22', 35.61, 36.11, 35.37, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (198, 34.71, '2022-02-25', 35.21, 35.21, 34.53, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (199, 34.63, '2022-02-24', 34.65, 35.10, 34.09, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (200, 36.14, '2022-02-21', 35.28, 36.23, 34.97, 37);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (201, 13.17, '2021-10-18', 12.92, 13.19, 12.85, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (202, 12.83, '2021-10-19', 12.52, 12.92, 12.36, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (203, 12.20, '2021-10-13', 12.85, 12.97, 12.10, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (204, 13.01, '2021-10-14', 12.73, 13.13, 12.66, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (205, 12.75, '2021-10-15', 13.15, 13.26, 12.73, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (206, 12.72, '2021-10-20', 13.11, 13.27, 12.67, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (207, 12.85, '2021-10-21', 13.01, 13.19, 12.64, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (208, 12.95, '2021-10-22', 12.62, 12.95, 12.21, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (209, 12.00, '2021-10-28', 12.04, 12.28, 11.80, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (210, 12.20, '2021-10-29', 11.91, 12.31, 11.85, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (211, 12.65, '2021-10-25', 12.89, 13.05, 12.60, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (212, 12.65, '2021-10-26', 12.15, 12.71, 12.14, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (213, 12.15, '2021-10-27', 12.12, 12.43, 12.05, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (214, 11.95, '2021-11-01', 11.98, 12.15, 11.87, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (215, 12.35, '2022-01-18', 12.31, 12.40, 12.04, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (216, 12.44, '2022-01-19', 12.26, 12.49, 12.25, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (217, 11.63, '2022-01-14', 12.22, 12.29, 11.56, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (218, 12.20, '2022-01-17', 12.36, 12.59, 12.11, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (219, 12.12, '2021-12-16', 12.07, 12.54, 11.99, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (220, 12.24, '2021-12-15', 12.06, 12.24, 11.88, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (221, 11.95, '2021-12-17', 12.31, 12.40, 11.90, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (222, 11.51, '2021-12-23', 11.38, 11.53, 11.30, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (223, 11.39, '2021-12-22', 11.50, 11.67, 11.33, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (224, 11.83, '2021-12-21', 11.37, 11.86, 11.28, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (225, 12.06, '2021-12-20', 11.88, 12.12, 11.65, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (226, 13.23, '2022-01-21', 13.64, 13.88, 13.15, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (227, 13.49, '2022-01-24', 13.06, 13.53, 12.84, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (228, 12.33, '2022-01-20', 13.25, 13.32, 12.28, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (229, 10.91, '2022-01-07', 11.24, 11.26, 10.88, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (230, 11.19, '2022-01-03', 10.72, 11.41, 10.71, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (231, 10.76, '2022-01-04', 10.95, 11.01, 10.62, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (232, 10.87, '2022-01-05', 10.72, 10.93, 10.62, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (233, 10.60, '2022-01-06', 10.98, 10.98, 10.58, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (234, 11.90, '2021-10-06', 12.22, 12.26, 11.72, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (235, 12.24, '2021-10-07', 12.26, 12.54, 12.17, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (236, 12.25, '2021-10-08', 12.49, 12.85, 12.25, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (237, 11.50, '2021-12-27', 11.31, 11.55, 11.19, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (238, 11.18, '2021-12-29', 11.08, 11.24, 10.99, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (239, 11.33, '2021-12-28', 11.16, 11.33, 11.10, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (240, 12.57, '2021-10-05', 12.15, 12.58, 12.15, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (241, 12.43, '2021-10-11', 12.13, 12.55, 11.95, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (242, 11.15, '2021-12-30', 11.14, 11.29, 11.05, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (243, 11.10, '2022-01-10', 11.18, 11.25, 10.97, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (244, 11.03, '2022-01-11', 11.21, 11.21, 10.85, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (245, 11.27, '2022-01-12', 11.61, 11.64, 11.14, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (246, 11.47, '2022-01-13', 11.59, 11.73, 11.46, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (247, 13.71, '2022-02-09', 14.16, 14.25, 13.67, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (248, 13.65, '2022-02-08', 13.55, 13.73, 13.35, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (249, 14.06, '2022-02-04', 14.13, 14.22, 13.88, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (250, 14.13, '2022-02-07', 13.70, 14.20, 13.60, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (251, 11.85, '2021-11-29', 11.50, 11.88, 11.21, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (252, 12.19, '2021-11-25', 12.37, 12.47, 12.17, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (253, 12.00, '2021-11-26', 11.78, 12.06, 11.70, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (254, 11.29, '2021-12-01', 11.01, 11.51, 10.99, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (255, 11.45, '2021-12-03', 11.63, 11.88, 11.42, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (256, 11.28, '2021-12-02', 11.46, 11.61, 11.17, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (257, 11.43, '2021-11-30', 11.11, 11.49, 10.96, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (258, 14.30, '2022-02-11', 13.92, 14.31, 13.74, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (259, 14.17, '2022-02-14', 14.12, 14.48, 13.96, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (260, 14.16, '2022-02-10', 14.10, 14.33, 13.82, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (261, 12.90, '2022-01-25', 13.32, 13.56, 12.88, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (262, 13.50, '2022-01-26', 13.78, 14.10, 13.50, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (263, 13.92, '2022-01-27', 14.46, 14.52, 13.81, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (264, 14.29, '2022-01-28', 14.74, 14.77, 14.06, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (265, 12.03, '2021-12-09', 11.71, 12.09, 11.62, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (266, 12.07, '2021-12-08', 12.12, 12.27, 11.94, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (267, 12.01, '2021-12-07', 12.05, 12.32, 11.91, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (268, 11.75, '2021-12-06', 11.78, 12.02, 11.64, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (269, 12.33, '2021-12-14', 12.10, 12.44, 12.03, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (270, 12.44, '2021-12-13', 12.15, 12.48, 12.15, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (271, 12.00, '2021-12-10', 12.38, 12.62, 11.95, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (272, 14.62, '2022-02-01', 14.26, 14.66, 14.15, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (273, 14.11, '2022-02-03', 14.14, 14.37, 14.03, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (274, 14.27, '2022-02-02', 14.13, 14.59, 13.97, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (275, 14.64, '2022-01-31', 14.62, 14.81, 14.45, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (276, 12.26, '2021-11-08', 12.24, 12.30, 12.07, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (277, 12.28, '2021-11-09', 12.64, 12.80, 12.22, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (278, 11.96, '2021-11-03', 12.00, 12.15, 11.63, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (279, 11.92, '2021-11-04', 11.94, 12.02, 11.77, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (280, 12.08, '2021-11-05', 12.37, 12.48, 12.02, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (281, 12.56, '2021-11-10', 12.67, 12.88, 12.50, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (282, 12.85, '2021-11-11', 13.15, 13.21, 12.83, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (283, 13.19, '2021-11-12', 13.05, 13.29, 12.89, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (284, 14.50, '2022-03-02', 14.32, 14.83, 14.28, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (285, 14.75, '2022-02-16', 14.59, 14.85, 14.31, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (286, 14.44, '2022-02-15', 14.60, 15.13, 14.24, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (287, 14.31, '2022-02-18', 14.27, 14.71, 14.25, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (288, 14.62, '2022-02-17', 14.20, 14.73, 14.14, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (289, 12.76, '2021-11-18', 12.47, 12.86, 12.31, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (290, 12.56, '2021-11-19', 12.47, 12.75, 12.36, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (291, 12.96, '2021-11-16', 12.75, 13.39, 12.67, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (292, 12.87, '2021-11-17', 12.66, 13.02, 12.40, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (293, 12.53, '2021-11-22', 12.10, 12.69, 12.03, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (294, 12.15, '2021-11-23', 11.98, 12.19, 11.71, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (295, 11.82, '2021-11-24', 12.19, 12.27, 11.68, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (296, 14.39, '2022-02-23', 14.59, 14.94, 14.39, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (297, 14.25, '2022-02-22', 14.39, 14.74, 14.23, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (298, 14.55, '2022-02-25', 14.58, 14.89, 14.47, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (299, 13.99, '2022-02-24', 14.70, 14.89, 13.86, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (300, 14.35, '2022-02-21', 14.07, 14.57, 13.97, 39);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (301, 21.58, '2021-10-18', 21.68, 21.90, 21.21, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (302, 21.53, '2021-10-19', 21.26, 21.62, 21.12, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (303, 20.45, '2021-10-13', 20.96, 21.12, 20.43, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (304, 21.05, '2021-10-14', 21.31, 21.76, 21.04, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (305, 21.33, '2021-10-15', 21.68, 21.71, 21.08, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (306, 21.35, '2021-10-20', 21.33, 21.75, 21.27, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (307, 20.99, '2021-10-21', 21.50, 21.62, 20.94, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (308, 21.33, '2021-10-22', 21.67, 21.96, 20.81, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (309, 22.35, '2021-10-28', 22.17, 22.62, 22.12, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (310, 22.30, '2021-10-29', 22.09, 22.48, 22.01, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (311, 21.80, '2021-10-25', 22.44, 22.65, 21.78, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (312, 22.17, '2021-10-26', 22.17, 22.41, 22.02, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (313, 22.28, '2021-10-27', 22.50, 22.87, 22.15, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (314, 22.39, '2021-11-01', 22.05, 22.46, 22.02, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (315, 19.67, '2022-01-18', 20.31, 20.34, 19.41, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (316, 20.48, '2022-01-19', 20.68, 20.75, 20.25, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (317, 19.20, '2022-01-14', 19.45, 19.45, 19.15, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (318, 19.45, '2022-01-17', 19.67, 19.94, 19.30, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (319, 21.12, '2021-12-16', 20.93, 21.20, 20.90, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (320, 20.88, '2021-12-15', 21.03, 21.24, 20.70, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (321, 20.89, '2021-12-17', 20.54, 20.89, 20.54, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (322, 20.58, '2021-12-23', 20.62, 20.93, 20.47, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (323, 20.56, '2021-12-22', 20.51, 20.65, 20.30, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (324, 20.40, '2021-12-21', 20.52, 20.55, 20.10, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (325, 20.52, '2021-12-20', 20.38, 20.52, 20.16, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (326, 20.46, '2022-01-21', 20.62, 20.74, 20.27, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (327, 20.74, '2022-01-24', 20.93, 21.11, 20.38, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (328, 20.70, '2022-01-20', 20.55, 20.76, 20.32, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (329, 20.45, '2022-01-07', 19.80, 20.45, 19.78, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (330, 20.92, '2022-01-03', 20.60, 21.12, 20.50, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (331, 20.61, '2022-01-04', 20.55, 20.79, 20.50, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (332, 20.53, '2022-01-05', 20.30, 20.75, 20.25, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (333, 20.30, '2022-01-06', 20.44, 20.65, 20.20, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (334, 19.76, '2021-10-06', 19.76, 20.02, 19.43, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (335, 19.84, '2021-10-07', 19.74, 20.21, 19.69, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (336, 19.84, '2021-10-08', 20.06, 20.25, 19.83, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (337, 20.60, '2021-12-27', 20.75, 20.85, 20.57, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (338, 20.79, '2021-12-29', 20.67, 20.84, 20.48, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (339, 20.75, '2021-12-28', 20.79, 20.90, 20.59, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (340, 19.93, '2021-10-05', 19.98, 20.34, 19.78, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (341, 20.00, '2021-10-11', 20.42, 20.55, 20.00, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (342, 20.70, '2021-12-30', 20.75, 21.05, 20.58, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (343, 19.76, '2022-01-10', 19.31, 19.76, 19.01, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (344, 19.40, '2022-01-11', 19.33, 19.45, 19.18, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (345, 19.34, '2022-01-12', 19.15, 19.47, 19.02, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (346, 19.15, '2022-01-13', 19.18, 19.41, 19.06, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (347, 24.10, '2022-02-09', 24.27, 24.48, 24.05, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (348, 24.20, '2022-02-08', 24.10, 24.69, 23.92, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (349, 22.93, '2022-02-04', 22.83, 22.94, 22.53, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (350, 23.29, '2022-02-07', 24.14, 24.23, 23.20, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (351, 21.80, '2021-11-29', 21.40, 21.85, 21.26, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (352, 21.66, '2021-11-25', 22.13, 22.33, 21.66, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (353, 21.79, '2021-11-26', 21.53, 21.91, 21.48, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (354, 21.12, '2021-12-01', 20.43, 21.12, 20.41, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (355, 21.09, '2021-12-03', 21.18, 21.65, 21.06, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (356, 20.60, '2021-12-02', 21.05, 21.09, 20.51, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (357, 21.39, '2021-11-30', 20.88, 21.39, 20.76, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (358, 23.00, '2022-02-11', 22.76, 23.14, 22.47, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (359, 22.78, '2022-02-14', 23.37, 23.44, 22.71, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (360, 24.37, '2022-02-10', 24.36, 24.57, 23.99, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (361, 20.85, '2022-01-25', 21.13, 21.21, 20.60, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (362, 21.13, '2022-01-26', 21.14, 21.37, 21.02, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (363, 21.12, '2022-01-27', 22.39, 22.66, 21.12, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (364, 22.18, '2022-01-28', 22.68, 22.76, 22.14, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (365, 21.65, '2021-12-09', 21.11, 21.90, 21.00, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (366, 21.37, '2021-12-08', 21.66, 21.77, 21.11, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (367, 21.49, '2021-12-07', 21.22, 21.70, 21.20, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (368, 21.19, '2021-12-06', 21.29, 21.50, 21.17, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (369, 21.01, '2021-12-14', 20.77, 21.26, 20.66, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (370, 21.20, '2021-12-13', 20.89, 21.33, 20.89, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (371, 21.20, '2021-12-10', 21.15, 21.35, 21.08, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (372, 23.10, '2022-02-01', 23.09, 23.43, 22.91, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (373, 22.80, '2022-02-03', 22.93, 23.07, 22.58, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (374, 23.05, '2022-02-02', 22.80, 23.19, 22.80, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (375, 22.64, '2022-01-31', 23.14, 23.25, 22.59, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (376, 22.63, '2021-11-08', 22.82, 22.99, 22.24, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (377, 22.78, '2021-11-09', 23.44, 23.46, 22.72, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (378, 22.00, '2021-11-03', 22.61, 22.69, 22.00, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (379, 22.60, '2021-11-04', 22.64, 22.85, 22.30, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (380, 22.80, '2021-11-05', 22.84, 22.85, 22.48, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (381, 23.38, '2021-11-10', 23.12, 23.49, 23.05, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (382, 23.35, '2021-11-11', 23.29, 23.38, 23.05, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (383, 23.21, '2021-11-12', 23.08, 23.55, 23.07, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (384, 22.30, '2022-03-02', 23.09, 23.19, 21.86, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (385, 23.10, '2022-02-16', 23.08, 23.19, 22.63, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (386, 23.50, '2022-02-15', 23.14, 23.66, 23.10, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (387, 23.26, '2022-02-18', 23.18, 23.35, 23.15, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (388, 23.01, '2022-02-17', 23.17, 23.29, 22.84, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (389, 22.75, '2021-11-18', 22.73, 23.04, 22.63, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (390, 22.73, '2021-11-19', 22.23, 22.87, 22.12, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (391, 22.92, '2021-11-16', 23.16, 23.26, 22.85, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (392, 23.20, '2021-11-17', 22.67, 23.49, 22.54, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (393, 22.07, '2021-11-22', 21.82, 22.39, 21.82, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (394, 21.69, '2021-11-23', 21.52, 21.83, 21.27, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (395, 21.50, '2021-11-24', 21.63, 21.96, 21.32, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (396, 23.13, '2022-02-23', 23.01, 23.48, 23.01, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (397, 23.17, '2022-02-22', 23.16, 23.43, 23.11, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (398, 22.76, '2022-02-25', 23.04, 23.06, 22.67, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (399, 22.54, '2022-02-24', 22.90, 23.12, 22.05, 40);
+INSERT INTO public.hist_bolsa_valores (idhistbolsavalores, abertura, datafechamento, fechamento, maxima, minima, idticket) VALUES (400, 23.14, '2022-02-21', 23.12, 23.43, 23.05, 40);
 
 
 --
@@ -1850,7 +2261,7 @@ INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isacti
 -- Name: bolsa_de_valores_idticket_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.bolsa_de_valores_idticket_seq', 20, true);
+SELECT pg_catalog.setval('public.bolsa_de_valores_idticket_seq', 41, true);
 
 
 --
@@ -1878,7 +2289,7 @@ SELECT pg_catalog.setval('public.hibernate_sequence', 16, true);
 -- Name: hist_bolsa_valores_idhistbolsavalores_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.hist_bolsa_valores_idhistbolsavalores_seq', 1, false);
+SELECT pg_catalog.setval('public.hist_bolsa_valores_idhistbolsavalores_seq', 400, true);
 
 
 --
@@ -2025,14 +2436,6 @@ ALTER TABLE ONLY public.tipogasto
 
 ALTER TABLE ONLY public.bolsa_de_valores
     ADD CONSTRAINT uk_6id6abbuap2n02i6i24uc1826 UNIQUE (nometicket);
-
-
---
--- Name: hist_bolsa_valores uk_dtob25j2xgilvesecboui3iy5; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.hist_bolsa_valores
-    ADD CONSTRAINT uk_dtob25j2xgilvesecboui3iy5 UNIQUE (datafechamento);
 
 
 --
