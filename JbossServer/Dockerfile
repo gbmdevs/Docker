@@ -42,6 +42,12 @@ RUN java -jar jboss-7-2.jar auto.xml -variables adminPassword=admin
 # Lembrar de Rodar sempre com -b  0.0.0.0 , pois o JBOSS nao replica para as outras portas
 # -b 0.0.0.0 -bmanagement 0.0.0.0 , para todas as portas
 
+
+# Instalação do Node.js - Angular 
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
+RUN apt install nodejs -y
+RUN npm install -g @angular/cli
+
 # Entrypoint para executação de teste
 #ENTRYPOINT [ "/home/app/init.sh" ]
 CMD ["/bin/bash"]
