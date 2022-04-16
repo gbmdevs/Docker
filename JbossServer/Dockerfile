@@ -39,6 +39,9 @@ RUN update-alternatives --install "/usr/bin/mvn" "mvn" "/opt/apache-maven-3.6.3/
 #Executa a Instalação por completo do JBOSS
 RUN java -jar jboss-7-2.jar auto.xml -variables adminPassword=admin
 
+# Configuração do Servidor
+COPY configuration /home/app/java/configuration/
+
 # Lembrar de Rodar sempre com -b  0.0.0.0 , pois o JBOSS nao replica para as outras portas
 # -b 0.0.0.0 -bmanagement 0.0.0.0 , para todas as portas
 
