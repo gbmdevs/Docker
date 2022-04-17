@@ -369,6 +369,40 @@ ALTER SEQUENCE public.tipinvestimentos_idtipinves_seq OWNED BY public.tipinvesti
 
 
 --
+-- Name: tipo_estrategia; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipo_estrategia (
+    idtipoestrategia integer NOT NULL,
+    nomeestrategia character varying(255)
+);
+
+
+ALTER TABLE public.tipo_estrategia OWNER TO postgres;
+
+--
+-- Name: tipo_estrategia_idtipoestrategia_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipo_estrategia_idtipoestrategia_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipo_estrategia_idtipoestrategia_seq OWNER TO postgres;
+
+--
+-- Name: tipo_estrategia_idtipoestrategia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipo_estrategia_idtipoestrategia_seq OWNED BY public.tipo_estrategia.idtipoestrategia;
+
+
+--
 -- Name: tipogasto; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -465,6 +499,13 @@ ALTER TABLE ONLY public.tipdespesas ALTER COLUMN idtipexpenses SET DEFAULT nextv
 --
 
 ALTER TABLE ONLY public.tipinvestimentos ALTER COLUMN idtipinves SET DEFAULT nextval('public.tipinvestimentos_idtipinves_seq'::regclass);
+
+
+--
+-- Name: tipo_estrategia idtipoestrategia; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_estrategia ALTER COLUMN idtipoestrategia SET DEFAULT nextval('public.tipo_estrategia_idtipoestrategia_seq'::regclass);
 
 
 --
@@ -1849,6 +1890,13 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1136, 'Pagamento NUbank', -3321.65, 1, '2022-04-15');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1137, 'Pagamento do OVO', -280.00, 1, '2022-04-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1138, 'La Casita', -78.80, 1, '2022-04-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1139, 'Pao da hora', -15.21, 1, '2022-04-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1140, 'Tays Abreu', -68.47, 1, '2022-04-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1141, 'La Casita', -73.30, 1, '2022-04-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1142, 'Ze delivery', -31.53, 1, '2022-04-15');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1143, 'Dona de Casa', -16.90, 1, '2022-04-15');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1144, 'China Brasil', -51.30, 6, '2022-04-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1145, 'Parmegiana Italiana', -48.00, 6, '2022-04-16');
 
 
 --
@@ -2714,6 +2762,12 @@ INSERT INTO public.tipinvestimentos (idtipinves, tipdescinves, tiptitleinves) VA
 
 
 --
+-- Data for Name: tipo_estrategia; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
 -- Data for Name: tipogasto; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2793,6 +2847,13 @@ SELECT pg_catalog.setval('public.tipdespesas_idtipexpenses_seq', 6, true);
 --
 
 SELECT pg_catalog.setval('public.tipinvestimentos_idtipinves_seq', 1, true);
+
+
+--
+-- Name: tipo_estrategia_idtipoestrategia_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipo_estrategia_idtipoestrategia_seq', 1, false);
 
 
 --
@@ -2888,6 +2949,14 @@ ALTER TABLE ONLY public.tipdespesas
 
 ALTER TABLE ONLY public.tipinvestimentos
     ADD CONSTRAINT tipinvestimentos_pkey PRIMARY KEY (idtipinves);
+
+
+--
+-- Name: tipo_estrategia tipo_estrategia_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_estrategia
+    ADD CONSTRAINT tipo_estrategia_pkey PRIMARY KEY (idtipoestrategia);
 
 
 --
