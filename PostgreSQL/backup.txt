@@ -1900,6 +1900,14 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1146, 'Pagamento do aluguel', -700.00, 1, '2022-04-19');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1147, 'Desconhecido', -55.87, 1, '2022-04-17');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1148, 'Cafe da manha', -20.00, 1, '2022-04-20');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1149, 'Deposito do PIX', 222.00, 1, '2022-04-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1150, 'Estacionamento do Volei', -25.00, 1, '2022-04-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1151, 'Mc Donalds', -31.40, 1, '2022-04-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1152, 'Mc Donalds', -41.40, 1, '2022-04-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1153, 'Coca dos Meninos', -12.00, 1, '2022-04-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1154, 'Do lado da padaria', -11.00, 1, '2022-04-21');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1155, 'Camarao cremoso', -76.98, 6, '2022-04-21');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1156, 'Gasolina da Sogra', -70.00, 5, '2022-04-22');
 
 
 --
