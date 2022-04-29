@@ -373,12 +373,33 @@ ALTER SEQUENCE public.tipinvestimentos_idtipinves_seq OWNED BY public.tipinvesti
 --
 
 CREATE TABLE public.tipo_estrategia (
-    idtipoestrategia integer NOT NULL,
+    id bigint NOT NULL,
     nomeestrategia character varying(255)
 );
 
 
 ALTER TABLE public.tipo_estrategia OWNER TO postgres;
+
+--
+-- Name: tipo_estrategia_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipo_estrategia_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipo_estrategia_id_seq OWNER TO postgres;
+
+--
+-- Name: tipo_estrategia_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipo_estrategia_id_seq OWNED BY public.tipo_estrategia.id;
+
 
 --
 -- Name: tipo_estrategia_idtipoestrategia_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -394,13 +415,6 @@ CREATE SEQUENCE public.tipo_estrategia_idtipoestrategia_seq
 
 
 ALTER TABLE public.tipo_estrategia_idtipoestrategia_seq OWNER TO postgres;
-
---
--- Name: tipo_estrategia_idtipoestrategia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE public.tipo_estrategia_idtipoestrategia_seq OWNED BY public.tipo_estrategia.idtipoestrategia;
-
 
 --
 -- Name: tipogasto; Type: TABLE; Schema: public; Owner: postgres
@@ -502,10 +516,10 @@ ALTER TABLE ONLY public.tipinvestimentos ALTER COLUMN idtipinves SET DEFAULT nex
 
 
 --
--- Name: tipo_estrategia idtipoestrategia; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: tipo_estrategia id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.tipo_estrategia ALTER COLUMN idtipoestrategia SET DEFAULT nextval('public.tipo_estrategia_idtipoestrategia_seq'::regclass);
+ALTER TABLE ONLY public.tipo_estrategia ALTER COLUMN id SET DEFAULT nextval('public.tipo_estrategia_id_seq'::regclass);
 
 
 --
@@ -726,7 +740,6 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (192, 9, 152.26, '2022-03-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (187, 2, 3930.32, '2022-03-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (200, 9, 145.97, '2022-04-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (201, 4, 675.00, '2022-04-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (196, 1, 75.19, '2022-04-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (191, 4, 675.00, '2022-03-31', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (202, 13, 480.93, '2022-04-01', 'S');
@@ -734,13 +747,14 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (198, 10, 450.00, '2022-04-08', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (195, 2, 3406.65, '2022-04-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (199, 7, 695.00, '2022-04-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (203, 2, 1348.52, '2022-05-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (205, 10, 450.00, '2022-05-08', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (204, 8, 144.99, '2022-05-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (206, 7, 695.00, '2022-05-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (207, 9, 150.00, '2022-05-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (208, 4, 675.00, '2022-05-31', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (209, 1, 75.19, '2022-05-10', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (201, 4, 450.00, '2022-04-30', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (208, 4, 450.00, '2022-05-31', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (203, 2, 1659.72, '2022-05-15', 'N');
 
 
 --
@@ -1918,6 +1932,13 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1157, 'Giraffas', -32.50, 1, '2022-04-23');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1158, 'Girafas', -28.50, 1, '2022-04-23');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1159, 'Flor do Cerrado', -62.99, 1, '2022-04-24');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1160, 'Pamonha da Br', -30.00, 1, '2022-04-25');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1161, 'Padaria pão dourado', -21.00, 6, '2022-04-24');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1162, 'Compra de Besteira asuahasi', -17.00, 1, '2022-04-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1163, 'Ze delivery', -27.00, 1, '2022-04-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1164, 'Deposito do Beneficio', 616.00, 6, '2022-04-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1165, 'Deposito do Beneficio', 300.00, 5, '2022-04-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1166, 'Deposito 1/2 do Salário', 1656.93, 1, '2022-04-29');
 
 
 --
@@ -2786,6 +2807,11 @@ INSERT INTO public.tipinvestimentos (idtipinves, tipdescinves, tiptitleinves) VA
 -- Data for Name: tipo_estrategia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO public.tipo_estrategia (id, nomeestrategia) VALUES (1, 'A����es B3');
+INSERT INTO public.tipo_estrategia (id, nomeestrategia) VALUES (2, 'Renda Fixa/Caixa');
+INSERT INTO public.tipo_estrategia (id, nomeestrategia) VALUES (3, 'Fundo Imobili��rio - FII');
+INSERT INTO public.tipo_estrategia (id, nomeestrategia) VALUES (4, 'Exterior/Stocks');
+INSERT INTO public.tipo_estrategia (id, nomeestrategia) VALUES (5, 'Risco');
 
 
 --
@@ -2868,6 +2894,13 @@ SELECT pg_catalog.setval('public.tipdespesas_idtipexpenses_seq', 6, true);
 --
 
 SELECT pg_catalog.setval('public.tipinvestimentos_idtipinves_seq', 1, true);
+
+
+--
+-- Name: tipo_estrategia_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipo_estrategia_id_seq', 5, true);
 
 
 --
@@ -2977,7 +3010,7 @@ ALTER TABLE ONLY public.tipinvestimentos
 --
 
 ALTER TABLE ONLY public.tipo_estrategia
-    ADD CONSTRAINT tipo_estrategia_pkey PRIMARY KEY (idtipoestrategia);
+    ADD CONSTRAINT tipo_estrategia_pkey PRIMARY KEY (id);
 
 
 --
