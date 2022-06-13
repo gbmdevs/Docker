@@ -2,19 +2,19 @@
 #  FRONT-END - Area de Estudos
 #  * Angular
 ##########################################
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER guih.smi2@outlook.com(guihdevs)
 WORKDIR /home/projetos
 RUN apt-get update
 RUN apt-get install nano -y && apt-get install git -y
 RUN apt-get install curl -y
-RUN apt-get install npm -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install npm -y
 
-# Instalação do Nodejs Version 13x 
-RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
+# Instalação do Nodejs Version 16x 
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 
-# Instalação do Angular 8
+# Instalação do Angular 13
 RUN npm install -g @angular/cli
  
 # Backup do Diretirio onde os projetos Front-end estao hospedados
