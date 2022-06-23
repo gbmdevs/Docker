@@ -4,10 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planilha V2.0</title>
-</style>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"  rel="stylesheet">
 
 </head>
+<body>
 
+  <div class="container">
+    <aside>
+       <div class="top">
+           <div class="logo">
+              <img src="./images/logo.png" alt="logo">
+              <h2>PLA<span class="danger">NILHA</span></h2>
+           </div>
+           <div class="close" id="close-btn">
+              <span class="material-icons-sharp">close</span>
+           </div>
+       </div>
 
+       <div class="sidebar">
+           <a href="#">
+              <span class="material-icons-sharp">grid_view</span>
+              <h3>Dashboard</h3>
+           </a>
+           <a href="#" class="active">
+              <span class="material-icons-sharp">person_outline</span>
+              <h3>Perfil</h3>
+           </a>
+           <a href="#">
+            <span class="material-icons-sharp">mail_outline</span>
+            <h3>Mensagens</h3>
+            <span class="message-count">26</span>
+           </a>
+           <a href="#">
+             <span class="material-icons-sharp">logout</span>
+             <h3>Desconectar</h3>
+           </a>
+       </div>
+    </aside>
+    <!-- FIM do Aside-->
+    <main>
+        <h1>Dashboard</h1>
+
+        <div class="date">
+           <input type="date">
+        </div>
+
+        <div class="insights">
+           <div class="sales">
+              <span class="material-icons-sharp">analytics</span>
+              <div class="middle">
+                 <div class="left">
+                    <h3>Total Sales</h3>
+                    <h1>$25,024</h1>
+                 </div>
+                 <div class="progress">
+                    <svg>
+                      <circle cx='38' cy='38' r='36'></circle>
+                    </svg>
+                    <div class="number">
+                      <p>81%</p>
+                    </div>
+                 </div>
+              </div>
+              <small class="text-muted">last 24 hours</small>
+           </div>
+           <div class="sales">
+            <span class="material-icons-sharp">analytics</span>
+            <div class="middle">
+               <div class="left">
+                  <h3>Total Sales</h3>
+                  <h1>$25,024</h1>
+               </div>
+               <div class="progress">
+                  <svg>
+                    <circle cx='38' cy='38' r='36'></circle>
+                  </svg>
+                  <div class="number">
+                    <p>81%</p>
+                  </div>
+               </div>
+            </div>
+            <small class="text-muted">last 24 hours</small>
+         </div>
+         <div class="sales">
+            <span class="material-icons-sharp">analytics</span>
+            <div class="middle">
+               <div class="left">
+                  <h3>Total Sales</h3>
+                  <h1>$25,024</h1>
+               </div>
+               <div class="progress">
+                  <svg>
+                    <circle cx='38' cy='38' r='36'></circle>
+                  </svg>
+                  <div class="number">
+                    <p>81%</p>
+                  </div>
+               </div>
+            </div>
+            <small class="text-muted">last 24 hours</small>
+         </div>
+        </div>
+        <!--FIM de INSIGHTS-->
+        <div class="recent-orders">
+           <h2>Despesas Fixas</h2>
+           <table>
+              <thead>
+                 <tr>
+                    <th>Despesa</th>
+                    <th>Valor</th>
+                    <th>Data de Vencimento</th>
+                    <th>Situação</th>
+                 </tr>
+              </thead>
+              <tbody>
+                 <tr>
+                     <td>Condominio/Água</td>
+                     <td class="danger">R$ 280,00</td>
+                     <td>08/07/2022</td>
+                     <td class="done"><span class="material-icons-sharp">done</span></td>
+                     <td class="primary">Details</td>
+                 </tr>
+                 <tr>
+                     <td>Foldable Mini Drone</td>
+                     <td>85631</td>
+                     <td>Due</td>
+                     <td class="pending"><span class="material-icons-sharp">close</span></td>
+                     <td class="primary">Details</td>
+                 </tr>
+                 <tr>
+                     <td>Foldable Mini Drone</td>
+                     <td>85631</td>
+                     <td>Due</td>
+                     <td class="warning">Pending</td>
+                     <td class="primary">Details</td>
+                 </tr>
+                 <tr>
+                  <td>Foldable Mini Drone</td>
+                  <td>85631</td>
+                  <td>Due</td>
+                  <td class="warning">Pending</td>
+                  <td class="primary">Details</td>
+                  <tr>
+                     <td>Foldable Mini Drone</td>
+                     <td>85631</td>
+                     <td>Due</td>
+                     <td class="warning">Pending</td>
+                     <td class="primary">Details</td>
+                 </tr>
+                  </tr>                 
+              </tbody>
+           </table>
+           <a href="#">Show All</a>
+        </div>
+    </main>
+    <!-- Fim do MAIN-->
+    <div class="right">
+      <div class="top">
+         <button class="menu-btn">
+             <span class="material-icons-sharp">menu</span>
+         </button>
+         <div class="theme-toggler">
+
+         </div>
+         <div class="profile">
+            <div class="info">
+               <p>Olá, <b>Guilherme</b></p>
+               <small class="text-muted">Administrador</small>
+            </div>
+            <div class="profile-photo">
+               <img src="./images/profile-1.jpg">
+            </div>
+         </div>
+      </div>
+      <div class="recent-updates">
+         <h2>Recent Updates</h2>
+         <div class="updates">
+            <div class="update">      
+               <div class="profile-photo">
+                  <img src="./images/profile-2.jpg" alt="">
+               </div>        
+               <div class="message">
+                  <p>b</p>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
