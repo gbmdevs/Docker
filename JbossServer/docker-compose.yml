@@ -8,6 +8,7 @@ services:
             - "8080:8080"
             - "9990:9990"
             - "3200:3200"
+            - "5000:5000"
         #  tty: true
           stdin_open: true
         # Adição do Commando para Iniciar o Servidor  

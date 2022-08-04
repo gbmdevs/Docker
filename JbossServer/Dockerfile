@@ -1,7 +1,7 @@
 # Titulo: Criação do Ambiente JBOSS para desenvolvimento Java WEB 1.8
 # Autor:  Guilherme B.(Emaloka) : guih.smi2@outlook.com
 # Descrição:
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER guih.smi2@outlook.com(Emaloka)
 WORKDIR /home/app/java
 
