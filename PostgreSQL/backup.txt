@@ -342,7 +342,8 @@ ALTER SEQUENCE public.tip_gasto_idtipgasto_seq OWNED BY public.tip_gasto.idtipga
 CREATE TABLE public.tipdespesas (
     idtipexpenses integer NOT NULL,
     titleexpenses character varying(20) NOT NULL,
-    descexpenses character varying(100) NOT NULL
+    descexpenses character varying(100) NOT NULL,
+    tipodesppessoa character varying(2)
 );
 
 
@@ -823,11 +824,13 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (223, 10, 428.00, '2022-07-08', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (224, 9, 110.29, '2022-07-23', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (221, 7, 990.00, '2022-07-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (227, 2, 3589.21, '2022-08-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (228, 1, 75.19, '2022-08-10', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (229, 10, 428.00, '2022-08-08', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (230, 8, 126.92, '2022-08-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (231, 9, 120.00, '2022-08-23', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (232, 13, 211.05, '2022-08-18', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (227, 2, 4263.96, '2022-08-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (229, 10, 428.00, '2022-08-08', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (233, 15, 133.32, '2022-08-19', 'N');
 
 
 --
@@ -2141,6 +2144,7 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1293, 'Pao da hora', -17.84, 1, '2022-08-29');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1294, 'Inicio do CNPJ', -20.00, 1, '2022-08-01');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1295, 'Resgate BRB', 113.00, 1, '2022-08-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1296, 'Pagamento do Condominio', -428.00, 1, '2022-08-08');
 
 
 --
@@ -2981,21 +2985,22 @@ INSERT INTO public.tip_gasto (idtipgasto, nometipgasto, desctipgasto) VALUES (1,
 -- Data for Name: tipdespesas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (1, 'Fatura Telefone', 'Fatura Referente ao plano da Claro');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (2, 'Cartao de Credito', 'Referente ao Nubank Mensal');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (3, 'Seguranca(Reserva)', 'Refere-se a dinheiro de margem de seguranca');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (4, 'Investimento', 'Refere-se a dinheiro de Investimento Livre');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (5, 'Academia e Saude', 'Refere-se a reserva para Academia/Saude');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (6, 'Transporte Onibus', 'Vale transporte pro 
-servico');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (8, 'Internet Banda Larga', 'Internet da Casa');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (9, 'Agua e Luz/Gas', 'Depesas de Agua e Luz');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (10, 'Condominio', 'Condominio do Apartamento');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (11, 'Caixa - Viagem', 'Caixa para futuras viagens e ferias');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (7, 'Aluguel do Apto', 'Solino Apto Quadra 02');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (12, 'Divida - Fortaleza', 'Estadia na raiana');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (13, 'Compras do Mes', 'Compras do mes para a casa no atacadao');
-INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses) VALUES (14, 'Cama do Bebe', 'Despesa do quarto do bebe');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (1, 'Fatura Telefone', 'Fatura Referente ao plano da Claro', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (2, 'Cartao de Credito', 'Referente ao Nubank Mensal', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (3, 'Seguranca(Reserva)', 'Refere-se a dinheiro de margem de seguranca', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (4, 'Investimento', 'Refere-se a dinheiro de Investimento Livre', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (5, 'Academia e Saude', 'Refere-se a reserva para Academia/Saude', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (6, 'Transporte Onibus', 'Vale transporte pro 
+servico', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (8, 'Internet Banda Larga', 'Internet da Casa', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (9, 'Agua e Luz/Gas', 'Depesas de Agua e Luz', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (10, 'Condominio', 'Condominio do Apartamento', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (11, 'Caixa - Viagem', 'Caixa para futuras viagens e ferias', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (7, 'Aluguel do Apto', 'Solino Apto Quadra 02', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (12, 'Divida - Fortaleza', 'Estadia na raiana', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (13, 'Compras do Mes', 'Compras do mes para a casa no atacadao', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (14, 'Cama do Bebe', 'Despesa do quarto do bebe', 'PF');
+INSERT INTO public.tipdespesas (idtipexpenses, titleexpenses, descexpenses, tipodesppessoa) VALUES (15, 'INSS - Pro labore', 'INSS da agilize para pro labore', 'PJ');
 
 
 --
