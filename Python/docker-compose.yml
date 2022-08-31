@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+   python:
+      build: .
+      container_name: "pythondesenv"
+      tty: true
+      stdin_open: true
+      ports: 
+       - "80:80"
+       - "8080:8080"  
