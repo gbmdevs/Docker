@@ -60,7 +60,19 @@ services:
          stdin_open: true     
          networks: 
             rede:
-                ipv4_address: 172.20.0.11                     
+                ipv4_address: 172.20.0.11  
+    python:
+         build: ../Python
+         image: "python:desenv"
+         container_name: "python_desen"
+         tty: true
+         stdin_open: true  
+         ports:
+          - "7000:7000" 
+         networks: 
+            rede:
+                ipv4_address: 172.20.0.12                
+
 networks:
     rede:
       driver: bridge
