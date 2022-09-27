@@ -18,9 +18,9 @@ RUN cd projetos && git init && git remote add origin https://github.com/emaloka/
 RUN mkdir /usr/lib/jvm
 
 # Copia os arquivos necessários para a configuração do ambiente
-COPY apache-maven-3.6.3-bin.tar.gz   /home/app/java
-COPY jdk-8u221-linux-x64.tar.gz      /home/app/java
-COPY jboss-eap-7.2.0-installer.jar   /home/app/java/jboss-7-2.jar    
+COPY ./recursos/apache-maven-3.8.6-bin.tar.gz  /home/app/java
+COPY ./recursos/jdk-8u333-linux-x64.tar.gz      /home/app/java
+COPY ./recursos/jboss-eap-7.2.0-installer.jar   /home/app/java/jboss-7-2.jar    
 
 #Copia o script de automação, instalação e inicialização
 COPY auto.xml                        /home/app/java/auto.xml  
@@ -33,7 +33,7 @@ RUN update-alternatives --install "/usr/bin/java"  "java"  "/usr/lib/jvm/jdk1.8.
 RUN update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0_221/bin/javac" 0
 
 # Instalação Maven  e especificação do comando MVN
-RUN tar xzvf apache-maven-3.6.3-bin.tar.gz -C /opt/
+RUN tar xzvf apache-maven-3.8.3-bin.tar.gz -C /opt/
 RUN update-alternatives --install "/usr/bin/mvn" "mvn" "/opt/apache-maven-3.6.3/bin/mvn" 0
 
 #Executa a Instalação por completo do JBOSS

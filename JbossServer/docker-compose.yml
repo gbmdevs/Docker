@@ -1,7 +1,9 @@
 version: "3.0"
 services:
     servidor:
-          build: .
+          build: 
+              context: ../
+              dockerfile: ./JbossServer/Dockerfile
           image: "jboss:desen"
           container_name: "jbossDesen"
           ports: 
