@@ -23,24 +23,24 @@ COPY ./recursos/jdk-8u333-linux-x64.tar.gz      /home/app/java
 COPY ./recursos/jboss-eap-7.2.0-installer.jar   /home/app/java/jboss-7-2.jar    
 
 #Copia o script de automação, instalação e inicialização
-COPY auto.xml                        /home/app/java/auto.xml  
-COPY init.sh                         /home/app/java/init.sh 
+COPY ./recursos/auto.xml                        /home/app/java/auto.xml  
+COPY ./recursos/init.sh                         /home/app/java/init.sh 
 
 #RUN ./init.sh
 # Extração do JDK versão 8 e Instalação
-RUN tar xzvf jdk-8u221-linux-x64.tar.gz -C /usr/lib/jvm
-RUN update-alternatives --install "/usr/bin/java"  "java"  "/usr/lib/jvm/jdk1.8.0_221/bin/java" 0
-RUN update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0_221/bin/javac" 0
+RUN tar xzvf jdk-8u333-linux-x64.tar.gz -C /usr/lib/jvm
+RUN update-alternatives --install "/usr/bin/java"  "java"  "/usr/lib/jvm/jdk1.8.0_333/bin/java" 0
+RUN update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0_333/bin/javac" 0
 
 # Instalação Maven  e especificação do comando MVN
-RUN tar xzvf apache-maven-3.8.3-bin.tar.gz -C /opt/
-RUN update-alternatives --install "/usr/bin/mvn" "mvn" "/opt/apache-maven-3.6.3/bin/mvn" 0
+RUN tar xzvf apache-maven-3.8.6-bin.tar.gz -C /opt/
+RUN update-alternatives --install "/usr/bin/mvn" "mvn" "/opt/apache-maven-3.8.6/bin/mvn" 0
 
 #Executa a Instalação por completo do JBOSS
 RUN java -jar jboss-7-2.jar auto.xml -variables adminPassword=admin
 
 # Configuração do Servidor
-COPY configuration /home/app/java/configuration/
+COPY ./recursos/configuration /home/app/java/configuration/
 
 # Lembrar de Rodar sempre com -b  0.0.0.0 , pois o JBOSS nao replica para as outras portas
 # -b 0.0.0.0 -bmanagement 0.0.0.0 , para todas as portas
@@ -48,8 +48,8 @@ COPY configuration /home/app/java/configuration/
 
 # Instalação do Node.js - Angular 
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
-RUN apt install nodejs -y
-RUN npm install -g @angular/cli
+RUN DEBIAN_FRONTEND=noninteractive apt install nodejs -yq
+#RUN npm install -g @angular/cli
 
 # Entrypoint para executação de teste
 #ENTRYPOINT [ "/home/app/init.sh" ]

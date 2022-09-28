@@ -1,7 +1,8 @@
-FROM ubuntu:21.04
+FROM ubuntu:20.04
 MAINTAINER Emaloka(guih.smi2@outlook.com)
 WORKDIR /home/server/nodejs
 # Ferramentas para desenvolvimento
+RUN apt-get clean
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install npm -yq
 RUN apt-get install nano -y && apt-get install git -y
