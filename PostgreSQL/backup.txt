@@ -462,7 +462,8 @@ CREATE TABLE public.tipogasto (
     idtypespent integer NOT NULL,
     titletypespent character varying(50) NOT NULL,
     desctypespent character varying(200) NOT NULL,
-    isactive character varying(1) DEFAULT 'S'::character varying
+    isactive character varying(1) DEFAULT 'S'::character varying,
+    isprincipal character varying(1) DEFAULT 'N'::character varying
 );
 
 
@@ -852,19 +853,19 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (256, 4, 1063.90, '2022-10-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (257, 19, 960.00, '2022-10-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (258, 17, 178.00, '2022-10-15', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (259, 10, 420.00, '2022-10-08', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (259, 10, 420.00, '2022-10-08', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (260, 1, 75.19, '2022-10-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (262, 20, 1800.00, '2022-10-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (263, 13, 1200.00, '2022-10-05', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (261, 18, 886.58, '2022-10-30', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (264, 21, 1200.00, '2022-10-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (265, 15, 369.60, '2022-10-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (266, 16, 720.00, '2022-10-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (267, 9, 120.00, '2022-10-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (268, 8, 126.92, '2022-10-10', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (268, 8, 126.92, '2022-10-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (243, 7, 990.00, '2022-09-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (251, 4, 1063.90, '2022-09-30', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (254, 2, 2165.93, '2022-10-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (254, 2, 3456.55, '2022-10-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (263, 13, 0.00, '2022-10-05', 'N');
 
 
 --
@@ -2259,6 +2260,24 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1374, 'Dellicata Padaria', -44.40, 7, '2022-09-24');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1375, 'La boca', -94.00, 7, '2022-09-25');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1376, 'Correção', -170.84, 7, '2022-09-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1377, 'Dona de Casa', -59.95, 7, '2022-09-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1378, 'Pao de Sal', -46.89, 7, '2022-09-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1379, 'Potiguar Almoço', -81.02, 7, '2022-09-28');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1380, 'Gordo Lanches', -36.99, 7, '2022-09-27');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1381, 'Shukran', -60.45, 7, '2022-09-26');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1382, 'Rendimento', 0.46, 7, '2022-09-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1383, 'Pix recebido', 22.00, 1, '2022-09-29');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1384, 'Desconhecido', -13.90, 7, '2022-09-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1385, 'Rendimento', 0.05, 7, '2022-10-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1386, 'Gasolina da Sogra', -60.00, 1, '2022-09-30');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1387, 'Dona de Casa', -33.96, 7, '2022-10-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1388, 'Hortifruit ', -12.98, 7, '2022-10-04');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1389, 'Besteiras na Distribuidora', -29.00, 7, '2022-10-03');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1390, 'Rendimento', 0.07, 7, '2022-10-05');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1391, 'Condominio', -428.00, 1, '2022-10-06');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1392, 'Conta Claro', -61.73, 1, '2022-10-09');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1393, 'Besteiras na Distribuidora', -24.00, 7, '2022-10-07');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1394, 'Rendimento', 0.07, 7, '2022-10-09');
 
 
 --
@@ -3146,13 +3165,13 @@ INSERT INTO public.tipo_estrategia (id, nomeestrategia) VALUES (5, 'Risco');
 -- Data for Name: tipogasto; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (1, 'Conta Corrente - Inter', 'Referente a conta corrent atual do banco inter', 'S');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (2, 'Cartao Alelo Refeicao', 'Beneficio Refeicao do Alelo', 'N');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (4, 'Sodexo Refeicao', 'Cartao de refeicao Sodexo', 'N');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (3, 'Ticket Alimentacao', 'Beneficio do ticket Alimentacao', 'N');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (7, 'Cartao ITI', 'Cartao ITI para beneficios e etc', 'S');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (6, 'Refeicao Alelo ACT', 'Auxilio Refeicao da ACT Digital', 'N');
-INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive) VALUES (5, 'Vale Combustivel Alelo', 'Auxilio Combustivel da ACT Digital', 'N');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive, isprincipal) VALUES (1, 'Conta Corrente - Inter', 'Referente a conta corrent atual do banco inter', 'S', 'N');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive, isprincipal) VALUES (2, 'Cartao Alelo Refeicao', 'Beneficio Refeicao do Alelo', 'N', 'N');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive, isprincipal) VALUES (4, 'Sodexo Refeicao', 'Cartao de refeicao Sodexo', 'N', 'N');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive, isprincipal) VALUES (3, 'Ticket Alimentacao', 'Beneficio do ticket Alimentacao', 'N', 'N');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive, isprincipal) VALUES (6, 'Refeicao Alelo ACT', 'Auxilio Refeicao da ACT Digital', 'N', 'N');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive, isprincipal) VALUES (5, 'Vale Combustivel Alelo', 'Auxilio Combustivel da ACT Digital', 'N', 'N');
+INSERT INTO public.tipogasto (idtypespent, titletypespent, desctypespent, isactive, isprincipal) VALUES (7, 'Cartao ITI', 'Cartao ITI para beneficios e etc', 'S', 'S');
 
 
 --
