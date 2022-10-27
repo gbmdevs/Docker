@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+    jenkins:
+          build: 
+              context: ../
+              dockerfile: ./Jenkins/Dockerfile
+          stdin_open: true
+          tty: true
+          ports:
+            - "9101:9101"
+          command: "java -jar jenkins.war --httpPort=9101"
