@@ -73,7 +73,22 @@ services:
           - "7000:7000" 
          networks: 
             rede:
-                ipv4_address: 172.20.0.12                
+                ipv4_address: 172.20.0.12        
+    jenkins:
+         build: 
+             context: ../
+             dockerfile: ./Jenkins/Dockerfile
+         image: "jenkins:desenv"
+         container_name: "jenkins_desen"
+         command: "java -jar jenkins.war --httpPort=9101"
+         tty: true
+         stdin_open: true
+         ports:
+           - "9101:9101"
+         networks: 
+            rede:
+                ipv4_address: 172.20.0.13    
+
 
 networks:
     rede:
