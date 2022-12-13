@@ -18,6 +18,20 @@ services:
           networks:
             rede: 
               ipv4_address: 172.20.0.6
+    sonarqube:
+          build: 
+             context: ../
+             dockerfile: ./SonarQube/Dockerfile
+          image: "sonarqube:desen"
+          container_name: "sonarqubeDesen"
+          #command: /home/desenv/sonarqube/sonarqube-9.7.1.62043/bin/linux-x86-64/./sonar.sh start
+          tty: true
+          stdin_open: true          
+          ports: 
+          - "9000:9000"
+          networks: 
+             rede:
+               ipv4_address: 172.20.0.7
     pgdb:
         build: ../PostgreSQL
         image: "postgres:desen"

@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+    sonarqube:
+          build: 
+             context: ../
+             dockerfile: ./SonarQube/Dockerfile
+          image: "sonarqube:desen"
+          container_name: "sonarqubeDesenv"
+          #command: /home/desenv/sonarqube/sonarqube-9.7.1.62043/bin/linux-x86-64/./sonar.sh start
+          tty: true
+          stdin_open: true          
+          ports: 
+          - "9000:9000"
