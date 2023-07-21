@@ -1,18 +1,14 @@
 version: "2.0"
 services: 
    postdb: 
-       image: psql:Desenv
-       container_name: "postgresql"
-       tty: true
-       stdin_open: true
-       ports:
-           - 5432:5432
-       volumes:
-           - my_dbdata:/var/lib/postgresql/data
-       environment: 
-         - POSTGRES_DB=pgweb
-         - POSTGRES_USER=postgres
-         - TZ=GMT    
+        build:  .
+        image: "postgres:desen"
+        container_name: "postgres_teste2"
+        tty: true
+        stdin_open: true
+        #command: postgres -D /etc/postgresql/data
+        ports: 
+           - "5432:5432"
 volumes:
    my_dbdata:           
         

@@ -18,20 +18,20 @@ services:
           networks:
             rede: 
               ipv4_address: 172.20.0.6
-    sonarqube:
-          build: 
-             context: ../
-             dockerfile: ./SonarQube/Dockerfile
-          image: "sonarqube:desen"
-          container_name: "sonarqubeDesen"
-          #command: /home/desenv/sonarqube/sonarqube-9.7.1.62043/bin/linux-x86-64/./sonar.sh start
-          tty: true
-          stdin_open: true          
-          ports: 
-          - "9000:9000"
-          networks: 
-             rede:
-               ipv4_address: 172.20.0.7
+    #sonarqube:
+    #      build: 
+    #         context: ../
+    #         dockerfile: ./SonarQube/Dockerfile
+    #      image: "sonarqube:desen"
+    #      container_name: "sonarqubeDesen"
+    #      #command: /home/desenv/sonarqube/sonarqube-9.7.1.62043/bin/linux-x86-64/./sonar.sh start
+    #      tty: true
+    #      stdin_open: true          
+    #      ports: 
+    #      - "9000:9000"
+    #      networks: 
+    #         rede:
+    #           ipv4_address: 172.20.0.7
     pgdb:
         build: ../PostgreSQL
         image: "postgres:desen"
@@ -45,63 +45,63 @@ services:
              rede:
                ipv4_address: 172.20.0.9     
     front:
-         build: ../Front-End
-         image: "frontend:desen"
-         container_name: "frontend_desen"
-         ##command: "git pull origin master"
-         ports: 
-            - "4200:4200"
-         tty: true
-         stdin_open: true  
-         networks: 
-              rede:
-                ipv4_address: 172.20.0.8                        
-    nodejs:
-         build: ../Nodejs - Servidor
-         image: "nodejs:desen"
-         container_name: "nodejs_desen"
-         ports: 
-            - "3000:3000"
-         tty: true
-         stdin_open: true  
-         networks: 
-              rede:
-                ipv4_address: 172.20.0.10                      
-    mongodb:
-         build: ../MongoDB
-         image: "mongodb:desenv"
-         container_name: "mongodb_desen"
-         command: "mongod --bind_ip 172.20.0.11"
-         tty: true
-         stdin_open: true     
-         networks: 
-            rede:
-                ipv4_address: 172.20.0.11  
-    python:
-         build: ../Python
-         image: "python:desenv"
-         container_name: "python_desen"
-         tty: true
-         stdin_open: true  
-         ports:
-          - "7000:7000" 
-         networks: 
-            rede:
-                ipv4_address: 172.20.0.12        
-    jenkins:
-         build: 
-             context: ../
-             dockerfile: ./Jenkins/Dockerfile
-         image: "jenkins:desenv"
-         container_name: "jenkins_desen"
-         command: "java -jar jenkins.war --httpPort=9101"
-         tty: true
-         stdin_open: true
-         ports:
-           - "9101:9101"
-         networks: 
-            rede:
-                ipv4_address: 172.20.0.13    
+        build: ../Front-End
+        image: "frontend:desen"
+        container_name: "frontend_desen_java"
+        ##command: "git pull origin master"
+        ports: 
+           - "4200:4200"
+        tty: true
+        stdin_open: true  
+        networks: 
+             rede:
+               ipv4_address: 172.20.0.8                        
+    #nodejs:
+    #     build: ../Nodejs - Servidor
+    #     image: "nodejs:desen"
+    #     container_name: "nodejs_desen"
+    #     ports: 
+    #        - "3000:3000"
+    #     tty: true
+    #     stdin_open: true  
+    #     networks: 
+    #          rede:
+    #            ipv4_address: 172.20.0.10                      
+    #mongodb:
+    #     build: ../MongoDB
+    #     image: "mongodb:desenv"
+    #     container_name: "mongodb_desen"
+    #     command: "mongod --bind_ip 172.20.0.11"
+    #     tty: true
+    #     stdin_open: true     
+    #     networks: 
+    #        rede:
+    #            ipv4_address: 172.20.0.11  
+    #python:
+    #     build: ../Python
+    #     image: "python:desenv"
+    #     container_name: "python_desen"
+    #     tty: true
+    #     stdin_open: true  
+    #     ports:
+    #      - "7000:7000" 
+    #     networks: 
+    #        rede:
+    #            ipv4_address: 172.20.0.12        
+    #jenkins:
+    #     build: 
+    #         context: ../
+    #         dockerfile: ./Jenkins/Dockerfile
+    #     image: "jenkins:desenv"
+    #     container_name: "jenkins_desen"
+    #     command: "java -jar jenkins.war --httpPort=9101"
+    #     tty: true
+    #     stdin_open: true
+    #     ports:
+    #       - "9101:9101"
+    #     networks: 
+    #        rede:
+    #            ipv4_address: 172.20.0.13    
 
 
 networks:

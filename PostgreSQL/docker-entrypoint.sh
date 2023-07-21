@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Iniciador do servidor para realização de backup automatico
 # Status de Saida e realizar a copia para o volume indicado
 finalizar() {

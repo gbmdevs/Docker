@@ -3,14 +3,15 @@
 # Guilherme Braga(Emaloka)
 # Versao do PostgreSQL 11
 
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER guih.smi2@outlook.com(Emaloka)
 WORKDIR /home/app/db
 
 # 
-RUN apt-get update
+RUN apt-get update 
 RUN apt-get install curl -y && apt-get install nano -y  && apt-get install git -y
 RUN apt-get install make -y
+RUN apt-get install dos2unix
 
 # Criação de Usuario Postgres
 RUN adduser --disabled-password --shell /bin/bash --gecos "User" postgres
@@ -59,6 +60,7 @@ RUN chmod 600 *.conf
 
 COPY docker-entrypoint.sh /usr/local/bin/ 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh 
+RUN dos2unix /usr/local/bin/docker-entrypoint.sh 
 # Usuario para a aplicação (no momento , sem nehuma trava de segurança)
 USER "postgres"
 
