@@ -1,0 +1,12 @@
+version: "3.0"
+services:
+    servidorRelic:
+          build: 
+              context: ../
+              dockerfile: ./NewRelic/Dockerfile
+          image: "newrelic:desen"
+          container_name: "newRelic"
+          ports: 
+            - "7777:7777" 
+          tty: true
+          stdin_open: true
