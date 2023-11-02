@@ -8,6 +8,7 @@ WORKDIR /home/app/java
 RUN apt-get update
 RUN apt-get install nano -y && apt-get install curl -y
 RUN apt-get install git -y  
+RUN apt-get install unzip -y
 
 # Inicialização dos repositorios GIT :  Projetos em Java e SETUP para ambiente
 RUN mkdir projetos
@@ -16,6 +17,12 @@ RUN git config --global user.email guih.smi2@outlook.com
 RUN cd projetos && git init && git remote add origin https://github.com/emaloka/Java.git && git pull origin master
 
 RUN mkdir /usr/lib/jvm
+
+# Instalação do gradle
+RUN mkdir /opt/gradle
+RUN curl --location --output file.zip --url https://services.gradle.org/distributions/gradle-8.4-bin.zip
+RUN unzip file.zip -d /opt/gradle/
+RUN update-alternatives --install "/usr/bin/gradle" "gradle" "/opt/gradle/gradle-8.4/bin/gradle" 0
 
 # Copia os arquivos necessários para a configuração do ambiente
 COPY ./recursos/apache-maven-3.8.6-bin.tar.gz  /home/app/java
