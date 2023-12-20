@@ -11,7 +11,7 @@ RUN apt-get install curl -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install npm -y
 
 # Instalação do Nodejs Version 16x 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
 # Instalação do Angular 13
@@ -25,6 +25,8 @@ RUN git init && git remote add origin https://github.com/gbmdevs/Front-end.git &
 # Incluir mais Watchers para Requisição
 RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
 RUN sysctl -p
+
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
 EXPOSE 4200
 CMD ["/bin/bash"]

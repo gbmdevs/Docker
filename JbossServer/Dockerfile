@@ -14,7 +14,7 @@ RUN apt-get install unzip -y
 RUN mkdir projetos
 RUN git config --global user.name "Guilherme B.(Emaloka)"
 RUN git config --global user.email guih.smi2@outlook.com
-RUN cd projetos && git init && git remote add origin https://github.com/emaloka/Java.git && git pull origin master
+RUN cd projetos && git init && git remote add origin https://github.com/gbmdevs/Java.git && git pull origin master
 
 RUN mkdir /usr/lib/jvm
 
