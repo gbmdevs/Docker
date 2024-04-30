@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+body{
+    background: #f0f5fd;
+    height: 100vh;
+    display: flex;
+}
+
+.left-section{
+    background: #fff;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 25px 10px;
+    transition: all 0.3s ease;
+}
+
+.left-section h2{
+    color: #364670;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.left-section .side-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+}
+
+.left-section .side-bar .item,
+.left-section .sign-out{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #364670;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.left-section .side-bar .item h3,
+.left-section .sign-out h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.main{
+    flex: 6;
+    padding: 25px;
+}
+
+.main .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .header .search{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    width: 75%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(136,148,171,0.2), 0 24px 20px -24px rgba(71,82,107,0.1);
+}
+
+.main .header .search input{
+    padding: 4px 6px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.main .separator {
+    margin: 35px 0 20px;
+    font-weight: 500;
+    color: #364670;
+}
+
+.main .quick-access{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.main .quick-access .item{
+    background: #fff;
+    width: 20%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(136,148,171,0.2), 0 24px 20px -24px rgba(71,82,107,0.1);
+}
+
+.main .quick-access .item i{
+    font-size: 46px;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.main table{
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    border-radius: 14px;
+    border-spacing: 0 8px;
+    box-shadow: 0 2px 6px rgba(136, 148, 171, 0.2), 0 24px 20px -24px rgba(71, 82, 107, 0.1);
+}
