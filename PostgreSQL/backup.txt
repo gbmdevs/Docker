@@ -1123,13 +1123,11 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (490, 20, 1728.88, '2024-02-20', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (515, 15, 351.00, '2024-04-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (521, 22, 1205.84, '2024-04-20', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (563, 7, 1250.00, '2024-07-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (542, 4, 550.00, '2024-06-10', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (593, 25, 3132.08, '2024-08-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (558, 27, 100.68, '2024-05-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (538, 25, 2019.72, '2024-05-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (579, 2, 542.20, '2024-08-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (530, 15, 351.00, '2024-05-15', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (580, 4, 550.00, '2024-08-10', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (477, 4, 0.00, '2024-01-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (524, 2, 559.00, '2024-05-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (532, 17, 175.00, '2024-05-10', 'S');
@@ -1139,18 +1137,9 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (536, 22, 1205.84, '2024-05-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (535, 20, 1728.88, '2024-05-25', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (531, 16, 750.00, '2024-05-15', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (561, 2, 542.20, '2024-07-15', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (562, 4, 550.00, '2024-07-10', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (565, 9, 160.00, '2024-07-20', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (567, 15, 351.00, '2024-07-15', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (568, 16, 750.00, '2024-07-15', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (570, 18, 886.00, '2024-07-30', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (571, 19, 960.00, '2024-07-30', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (572, 20, 1728.88, '2024-07-25', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (573, 22, 1205.84, '2024-07-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (275, 4, 2867.56, '2022-11-30', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (582, 8, 134.00, '2024-08-10', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (593, 25, 1932.70, '2024-08-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (570, 18, 575.00, '2024-07-30', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (560, 1, 72.09, '2024-07-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (546, 10, 350.00, '2024-06-08', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (540, 1, 72.09, '2024-06-10', 'S');
@@ -1158,7 +1147,7 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (555, 24, 0.00, '2024-06-15', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (534, 19, 0.00, '2024-05-30', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (480, 4, 0.00, '2024-02-10', 'S');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (495, 4, 170.00, '2024-03-10', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (542, 4, 550.00, '2024-06-10', 'S');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (583, 9, 160.00, '2024-08-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (584, 10, 350.00, '2024-08-08', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (585, 15, 351.00, '2024-08-15', 'N');
@@ -1210,9 +1199,20 @@ INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, dued
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (610, 20, 1728.88, '2024-09-20', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (611, 22, 1205.84, '2024-09-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (612, 23, 975.00, '2024-09-25', 'N');
-INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (613, 25, 1050.41, '2024-09-25', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (614, 27, 100.68, '2024-09-15', 'N');
 INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (615, 28, 109.90, '2024-09-15', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (567, 15, 351.00, '2024-07-15', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (561, 2, 542.20, '2024-07-15', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (568, 16, 750.00, '2024-07-15', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (573, 22, 1205.84, '2024-07-25', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (565, 9, 160.00, '2024-07-20', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (613, 25, 1410.93, '2024-09-25', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (572, 20, 1728.88, '2024-07-25', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (495, 4, 170.00, '2024-03-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (562, 4, 550.00, '2024-07-10', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (571, 19, 575.00, '2024-07-30', 'S');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (580, 4, 0.00, '2024-08-10', 'N');
+INSERT INTO public.despesasfixas (idexpenses, idtipexpenses, valueexpenses, duedate, sitpayment) VALUES (563, 7, 1250.00, '2024-07-20', 'S');
 
 
 --
@@ -3006,6 +3006,17 @@ INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, dat
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1773, 'IPTU', -100.68, 7, '2024-07-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1774, 'Academia lais', -109.90, 7, '2024-07-14');
 INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1775, 'AMIL Dental', -104.90, 7, '2024-07-14');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1776, 'Nubank', -632.20, 7, '2024-07-15');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1777, 'INSS', -409.80, 7, '2024-07-15');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1778, 'PAgamento DAS', -720.00, 7, '2024-07-16');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1779, 'Correção', 373.59, 7, '2024-07-17');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1780, 'Pagamento do carro ', -1202.40, 7, '2024-07-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1781, 'Pagamento da luz', -156.24, 7, '2024-07-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1782, 'AMIL Saude', 1308.27, 7, '2024-07-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1783, 'Correção', -2611.40, 7, '2024-07-19');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1784, 'Pagamento do aluguel', -1250.00, 7, '2024-07-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1785, '13 salario', -575.00, 7, '2024-07-22');
+INSERT INTO public.gastos (idspent, spentdescription, spentvalue, spenttype, datespent) VALUES (1786, 'Ferias', -575.00, 7, '2024-07-22');
 
 
 --
