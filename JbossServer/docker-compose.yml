@@ -35,7 +35,7 @@ services:
     pgdb:
         build: ../PostgreSQL
         image: "postgres:desen"
-        container_name: "postgres_teste"
+        container_name: "postgres_desen"
         tty: true
         stdin_open: true
         #command: postgres -D /etc/postgresql/data
@@ -47,7 +47,7 @@ services:
     front:
         build: ../Front-End
         image: "frontend:desen"
-        container_name: "frontend_desen_java"
+        container_name: "frontend_java"
         ##command: "git pull origin master"
         ports: 
            - "4200:4200"

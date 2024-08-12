@@ -3,15 +3,15 @@
 # Guilherme Braga(Emaloka)
 # Versao do PostgreSQL 11
 
-FROM ubuntu:20.04
+FROM ubuntu:focal
 MAINTAINER guih.smi2@outlook.com(Emaloka)
 WORKDIR /home/app/db
 
 # 
-RUN apt-get update 
+RUN apt-get clean && apt-get update && apt-get upgrade -y
 RUN apt-get install curl -y && apt-get install nano -y  && apt-get install git -y
 RUN apt-get install make -y
-RUN apt-get install dos2unix
+RUN apt-get install dos2unix -y
 
 # Criação de Usuario Postgres
 RUN adduser --disabled-password --shell /bin/bash --gecos "User" postgres
@@ -30,7 +30,7 @@ RUN mkdir /etc/postgresql
 RUN mkdir /etc/postgresql/bin && mkdir /etc/postgresql/data
 
 # Baixar o arquivo PostgreSQL 11.1
-RUN curl -O https://ftp.postgresql.org/pub/source/v11.1/postgresql-11.1.tar.gz
+RUN curl -fsSL -O https://ftp.postgresql.org/pub/source/v11.1/postgresql-11.1.tar.gz
 RUN tar -xvf postgresql-11.1.tar.gz
 
 # Configuração do PostgreSQL

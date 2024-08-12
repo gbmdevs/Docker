@@ -1,17 +1,21 @@
 ##########################################
 #  FRONT-END - Area de Estudos
 #  * Angular
+#  * React
 ##########################################
-FROM ubuntu:20.04
+FROM ubuntu:focal
 MAINTAINER guih.smi2@outlook.com(guihdevs)
 WORKDIR /home/projetos
-RUN apt-get update
+RUN echo 'Acquire::http::No-Cache true;' > /etc/apt/apt.conf.d/no-cache
+RUN apt-get clean && apt-get update && apt-get upgrade -y
 RUN apt-get install nano -y && apt-get install git -y
 RUN apt-get install curl -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install npm -y
+#RUN DEBIAN_FRONTEND=noninteractive apt-get install npm -y
 
-# Instalação do Nodejs Version 16x 
-RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
+# Instalação do Nodejs Version 20x 
+RUN apt-get autoremove nodejs -y
+RUN apt-get remove nodejs-doc -y 
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
 # Instalação do Angular 13
