@@ -103,7 +103,6 @@ services:
     #        rede:
     #            ipv4_address: 172.20.0.13    
 
-
 networks:
     rede:
       driver: bridge
