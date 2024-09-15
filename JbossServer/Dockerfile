@@ -15,7 +15,7 @@ RUN mkdir projetos
 RUN git config --global user.name "Guilherme B.(Emaloka)"
 RUN git config --global user.email guih.smi2@outlook.com
 RUN git config --global init.defaultBranch master
-RUN git config --global core.compression 9
+RUN git config --global core.compression 0
 RUN cd projetos && git init && git clone https://github.com/gbmdevs/Java.git
 
 RUN mkdir /usr/lib/jvm
