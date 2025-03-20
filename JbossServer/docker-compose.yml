@@ -44,6 +44,15 @@ services:
         networks: 
              rede:
                ipv4_address: 172.20.0.9     
+    rabbitMq:
+        build: ../RabbitMQ          
+        image: "rabbitmq:desen" 
+        container_name: "rabbitmq_desen"
+        ports: 
+           - "15672:15672"
+        networks: 
+             rede:
+               ipv4_address: 172.20.0.10   
     front:
         build: ../Front-End
         image: "frontend:desen"
