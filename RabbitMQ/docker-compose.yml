@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+    rabbitMQ:
+          build: 
+             context: ../
+             dockerfile: ./RabbitMQ/Dockerfile
+          image: "rabbitmq:desen"
+          container_name: "rabbitMQDesenv" 
+          tty: true
+          stdin_open: true          
+          ports: 
+          - "15672:15672"
+          - "5672:5672"

@@ -12,10 +12,10 @@ RUN apt-get install nano -y && apt-get install git -y
 RUN apt-get install curl -y
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install npm -y
 
-# Instalação do Nodejs Version 20x 
+# Instalação do Nodejs Version 23x 
 RUN apt-get autoremove nodejs -y
 RUN apt-get remove nodejs-doc -y 
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_23.x | bash -
 RUN apt-get install -y nodejs
 
 # Instalação do Angular 13

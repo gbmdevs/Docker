@@ -5,7 +5,6 @@ services:
          image: "frontend:desen"
          container_name: "frontend_desen"
          ports: 
-            - "80:4200"
+            - "4200:4200"
          tty: true
-         stdin_open: true
-         command: "git pull origin master"
+         stdin_open: true 
