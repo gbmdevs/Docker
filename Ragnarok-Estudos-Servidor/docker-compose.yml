@@ -1,7 +1,9 @@
 version:  "3.0"
 services:
     ragnarok:
-        build: .
+        build: 
+              context: ../
+              dockerfile: ./Ragnarok-Estudos-Servidor/Dockerfile
         container_name: "ragnarokDes"
         image: "ragnarok:server"
         tty: true
