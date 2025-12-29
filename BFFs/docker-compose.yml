@@ -1,0 +1,14 @@
+version:  "3.0"
+services:
+    bffs:
+        build: 
+              context: ../
+              dockerfile: ./BFFs/Dockerfile
+        container_name: "bffsDesenv"
+        image: "bffs:desenv"
+        tty: true
+        stdin_open: true
+        ports: 
+            - "3001:3001" 
+            - "3002:3002"
+            - "5000:5000"
